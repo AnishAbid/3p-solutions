@@ -3,7 +3,8 @@
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { CheckCircle2, CircleAlert } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -134,7 +135,7 @@ export function ContactForm() {
   const empty = status === "empty";
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5" noValidate>
+    <form onSubmit={onSubmit} className="space-y-5" noValidate method="post" action="#">
       {empty ? (
         <p className="rounded-lg border border-dashed border-gold/50 bg-gold-soft/30 px-4 py-3 text-sm text-navy">
           Form is empty. Name, email, practice, and a short brief are required.
@@ -238,13 +239,16 @@ export function ContactForm() {
         />
       </Field>
 
-      <Button
+      <button
         type="submit"
-        className="h-11 w-full px-6 sm:w-auto"
+        className={cn(
+          buttonVariants(),
+          "h-11 w-full px-6 sm:w-auto disabled:pointer-events-none disabled:opacity-50",
+        )}
         disabled={status === "submitting"}
       >
         {status === "submitting" ? "Sending…" : "Send brief"}
-      </Button>
+      </button>
     </form>
   );
 }
