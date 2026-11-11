@@ -26,27 +26,27 @@ export function QuoteSlider({ quotes }: { quotes: readonly string[] }) {
     <div className="relative">
       <div className="overflow-hidden">
         <div
-          className="flex transition-transform duration-500 ease-out motion-reduce:transition-none"
+          className="flex transition-transform duration-700 ease-out motion-reduce:transition-none"
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
           {quotes.map((quote) => (
-            <blockquote
-              key={quote}
-              className="w-full shrink-0 rounded-xl border bg-card p-6 ring-1 ring-foreground/5 md:p-8"
-            >
-              <p className="font-heading text-lg leading-relaxed md:text-xl">
+            <blockquote key={quote} className="w-full shrink-0 pr-4">
+              <p className="font-display text-3xl leading-[1.2] text-navy md:text-5xl">
                 “{quote}”
+              </p>
+              <p className="mt-6 text-[0.65rem] font-semibold tracking-[0.2em] text-gold uppercase">
+                3psolutions.com.pk
               </p>
             </blockquote>
           ))}
         </div>
       </div>
-      <div className="mt-5 flex items-center gap-3">
+      <div className="mt-8 flex items-center gap-3">
         <button
           type="button"
           aria-label="Previous quote"
           onClick={() => go(-1)}
-          className="inline-flex size-9 items-center justify-center rounded-full border text-navy transition hover:border-gold hover:text-gold"
+          className="inline-flex size-10 items-center justify-center rounded-full border text-navy transition hover:border-gold hover:text-gold"
         >
           <ChevronLeft className="size-4" />
         </button>
@@ -54,7 +54,7 @@ export function QuoteSlider({ quotes }: { quotes: readonly string[] }) {
           type="button"
           aria-label="Next quote"
           onClick={() => go(1)}
-          className="inline-flex size-9 items-center justify-center rounded-full border text-navy transition hover:border-gold hover:text-gold"
+          className="inline-flex size-10 items-center justify-center rounded-full border text-navy transition hover:border-gold hover:text-gold"
         >
           <ChevronRight className="size-4" />
         </button>

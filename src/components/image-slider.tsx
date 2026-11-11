@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 type Slide = {
   src: string;
   alt: string;
+  label?: string;
 };
 
 export function ImageSlider({
@@ -30,6 +31,7 @@ export function ImageSlider({
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const count = slides.length;
+  const current = slides[index];
 
   const go = useCallback(
     (next: number) => {
@@ -68,41 +70,54 @@ export function ImageSlider({
           sizes="100vw"
         />
       ))}
-      <div className={cn("absolute inset-0 bg-navy-deep/78", overlayClassName)} />
+      <div
+        className={cn(
+          "absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/55 to-navy-deep/25",
+          overlayClassName,
+        )}
+      />
       <div className="relative z-10">{children}</div>
       {showControls && count > 1 ? (
-        <div className="absolute inset-x-0 bottom-5 z-10 flex items-center justify-center gap-3">
-          <button
-            type="button"
-            aria-label="Previous slide"
-            onClick={() => go(-1)}
-            className="hidden size-9 items-center justify-center rounded-full border border-white/25 bg-navy/40 text-white backdrop-blur-sm transition hover:border-gold hover:text-gold md:inline-flex"
-          >
-            <ChevronLeft className="size-4" />
-          </button>
-          <div className="flex items-center gap-2">
-            {slides.map((slide, i) => (
+        <div className="absolute inset-x-0 bottom-0 z-10">
+          <div className="container-home flex items-end justify-between gap-4 pb-6">
+            <p className="text-[0.65rem] font-semibold tracking-[0.22em] text-gold uppercase">
+              {String(index + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}
+              {current?.label ? ` · ${current.label}` : ""}
+            </p>
+            <div className="flex items-center gap-3">
               <button
-                key={slide.src}
                 type="button"
-                aria-label={`Show slide ${i + 1}`}
-                aria-current={i === index}
-                onClick={() => setIndex(i)}
-                className={cn(
-                  "h-1.5 rounded-full transition-all",
-                  i === index ? "w-8 bg-gold" : "w-2.5 bg-white/40 hover:bg-white/70",
-                )}
-              />
-            ))}
+                aria-label="Previous slide"
+                onClick={() => go(-1)}
+                className="inline-flex size-10 items-center justify-center rounded-full border border-white/25 bg-white/5 text-white backdrop-blur-sm transition hover:border-gold hover:text-gold"
+              >
+                <ChevronLeft className="size-4" />
+              </button>
+              <div className="flex items-center gap-2">
+                {slides.map((slide, i) => (
+                  <button
+                    key={slide.src}
+                    type="button"
+                    aria-label={`Show slide ${i + 1}`}
+                    aria-current={i === index}
+                    onClick={() => setIndex(i)}
+                    className={cn(
+                      "h-1 rounded-full transition-all",
+                      i === index ? "w-10 bg-gold" : "w-3 bg-white/35 hover:bg-white/70",
+                    )}
+                  />
+                ))}
+              </div>
+              <button
+                type="button"
+                aria-label="Next slide"
+                onClick={() => go(1)}
+                className="inline-flex size-10 items-center justify-center rounded-full border border-white/25 bg-white/5 text-white backdrop-blur-sm transition hover:border-gold hover:text-gold"
+              >
+                <ChevronRight className="size-4" />
+              </button>
+            </div>
           </div>
-          <button
-            type="button"
-            aria-label="Next slide"
-            onClick={() => go(1)}
-            className="hidden size-9 items-center justify-center rounded-full border border-white/25 bg-navy/40 text-white backdrop-blur-sm transition hover:border-gold hover:text-gold md:inline-flex"
-          >
-            <ChevronRight className="size-4" />
-          </button>
         </div>
       ) : null}
     </section>

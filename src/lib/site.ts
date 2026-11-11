@@ -68,22 +68,27 @@ export const heroSlides = [
   {
     src: "/images/construction.jpg",
     alt: "Construction crew reviewing a reinforced concrete slab",
+    label: "Construction",
   },
   {
     src: "/images/solar-farm.jpg",
     alt: "Aerial view of a solar farm",
+    label: "Solar energy",
   },
   {
     src: "/images/wind.jpg",
     alt: "Wind turbines on a field at sunset",
+    label: "Wind energy",
   },
   {
     src: "/images/municipal.jpg",
     alt: "City skyline at night",
+    label: "Municipal services",
   },
   {
     src: "/images/odoo.jpg",
     alt: "Laptop showing operations dashboards used in ERP work",
+    label: "Odoo",
   },
 ] as const;
 
