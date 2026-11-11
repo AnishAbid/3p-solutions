@@ -36,6 +36,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/practices/it" className="text-white/80 hover:text-gold">
+                IT · Odoo
+              </Link>
+            </li>
+            <li>
               <Link href="/about" className="text-white/80 hover:text-gold">
                 About
               </Link>

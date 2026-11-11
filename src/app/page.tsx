@@ -27,7 +27,11 @@ export default function Home() {
               Construction and renewable energy for Pakistan.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
-              {site.tagline}. {aboutCopy.intro}
+              {site.tagline}. {aboutCopy.intro} The IT practice implements{" "}
+              <Link href="/practices/it" className="text-gold underline-offset-4 hover:underline">
+                Odoo
+              </Link>
+              .
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link

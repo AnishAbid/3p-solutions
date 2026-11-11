@@ -3,7 +3,7 @@ export const site = {
   alsoKnownAs: "3Psolution",
   tagline: "Your trusted partner in construction and sustainable energy",
   description:
-    "3P Solutions delivers construction services and energy solutions — including solar and wind — from Lahore, for communities across Pakistan.",
+    "3P Solutions delivers construction, renewable energy, municipal services, and Odoo IT from Lahore, for work across Pakistan.",
   city: "Lahore",
   country: "Pakistan",
 } as const;
@@ -31,11 +31,23 @@ export const nav = [
   { href: "/projects", label: "Projects" },
   { href: "/renewables", label: "Renewables" },
   { href: "/municipal-services", label: "Municipal Services" },
+  { href: "/practices/it", label: "IT" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Get In Touch" },
 ] as const;
 
 export const services = [
+  {
+    slug: "odoo",
+    href: "/practices/it",
+    kicker: "IT",
+    title: "Odoo",
+    shortTitle: "Odoo",
+    summary:
+      "Odoo ERP for finance, inventory, manufacturing, and operations — implemented so the books, the warehouse, and the site can share one set of numbers.",
+    blurb:
+      "Odoo implementation, configuration, training, and support. (Sometimes searched as OODO.)",
+  },
   {
     slug: "construction",
     href: "/projects",
@@ -271,7 +283,7 @@ export const aboutCopy = {
 } as const;
 
 const legacyQuery: Record<string, ServiceSlug> = {
-  it: "solar",
+  it: "odoo",
   engineering: "construction",
   consulting: "water",
 };

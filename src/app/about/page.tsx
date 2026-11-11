@@ -30,6 +30,10 @@ export default function AboutPage() {
               services, water supply, wastewater treatment, solar energy, wind
               energy, and transmission lines.
             </p>
+            <p className="mt-4 leading-relaxed text-muted-foreground">
+              Alongside that field work, the IT practice implements Odoo (also
+              searched as OODO). No named IT clients are listed on this site.
+            </p>
           </div>
           <aside className="border border-gold/40 bg-navy p-6 text-white lg:col-span-5">
             <p className="text-[0.7rem] font-semibold tracking-[0.2em] text-gold uppercase">
@@ -37,7 +41,7 @@ export default function AboutPage() {
             </p>
             <p className="mt-3 font-heading text-2xl">{site.name}</p>
             <p className="mt-1 text-sm text-white/70">
-              Construction &amp; renewable energy
+              Construction, energy, municipal, and Odoo IT
             </p>
             <dl className="mt-8 space-y-4 text-sm">
               <div>
@@ -48,7 +52,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <dt className="text-white/50">Focus</dt>
-                <dd>Construction, solar, wind, water, waste, municipal works</dd>
+                <dd>Construction, solar, wind, water, waste, municipal, Odoo</dd>
               </div>
             </dl>
           </aside>
