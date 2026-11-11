@@ -17,6 +17,8 @@ export default function ContactPage() {
         kicker="Get in touch"
         title="Your local experts in construction and sustainable energy solutions."
         description="Have questions or need assistance? Reach out about construction services, solar energy projects, or municipal services."
+        image="/images/solar.jpg"
+        imageAlt="Rows of solar panels in an open field"
       />
       <section className="container-site grid gap-12 py-16 lg:grid-cols-12">
         <div className="lg:col-span-7">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { CtaBand } from "@/components/cta-band";
@@ -17,8 +18,17 @@ import { cn } from "@/lib/utils";
 export default function Home() {
   return (
     <>
-      <section className="hero-grid text-white">
-        <div className="container-site grid items-center gap-12 py-16 md:grid-cols-12 md:py-24 lg:py-28">
+      <section className="relative overflow-hidden bg-navy-deep text-white">
+        <Image
+          src="/images/construction.jpg"
+          alt="Construction crew reviewing a reinforced concrete slab"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-navy-deep/78" />
+        <div className="relative container-site grid items-center gap-12 py-16 md:grid-cols-12 md:py-24 lg:py-28">
           <div className="md:col-span-7">
             <p className="text-[0.7rem] font-semibold tracking-[0.24em] text-gold uppercase">
               {site.name} · {site.city}
@@ -112,6 +122,36 @@ export default function Home() {
       </section>
 
       <section className="bg-navy text-white">
+        <div className="grid grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              src: "/images/solar-farm.jpg",
+              alt: "Aerial view of a solar farm",
+            },
+            {
+              src: "/images/municipal.jpg",
+              alt: "City skyline at night",
+            },
+            {
+              src: "/images/odoo.jpg",
+              alt: "Laptop showing operations dashboards",
+            },
+            {
+              src: "/images/wind.jpg",
+              alt: "Wind turbines on a field at sunset",
+            },
+          ].map((photo) => (
+            <div key={photo.src} className="relative aspect-[16/10] overflow-hidden">
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 25vw, 50vw"
+              />
+            </div>
+          ))}
+        </div>
         <div className="container-site py-16 md:py-24">
           <div className="max-w-2xl">
             <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">

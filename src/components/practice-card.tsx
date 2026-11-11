@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -17,11 +18,20 @@ export function PracticeCard({
   return (
     <Card
       className={cn(
-        "h-full gap-0 py-0 ring-border transition-shadow hover:shadow-md",
+        "h-full gap-0 overflow-hidden py-0 ring-border transition-shadow hover:shadow-md",
         className,
       )}
     >
-      <CardHeader className="pt-6">
+      <div className="relative aspect-[16/10] bg-muted">
+        <Image
+          src={practice.image}
+          alt={practice.imageAlt}
+          fill
+          className="object-cover"
+          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+        />
+      </div>
+      <CardHeader className="pt-5">
         <Badge variant="outline" className="border-gold/40 bg-gold-soft/40 text-navy">
           {practice.kicker}
         </Badge>

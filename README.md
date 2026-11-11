@@ -39,6 +39,8 @@ The dev server binds to **port 4783** (not 3000):
 
 `/practices/engineering` and `/practices/consulting` redirect to projects and municipal services.
 
+Photographs live in `public/images/` (Unsplash, Pexels, and Pixabay). See `public/images/CREDITS.md`. They were not copied from eliteengineering.com.pk, unitenterprises.site, or 3psolutions.com.pk.
+
 Production-style local run:
 
 ```bash

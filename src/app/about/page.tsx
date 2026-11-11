@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
 import { aboutCopy, site, team, values } from "@/lib/site";
@@ -15,6 +16,8 @@ export default function AboutPage() {
         kicker="About us"
         title="High-quality construction and innovative energy solutions from Lahore."
         description={aboutCopy.intro}
+        image="/images/transmission.jpg"
+        imageAlt="Transmission lines at dusk"
       />
 
       <section className="container-site py-16 md:py-20">
@@ -35,26 +38,37 @@ export default function AboutPage() {
               searched as OODO). No named IT clients are listed on this site.
             </p>
           </div>
-          <aside className="border border-gold/40 bg-navy p-6 text-white lg:col-span-5">
-            <p className="text-[0.7rem] font-semibold tracking-[0.2em] text-gold uppercase">
-              Company
-            </p>
-            <p className="mt-3 font-heading text-2xl">{site.name}</p>
-            <p className="mt-1 text-sm text-white/70">
-              Construction, energy, municipal, and Odoo IT
-            </p>
-            <dl className="mt-8 space-y-4 text-sm">
-              <div>
-                <dt className="text-white/50">Base</dt>
-                <dd>
-                  {site.city}, {site.country}
-                </dd>
-              </div>
-              <div>
-                <dt className="text-white/50">Focus</dt>
-                <dd>Construction, solar, wind, water, waste, municipal, Odoo</dd>
-              </div>
-            </dl>
+          <aside className="lg:col-span-5">
+            <div className="relative mb-6 aspect-[16/10] overflow-hidden rounded-xl">
+              <Image
+                src="/images/construction.jpg"
+                alt="Construction crew reviewing a reinforced concrete slab"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+              />
+            </div>
+            <div className="border border-gold/40 bg-navy p-6 text-white">
+              <p className="text-[0.7rem] font-semibold tracking-[0.2em] text-gold uppercase">
+                Company
+              </p>
+              <p className="mt-3 font-heading text-2xl">{site.name}</p>
+              <p className="mt-1 text-sm text-white/70">
+                Construction, energy, municipal, and Odoo IT
+              </p>
+              <dl className="mt-8 space-y-4 text-sm">
+                <div>
+                  <dt className="text-white/50">Base</dt>
+                  <dd>
+                    {site.city}, {site.country}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-white/50">Focus</dt>
+                  <dd>Construction, solar, wind, water, waste, municipal, Odoo</dd>
+                </div>
+              </dl>
+            </div>
           </aside>
         </div>
       </section>

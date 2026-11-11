@@ -47,6 +47,8 @@ export const services = [
       "Odoo ERP for finance, inventory, manufacturing, and operations — implemented so the books, the warehouse, and the site can share one set of numbers.",
     blurb:
       "Odoo implementation, configuration, training, and support. (Sometimes searched as OODO.)",
+    image: "/images/odoo.jpg",
+    imageAlt: "Laptop showing operations dashboards used in ERP work",
   },
   {
     slug: "construction",
@@ -58,6 +60,8 @@ export const services = [
       "Expert project management and quality building practices for a robust infrastructure.",
     blurb:
       "Construction services for modern infrastructure, delivered with quality building practices.",
+    image: "/images/construction.jpg",
+    imageAlt: "Construction crew reviewing a reinforced concrete slab",
   },
   {
     slug: "solar",
@@ -69,6 +73,8 @@ export const services = [
       "Harness the power of the sun with efficient solar panel installations.",
     blurb:
       "Solar installations designed to optimize energy efficiency and reduce carbon footprints.",
+    image: "/images/solar.jpg",
+    imageAlt: "Rows of solar panels in an open field",
   },
   {
     slug: "water",
@@ -80,6 +86,8 @@ export const services = [
       "Reliable water supply solutions for municipalities and private sectors.",
     blurb:
       "Urban water supply systems for clean, reliable access in communities.",
+    image: "/images/water.jpg",
+    imageAlt: "Clean drinking water poured into a glass",
   },
   {
     slug: "wastewater",
@@ -91,6 +99,8 @@ export const services = [
       "Advanced technologies for effective wastewater management and treatment.",
     blurb:
       "Treatment plants designed to meet environmental standards and recover resources.",
+    image: "/images/wastewater.jpg",
+    imageAlt: "Industrial treatment plant tanks, piping, and towers",
   },
   {
     slug: "waste",
@@ -102,6 +112,8 @@ export const services = [
       "Approaches to waste collection, recycling, and management.",
     blurb:
       "Collection to disposal, with recycling and composting where the work calls for it.",
+    image: "/images/waste.jpg",
+    imageAlt: "Sorted scrap and solid waste ready for processing",
   },
   {
     slug: "wind",
@@ -113,6 +125,8 @@ export const services = [
       "Wind farms that convert natural wind into clean energy for Pakistan’s energy mix.",
     blurb:
       "Wind energy projects contributing to a sustainable energy mix for Pakistan.",
+    image: "/images/wind.jpg",
+    imageAlt: "Wind turbines on a field at sunset",
   },
 ] as const;
 
@@ -184,26 +198,38 @@ export const projectLines = [
   {
     title: "Construction Services",
     body: "Project management and quality building practices for infrastructure.",
+    image: "/images/construction.jpg",
+    imageAlt: "Construction crew on a concrete slab",
   },
   {
     title: "Solar Energy Solutions",
     body: "Solar panel installations for efficient, lower-carbon power.",
+    image: "/images/solar.jpg",
+    imageAlt: "Solar panel array",
   },
   {
     title: "Water Supply Management",
     body: "Water supply for municipalities and private clients.",
+    image: "/images/water.jpg",
+    imageAlt: "Clean water supply",
   },
   {
     title: "Wastewater Treatment Projects",
     body: "Treatment plants for safe discharge and resource recovery.",
+    image: "/images/wastewater.jpg",
+    imageAlt: "Wastewater treatment plant",
   },
   {
     title: "Wind Energy Projects",
     body: "Wind farms converting natural wind into clean energy.",
+    image: "/images/wind.jpg",
+    imageAlt: "Wind farm at sunset",
   },
   {
     title: "Municipal Services",
     body: "Urban water, waste, and related municipal infrastructure.",
+    image: "/images/municipal.jpg",
+    imageAlt: "City skyline at night",
   },
 ] as const;
 

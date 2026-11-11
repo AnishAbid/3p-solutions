@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { CtaBand } from "@/components/cta-band";
@@ -46,6 +47,8 @@ export default function ItPracticePage() {
         kicker="IT practice"
         title="Odoo for companies that already run plants, sites, and ledgers."
         description="3P Solutions’ IT practice implements Odoo — the open-source ERP suite. Local search sometimes writes it OODO; the product name is Odoo."
+        image="/images/odoo.jpg"
+        imageAlt="Laptop showing operations dashboards used in ERP work"
       />
 
       <section className="container-site py-16 md:py-20">
@@ -71,13 +74,24 @@ export default function ItPracticePage() {
               ))}
             </ul>
           </div>
-          <div className="rounded-xl border bg-card p-6 md:p-8">
-            <h2 className="text-2xl font-semibold">What we do not claim here</h2>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              No partner logos, no named Odoo customers, and no invented SAP
-              specialisations. If a brief needs a different ERP landscape, that
-              is a conversation — not a badge on this page.
-            </p>
+          <div className="space-y-6">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-xl">
+              <Image
+                src="/images/it-network.jpg"
+                alt="Engineer connecting servers in a network rack"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            </div>
+            <div className="rounded-xl border bg-card p-6 md:p-8">
+              <h2 className="text-2xl font-semibold">What we do not claim here</h2>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                No partner logos, no named Odoo customers, and no invented SAP
+                specialisations. If a brief needs a different ERP landscape, that
+                is a conversation — not a badge on this page.
+              </p>
+            </div>
           </div>
         </div>
       </section>

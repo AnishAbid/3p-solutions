@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export function PageHero({
@@ -5,15 +6,32 @@ export function PageHero({
   title,
   description,
   className,
+  image,
+  imageAlt,
 }: {
   kicker?: string;
   title: string;
   description: string;
   className?: string;
+  image?: string;
+  imageAlt?: string;
 }) {
   return (
-    <section className={cn("bg-navy text-white", className)}>
-      <div className="container-site py-14 md:py-20">
+    <section className={cn("relative overflow-hidden bg-navy text-white", className)}>
+      {image ? (
+        <>
+          <Image
+            src={image}
+            alt={imageAlt ?? ""}
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-navy/78" />
+        </>
+      ) : null}
+      <div className="relative container-site py-14 md:py-20">
         {kicker ? (
           <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
             {kicker}

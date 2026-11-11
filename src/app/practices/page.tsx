@@ -17,6 +17,8 @@ export default function PracticesPage() {
         kicker="Practices"
         title="Construction, energy, municipal work — and Odoo."
         description="Field services match 3psolutions.com.pk. The IT practice is Odoo ERP, listed here because it is part of this site’s offering."
+        image="/images/construction.jpg"
+        imageAlt="Construction crew reviewing a reinforced concrete slab"
       />
       <section className="container-site py-16 md:py-20">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

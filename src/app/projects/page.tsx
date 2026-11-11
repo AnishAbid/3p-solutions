@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CtaBand } from "@/components/cta-band";
 import { FaqList } from "@/components/faq-list";
 import { PageHero } from "@/components/page-hero";
+import { PhotoArticle } from "@/components/photo-article";
 import { projectLines, testimonials } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -17,17 +18,20 @@ export default function ProjectsPage() {
         kicker="Projects"
         title="Showcasing our expertise in diverse fields"
         description="Key service lines published on 3psolutions.com.pk: construction, solar, water supply, wastewater treatment, wind energy, and municipal services. Named project sites are not listed on the live site."
+        image="/images/construction-work.jpg"
+        imageAlt="Construction worker placing a concrete pour"
       />
       <section className="container-site py-16 md:py-20">
         <h2 className="text-3xl font-semibold">Our key services</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projectLines.map((line) => (
-            <article key={line.title} className="rounded-xl border bg-card p-6">
-              <h3 className="text-xl font-semibold">{line.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {line.body}
-              </p>
-            </article>
+            <PhotoArticle
+              key={line.title}
+              title={line.title}
+              body={line.body}
+              image={line.image}
+              imageAlt={line.imageAlt}
+            />
           ))}
         </div>
       </section>
