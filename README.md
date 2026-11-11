@@ -49,3 +49,5 @@ npm start
 ```
 
 `npm start` also uses port 4783.
+
+To replace the live WordPress site at 3psolutions.com.pk, see [docs/namecheap-deploy.md](docs/namecheap-deploy.md). This app is a Node Next.js server as committed; Namecheap shared hosting cannot run it without a later static-export change.
