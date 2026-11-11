@@ -10,8 +10,8 @@ export default function NotFound() {
       </p>
       <h1 className="mt-3 text-4xl font-semibold">This page is not on the drawings.</h1>
       <p className="mx-auto mt-4 max-w-md text-muted-foreground">
-        The route you asked for is not part of the 3P Solutions site. Head home
-        or send a brief instead.
+        That route is not part of the 3P Solutions site. Head home or get in
+        touch instead.
       </p>
       <div className="mt-8 flex justify-center gap-3">
         <Link href="/" className={cn(buttonVariants(), "h-11 px-5")}>
@@ -21,7 +21,7 @@ export default function NotFound() {
           href="/contact"
           className={cn(buttonVariants({ variant: "outline" }), "h-11 px-5")}
         >
-          Contact
+          Get in touch
         </Link>
       </div>
     </section>

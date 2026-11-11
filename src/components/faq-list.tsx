@@ -8,10 +8,12 @@ import {
 } from "@/components/ui/accordion";
 import { faqs } from "@/lib/site";
 
-export function FaqList() {
+type Faq = { id: string; question: string; answer: string };
+
+export function FaqList({ items = faqs }: { items?: readonly Faq[] }) {
   return (
     <Accordion className="divide-y rounded-xl border bg-card px-4" multiple={false}>
-      {faqs.map((item) => (
+      {items.map((item) => (
         <AccordionItem key={item.id} value={item.id} className="border-border">
           <AccordionTrigger className="py-4 text-base hover:no-underline">
             {item.question}

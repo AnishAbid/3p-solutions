@@ -1,88 +1,283 @@
 export const site = {
   name: "3P Solutions",
   alsoKnownAs: "3Psolution",
-  tagline: "Three practices. One accountable partner.",
+  tagline: "Your trusted partner in construction and sustainable energy",
   description:
-    "3P Solutions (also written 3Psolution) is a Pakistani consultancy spanning SAP and Odoo, construction engineering, and tax advisory.",
+    "3P Solutions delivers construction services and energy solutions — including solar and wind — from Lahore, for communities across Pakistan.",
+  city: "Lahore",
+  country: "Pakistan",
+} as const;
+
+export const contact = {
+  addressLine: "123 Construction Lane",
+  postalCode: "54000",
+  city: "Lahore",
+  phoneDisplay: "+92 123 4567890",
+  phoneAltDisplay: "+92 123 456 7890",
+  phoneHref: "tel:+921234567890",
+  email: "info@3psolutions.com.pk",
+  hours: [
+    { day: "Monday", hours: "9:00 AM - 5:00 PM" },
+    { day: "Tuesday", hours: "9:00 AM - 5:00 PM" },
+    { day: "Wednesday", hours: "9:00 AM - 5:00 PM" },
+    { day: "Thursday", hours: "9:00 AM - 5:00 PM" },
+    { day: "Friday", hours: "9:00 AM - 5:00 PM" },
+    { day: "Saturday", hours: "Closed" },
+    { day: "Sunday", hours: "Closed" },
+  ],
 } as const;
 
 export const nav = [
-  { href: "/practices", label: "Practices" },
+  { href: "/projects", label: "Projects" },
+  { href: "/renewables", label: "Renewables" },
+  { href: "/municipal-services", label: "Municipal Services" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Get In Touch" },
 ] as const;
 
-export const practices = [
+export const services = [
   {
-    slug: "it",
-    href: "/practices/it",
-    kicker: "IT",
-    title: "SAP and Odoo",
-    shortTitle: "SAP & Odoo",
-    summary:
-      "Enterprise systems that match how your business actually runs — finance, supply chain, manufacturing, and the integrations around them.",
-    blurb:
-      "Implementation, rollout, and support for SAP and Odoo, with process design that finance and operations can live with.",
-  },
-  {
-    slug: "engineering",
-    href: "/practices/engineering",
-    kicker: "Engineering",
-    title: "Construction",
+    slug: "construction",
+    href: "/projects",
+    kicker: "Construction",
+    title: "Construction Services",
     shortTitle: "Construction",
     summary:
-      "Construction engineering for industrial, commercial, and infrastructure works — planned, coordinated, and handed over with a paper trail.",
+      "Expert project management and quality building practices for a robust infrastructure.",
     blurb:
-      "From method statements to site coordination, we treat construction as an engineered delivery, not a collection of invoices.",
+      "Construction services for modern infrastructure, delivered with quality building practices.",
   },
   {
-    slug: "consulting",
-    href: "/practices/consulting",
-    kicker: "Consulting",
-    title: "Tax Advisory",
-    shortTitle: "Tax Advisory",
+    slug: "solar",
+    href: "/renewables",
+    kicker: "Renewables",
+    title: "Solar Energy Solutions",
+    shortTitle: "Solar Energy",
     summary:
-      "Corporate tax counsel for Pakistan: structuring, filings, withholding, and the questions that sit between accounts and the regulator.",
+      "Harness the power of the sun with efficient solar panel installations.",
     blurb:
-      "Clear advice on income tax, sales tax, and corporate compliance, written so boards and CFOs can act on it.",
+      "Solar installations designed to optimize energy efficiency and reduce carbon footprints.",
+  },
+  {
+    slug: "water",
+    href: "/municipal-services",
+    kicker: "Municipal",
+    title: "Water Supply Management",
+    shortTitle: "Water Supply",
+    summary:
+      "Reliable water supply solutions for municipalities and private sectors.",
+    blurb:
+      "Urban water supply systems for clean, reliable access in communities.",
+  },
+  {
+    slug: "wastewater",
+    href: "/municipal-services",
+    kicker: "Municipal",
+    title: "Wastewater Treatment",
+    shortTitle: "Wastewater",
+    summary:
+      "Advanced technologies for effective wastewater management and treatment.",
+    blurb:
+      "Treatment plants designed to meet environmental standards and recover resources.",
+  },
+  {
+    slug: "waste",
+    href: "/municipal-services",
+    kicker: "Municipal",
+    title: "Solid Waste Management",
+    shortTitle: "Solid Waste",
+    summary:
+      "Approaches to waste collection, recycling, and management.",
+    blurb:
+      "Collection to disposal, with recycling and composting where the work calls for it.",
+  },
+  {
+    slug: "wind",
+    href: "/renewables",
+    kicker: "Renewables",
+    title: "Wind Energy Projects",
+    shortTitle: "Wind Energy",
+    summary:
+      "Wind farms that convert natural wind into clean energy for Pakistan’s energy mix.",
+    blurb:
+      "Wind energy projects contributing to a sustainable energy mix for Pakistan.",
   },
 ] as const;
 
-export type PracticeSlug = (typeof practices)[number]["slug"];
+/** @deprecated Use services. Kept so older query strings still resolve. */
+export const practices = services;
 
-export function getPractice(slug: string) {
-  return practices.find((practice) => practice.slug === slug);
+export type ServiceSlug = (typeof services)[number]["slug"];
+
+export function getService(slug: string) {
+  return services.find((service) => service.slug === slug);
 }
+
+export const stats = [
+  { value: "10", label: "Years in business" },
+  { value: "150", label: "Projects completed" },
+  { value: "5,000", label: "Happy clients" },
+  { value: "30", label: "Renewable projects" },
+] as const;
+
+export const values = [
+  {
+    title: "Integrity",
+    body: "We uphold the highest standards of honesty and transparency in our operations.",
+  },
+  {
+    title: "Sustainability",
+    body: "We prioritize eco-friendly practices in each project we undertake.",
+  },
+  {
+    title: "Excellence",
+    body: "We strive for excellence in service delivery and craftsmanship.",
+  },
+] as const;
+
+export const team = [
+  {
+    name: "Ahmed Ali",
+    role: "Project Manager with expertise in renewable energy projects.",
+  },
+  {
+    name: "Sara Khan",
+    role: "Lead Engineer focusing on solar energy technology.",
+  },
+  {
+    name: "Bilal Tariq",
+    role: "Waste Management Specialist dedicated to sustainable solutions.",
+  },
+  {
+    name: "Nadia Hussain",
+    role: "Municipal Services Consultant with vast experience in infrastructure.",
+  },
+  {
+    name: "Aamir Malik",
+    role: "Environmental Scientist promoting green initiatives.",
+  },
+  {
+    name: "Zainab Rafiq",
+    role: "Business Development Director aiming to expand renewable services.",
+  },
+] as const;
+
+export const testimonials = [
+  "3P Solutions delivered our project on time and exceeded our expectations!",
+  "Their professionalism in managing our municipal services was remarkable.",
+  "The installation of the solar panels was smooth and efficient. Highly recommend!",
+] as const;
+
+export const projectLines = [
+  {
+    title: "Construction Services",
+    body: "Project management and quality building practices for infrastructure.",
+  },
+  {
+    title: "Solar Energy Solutions",
+    body: "Solar panel installations for efficient, lower-carbon power.",
+  },
+  {
+    title: "Water Supply Management",
+    body: "Water supply for municipalities and private clients.",
+  },
+  {
+    title: "Wastewater Treatment Projects",
+    body: "Treatment plants for safe discharge and resource recovery.",
+  },
+  {
+    title: "Wind Energy Projects",
+    body: "Wind farms converting natural wind into clean energy.",
+  },
+  {
+    title: "Municipal Services",
+    body: "Urban water, waste, and related municipal infrastructure.",
+  },
+] as const;
 
 export const faqs = [
   {
-    id: "one-firm",
-    question: "Why keep IT, construction, and tax in one firm?",
+    id: "types",
+    question: "What types of projects does 3P Solutions undertake?",
     answer:
-      "Most mid-size Pakistani companies do not fail for lack of vendors. They fail when the ERP, the site, and the tax position are each told a different story. 3P Solutions is built so those three conversations happen in one place, with one brief and one set of numbers.",
-  },
-  {
-    id: "sap-or-odoo",
-    question: "Do you push SAP or Odoo?",
-    answer:
-      "Neither by default. SAP is the right backbone for complex, multi-entity, tightly controlled operations. Odoo is often the better fit when a company needs a full suite quickly, with room to grow. We will tell you which one we would not implement for your case.",
-  },
-  {
-    id: "construction-scope",
-    question: "What kind of construction work do you take on?",
-    answer:
-      "Industrial and commercial buildings, plant-related civil works, and the engineering coordination that sits around a main contractor. We are not a labour-only contractor. We are the engineering practice that keeps drawings, methods, quality, and site progress aligned.",
-  },
-  {
-    id: "tax-filings",
-    question: "Can you file returns with FBR?",
-    answer:
-      "We advise on position, documentation, and filings. Where a named tax practitioner or legal counsel must sign, we say so up front and work alongside them. We do not pretend a marketing website is a practising certificate.",
+      "We specialize in a variety of sectors including construction services, municipal services, water supply, wastewater treatment plants, solar energy, wind energy, and transmission lines projects.",
   },
   {
     id: "where",
-    question: "Where do you work?",
+    question: "Where is 3P Solutions based?",
     answer:
-      "Across Pakistan, with the same operating model whether the brief is a plant in Punjab, a commercial fit-out in Karachi, or a group ERP spanning several companies. Office location and phone will be published here once they are confirmed — until then, use the contact form.",
+      "Our headquarters is located in Lahore, Pakistan, but we operate projects across the entire country.",
+  },
+  {
+    id: "quality",
+    question: "How does 3P Solutions ensure project quality?",
+    answer:
+      "We maintain stringent quality control measures throughout all stages of our projects, ensuring that we meet industry standards and client expectations.",
+  },
+  {
+    id: "scale",
+    question: "Can you handle large-scale projects?",
+    answer:
+      "Yes, we have the capacity and expertise to manage large-scale projects, ensuring timely delivery and successful outcomes.",
+  },
+  {
+    id: "sustainable",
+    question: "Does 3P Solutions offer sustainable solutions?",
+    answer:
+      "Absolutely! We are committed to sustainability and incorporate eco-friendly practices into our solar energy and waste management projects.",
+  },
+  {
+    id: "contact",
+    question: "How can I get in touch for a project consultation?",
+    answer:
+      "You can contact us through our website’s contact form or call us directly to schedule a consultation regarding your project needs.",
   },
 ] as const;
+
+export const municipalFaqs = [
+  {
+    id: "offer",
+    question: "What types of municipal services do you offer?",
+    answer:
+      "We provide a wide range of municipal services including water supply management, wastewater treatment, solid waste management, and renewable energy solutions.",
+  },
+  {
+    id: "sustain",
+    question: "How do you ensure the sustainability of your projects?",
+    answer:
+      "We integrate environmentally friendly practices and sustainable materials into all our construction and municipal service projects.",
+  },
+  {
+    id: "custom",
+    question: "Can you customize your services for specific neighborhoods or communities?",
+    answer:
+      "Yes, we tailor our services to meet the unique needs of each community, ensuring optimal results and satisfaction.",
+  },
+  {
+    id: "reach",
+    question: "How can I get in touch with your team?",
+    answer:
+      "You can contact us through our website’s contact form or call our customer service for immediate assistance.",
+  },
+] as const;
+
+export const aboutCopy = {
+  intro:
+    "At 3P Solutions, we are dedicated to delivering high-quality construction services and innovative solutions in solar energy, water management, and waste management. With years of experience based in Lahore, we excel in various sectors, ensuring sustainability and reliability in everything we do.",
+  footer:
+    "At 3P Solutions, we are dedicated to delivering high-quality construction services and innovative energy solutions, including solar and wind energy projects. Based in Lahore, we are committed to enhancing the infrastructure and sustainability of communities across Pakistan. Contact us today to find out how we can help you.",
+  hero:
+    "Innovative construction and energy solutions for a greener tomorrow.",
+} as const;
+
+const legacyQuery: Record<string, ServiceSlug> = {
+  it: "solar",
+  engineering: "construction",
+  consulting: "water",
+};
+
+export function resolveServiceSlug(raw: string | null) {
+  if (!raw) return "";
+  if (services.some((item) => item.slug === raw)) return raw;
+  return legacyQuery[raw] ?? "";
+}

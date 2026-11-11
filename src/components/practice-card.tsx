@@ -2,16 +2,16 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { practices } from "@/lib/site";
+import { services } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-type Practice = (typeof practices)[number];
+type Service = (typeof services)[number];
 
 export function PracticeCard({
   practice,
   className,
 }: {
-  practice: Practice;
+  practice: Service;
   className?: string;
 }) {
   return (

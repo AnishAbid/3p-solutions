@@ -1,12 +1,10 @@
 # 3P Solutions
 
-Marketing site for **3P Solutions** (also written **3Psolution**), a Pakistani consultancy with three practices:
+Marketing site for **3P Solutions** (also written **3Psolution**), a Lahore-based firm for construction and renewable energy in Pakistan. Copy and contact details follow [3psolutions.com.pk](https://3psolutions.com.pk/).
 
-- **IT** — SAP and Odoo
-- **Engineering** — Construction
-- **Consulting** — Tax Advisory
+Services include construction, solar energy, wind energy, water supply, wastewater treatment, solid waste, and municipal services.
 
-This is a complete public website: homepage, practice pages, about, and a contact form. There is no authentication, database, or live mailbox. The contact form validates in the browser and shows empty, error, and success states. Office address, phone, and email are labelled “To be added” until the firm publishes them.
+The contact form validates in the browser (empty / error / success). Enquiries are also directed to **info@3psolutions.com.pk**.
 
 ## Stack
 
@@ -24,17 +22,20 @@ npm run dev
 
 The dev server binds to **port 4783** (not 3000):
 
-[http://127.0.0.1:4783](http://127.0.0.1:4783)
+[http://localhost:4783](http://localhost:4783)
 
 | Route | Page |
 | --- | --- |
 | `/` | Homepage |
-| `/practices` | Practice overview |
-| `/practices/it` | SAP and Odoo |
-| `/practices/engineering` | Construction |
-| `/practices/consulting` | Tax Advisory |
-| `/about` | About the firm |
-| `/contact` | Contact form |
+| `/projects` | Projects and key services |
+| `/renewables` | Solar, wind, and related work |
+| `/municipal-services` | Water, wastewater, waste, municipal |
+| `/about` | About, values, team |
+| `/contact` | Get in touch |
+| `/legal-notice` | Legal notice |
+| `/privacy` | Privacy policy |
+
+`/practices` and the old practice URLs redirect to the pages above.
 
 Production-style local run:
 

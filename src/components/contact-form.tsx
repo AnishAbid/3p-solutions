@@ -15,7 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { practices } from "@/lib/site";
+import { contact, resolveServiceSlug, services } from "@/lib/site";
 
 type FormState = "empty" | "editing" | "error" | "submitting" | "success";
 
@@ -52,7 +52,7 @@ function validate(fields: Fields): Errors {
     errors.email = "Enter a valid email address.";
   }
   if (!fields.practice) {
-    errors.practice = "Choose the practice this brief belongs to.";
+    errors.practice = "Choose the service this enquiry belongs to.";
   }
   if (fields.message.trim().length < 20) {
     errors.message = "Give us at least a short brief (20 characters).";
@@ -62,13 +62,11 @@ function validate(fields: Fields): Errors {
 
 export function ContactForm() {
   const searchParams = useSearchParams();
-  const requested = searchParams.get("practice") ?? "";
+  const requested = resolveServiceSlug(searchParams.get("practice"));
   const initial = useMemo<Fields>(
     () => ({
       ...emptyFields,
-      practice: practices.some((item) => item.slug === requested)
-        ? requested
-        : "",
+      practice: requested,
     }),
     [requested],
   );
@@ -118,15 +116,18 @@ export function ContactForm() {
         className="rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-navy"
       >
         <CheckCircle2 className="size-8 text-emerald-700" />
-        <h2 className="font-heading mt-4 text-2xl font-semibold">Brief received</h2>
+        <h2 className="font-heading mt-4 text-2xl font-semibold">Enquiry received</h2>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          This is a local confirmation only — no message has been emailed yet,
-          because office contact details are still being published. We have
-          captured your {fields.practice ? getPracticeLabel(fields.practice) : ""}{" "}
-          enquiry in this session. Send another note if you need to add detail.
+          This page confirmed your{" "}
+          {fields.practice ? getServiceLabel(fields.practice) : ""} enquiry in
+          the browser. For a reply from the firm, email{" "}
+          <a className="text-navy underline" href={`mailto:${contact.email}`}>
+            {contact.email}
+          </a>{" "}
+          or call {contact.phoneDisplay}.
         </p>
         <Button className="mt-5 h-10 px-4" type="button" onClick={reset}>
-          Send another brief
+          Send another enquiry
         </Button>
       </div>
     );
@@ -138,7 +139,7 @@ export function ContactForm() {
     <form onSubmit={onSubmit} className="space-y-5" noValidate method="post" action="#">
       {empty ? (
         <p className="rounded-lg border border-dashed border-gold/50 bg-gold-soft/30 px-4 py-3 text-sm text-navy">
-          Form is empty. Name, email, practice, and a short brief are required.
+          Form is empty. Name, email, service, and a short message are required.
         </p>
       ) : null}
       {status === "error" ? (
@@ -205,7 +206,7 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <Field id="practice" label="Practice" error={errors.practice} required>
+      <Field id="practice" label="Service" error={errors.practice} required>
         <Select
           value={fields.practice || null}
           onValueChange={(value) => update("practice", value ?? "")}
@@ -215,12 +216,12 @@ export function ContactForm() {
             className="h-11 w-full"
             aria-invalid={Boolean(errors.practice)}
           >
-            <SelectValue placeholder="Select a practice" />
+            <SelectValue placeholder="Select a service" />
           </SelectTrigger>
           <SelectContent alignItemWithTrigger={false} align="start">
-            {practices.map((practice) => (
-              <SelectItem key={practice.slug} value={practice.slug}>
-                {practice.kicker}: {practice.shortTitle}
+            {services.map((service) => (
+              <SelectItem key={service.slug} value={service.slug}>
+                {service.title}
               </SelectItem>
             ))}
           </SelectContent>
@@ -247,7 +248,7 @@ export function ContactForm() {
         )}
         disabled={status === "submitting"}
       >
-        {status === "submitting" ? "Sending…" : "Send brief"}
+        {status === "submitting" ? "Sending…" : "Submit inquiry"}
       </button>
     </form>
   );
@@ -282,7 +283,7 @@ function Field({
   );
 }
 
-function getPracticeLabel(slug: string) {
-  const match = practices.find((item) => item.slug === slug);
-  return match ? `${match.kicker} / ${match.shortTitle}` : slug;
+function getServiceLabel(slug: string) {
+  const match = services.find((item) => item.slug === slug);
+  return match ? match.title : slug;
 }

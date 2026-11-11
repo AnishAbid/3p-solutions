@@ -19,23 +19,24 @@ const serif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} · SAP, Construction, Tax Advisory`,
+    default: `${site.name} · Construction & Renewable Energy`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
   applicationName: site.name,
   keywords: [
     "3P Solutions",
-    "3Psolution",
-    "SAP",
-    "Odoo",
-    "construction engineering",
-    "tax advisory",
-    "Pakistan consultancy",
+    "construction Pakistan",
+    "solar energy",
+    "wind energy",
+    "municipal services",
+    "Lahore",
   ],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"

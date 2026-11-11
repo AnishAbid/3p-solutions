@@ -14,12 +14,12 @@ import {
 import { SiteLogo } from "@/components/site-logo";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { nav, practices } from "@/lib/site";
+import { nav } from "@/lib/site";
 
-const practiceLinks = practices.map((practice) => ({
-  href: practice.href,
-  label: `${practice.kicker}: ${practice.shortTitle}`,
-}));
+function isActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -36,18 +36,15 @@ export function SiteHeader() {
     >
       <div className="container-site flex h-16 items-center justify-between gap-4">
         <SiteLogo tone={onDark ? "light" : "dark"} />
-        <nav className="hidden items-center gap-7 text-sm font-medium lg:flex">
+        <nav className="hidden items-center gap-6 text-sm font-medium xl:flex">
           {nav.map((item) => {
-            const active =
-              item.href === "/practices"
-                ? pathname.startsWith("/practices")
-                : pathname === item.href;
+            const active = isActive(pathname, item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "relative py-1 transition-colors",
+                  "relative py-1 whitespace-nowrap transition-colors",
                   onDark
                     ? active
                       ? "text-gold"
@@ -65,7 +62,7 @@ export function SiteHeader() {
             );
           })}
         </nav>
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <Link
             href="/contact"
             className={cn(
@@ -76,7 +73,7 @@ export function SiteHeader() {
                 : "bg-navy text-primary-foreground hover:bg-navy/90",
             )}
           >
-            Start a brief
+            Get in touch
           </Link>
         </div>
         <Sheet>
@@ -84,7 +81,7 @@ export function SiteHeader() {
             aria-label="Open menu"
             className={cn(
               buttonVariants({ variant: "outline", size: "icon" }),
-              "lg:hidden",
+              "xl:hidden",
               onDark &&
                 "border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white",
             )}
@@ -98,12 +95,6 @@ export function SiteHeader() {
             <nav className="flex flex-col gap-1 px-4">
               <MobileLink href="/" label="Home" />
               {nav.map((item) => (
-                <MobileLink key={item.href} href={item.href} label={item.label} />
-              ))}
-              <p className="mt-4 mb-1 text-[0.65rem] font-medium tracking-[0.18em] text-gold uppercase">
-                Practices
-              </p>
-              {practiceLinks.map((item) => (
                 <MobileLink key={item.href} href={item.href} label={item.label} />
               ))}
             </nav>

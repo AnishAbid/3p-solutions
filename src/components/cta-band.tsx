@@ -3,8 +3,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function CtaBand({
-  title = "Tell us the brief. We will tell you which practice should lead.",
-  body = "SAP, Odoo, a construction package, or a tax position — start with one conversation rather than three vendors.",
+  title = "Build a sustainable future with us",
+  body = "Contact 3P Solutions in Lahore about construction, solar and wind energy, or municipal services across Pakistan.",
 }: {
   title?: string;
   body?: string;
@@ -14,7 +14,7 @@ export function CtaBand({
       <div className="container-site flex flex-col items-start justify-between gap-8 py-14 md:flex-row md:items-center md:py-16">
         <div className="max-w-xl">
           <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
-            Next step
+            Get started
           </p>
           <h2 className="mt-3 text-3xl font-semibold md:text-4xl">{title}</h2>
           <p className="mt-4 text-white/75">{body}</p>
@@ -26,7 +26,7 @@ export function CtaBand({
             "h-11 bg-gold px-6 text-navy hover:bg-gold/90",
           )}
         >
-          Open the contact form
+          Get in touch
         </Link>
       </div>
     </section>
