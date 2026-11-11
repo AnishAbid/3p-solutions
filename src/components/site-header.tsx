@@ -1,0 +1,131 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { SiteLogo } from "@/components/site-logo";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { nav, practices } from "@/lib/site";
+
+const practiceLinks = practices.map((practice) => ({
+  href: practice.href,
+  label: `${practice.kicker}: ${practice.shortTitle}`,
+}));
+
+export function SiteHeader() {
+  const pathname = usePathname();
+  const onDark = pathname === "/";
+
+  return (
+    <header
+      className={cn(
+        "sticky top-0 z-40 border-b",
+        onDark
+          ? "border-white/10 bg-navy-deep/95 text-white backdrop-blur-md"
+          : "border-border bg-background/95 text-navy backdrop-blur-md",
+      )}
+    >
+      <div className="container-site flex h-16 items-center justify-between gap-4">
+        <SiteLogo tone={onDark ? "light" : "dark"} />
+        <nav className="hidden items-center gap-7 text-sm font-medium lg:flex">
+          {nav.map((item) => {
+            const active =
+              item.href === "/practices"
+                ? pathname.startsWith("/practices")
+                : pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "relative py-1 transition-colors",
+                  onDark
+                    ? active
+                      ? "text-gold"
+                      : "text-white/80 hover:text-white"
+                    : active
+                      ? "text-navy"
+                      : "text-muted-foreground hover:text-navy",
+                )}
+              >
+                {item.label}
+                {active ? (
+                  <span className="absolute inset-x-0 -bottom-1 h-px bg-gold" />
+                ) : null}
+              </Link>
+            );
+          })}
+        </nav>
+        <div className="hidden items-center gap-3 lg:flex">
+          <Link
+            href="/contact"
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "h-10 px-4",
+              onDark
+                ? "bg-gold text-navy hover:bg-gold/90"
+                : "bg-navy text-primary-foreground hover:bg-navy/90",
+            )}
+          >
+            Start a brief
+          </Link>
+        </div>
+        <Sheet>
+          <SheetTrigger
+            aria-label="Open menu"
+            className={cn(
+              buttonVariants({ variant: "outline", size: "icon" }),
+              "lg:hidden",
+              onDark &&
+                "border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white",
+            )}
+          >
+            <Menu />
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[min(100%,20rem)] bg-navy text-white">
+            <SheetHeader>
+              <SheetTitle className="text-white">Menu</SheetTitle>
+            </SheetHeader>
+            <nav className="flex flex-col gap-1 px-4">
+              <MobileLink href="/" label="Home" />
+              {nav.map((item) => (
+                <MobileLink key={item.href} href={item.href} label={item.label} />
+              ))}
+              <p className="mt-4 mb-1 text-[0.65rem] font-medium tracking-[0.18em] text-gold uppercase">
+                Practices
+              </p>
+              {practiceLinks.map((item) => (
+                <MobileLink key={item.href} href={item.href} label={item.label} />
+              ))}
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </header>
+  );
+}
+
+function MobileLink({ href, label }: { href: string; label: string }) {
+  return (
+    <SheetClose
+      nativeButton={false}
+      render={
+        <Link
+          href={href}
+          className="rounded-md px-1 py-2 text-base text-white/90 hover:bg-white/10 hover:text-white"
+        />
+      }
+    >
+      {label}
+    </SheetClose>
+  );
+}
