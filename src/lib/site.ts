@@ -256,36 +256,42 @@ export const projectLines = [
     body: "Project management and quality building practices for infrastructure.",
     image: "/images/construction.jpg",
     imageAlt: "Construction crew on a concrete slab",
+    href: "/projects",
   },
   {
     title: "Solar Energy Solutions",
     body: "Solar panel installations for efficient, lower-carbon power.",
     image: "/images/solar.jpg",
     imageAlt: "Solar panel array",
+    href: "/renewables",
   },
   {
     title: "Water Supply Management",
     body: "Water supply for municipalities and private clients.",
     image: "/images/water.jpg",
     imageAlt: "Clean water supply",
+    href: "/municipal-services",
   },
   {
     title: "Wastewater Treatment Projects",
     body: "Treatment plants for safe discharge and resource recovery.",
     image: "/images/wastewater.jpg",
     imageAlt: "Wastewater treatment plant",
+    href: "/municipal-services",
   },
   {
     title: "Wind Energy Projects",
     body: "Wind farms converting natural wind into clean energy.",
     image: "/images/wind.jpg",
     imageAlt: "Wind farm at sunset",
+    href: "/renewables",
   },
   {
     title: "Municipal Services",
     body: "Urban water, waste, and related municipal infrastructure.",
     image: "/images/municipal.jpg",
     imageAlt: "City skyline at night",
+    href: "/municipal-services",
   },
 ] as const;
 
