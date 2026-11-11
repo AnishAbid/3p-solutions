@@ -3,10 +3,13 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { CtaBand } from "@/components/cta-band";
 import { FaqList } from "@/components/faq-list";
+import { ImageSlider } from "@/components/image-slider";
 import { PracticeCard } from "@/components/practice-card";
+import { QuoteSlider } from "@/components/quote-slider";
 import { buttonVariants } from "@/components/ui/button";
 import {
   aboutCopy,
+  heroSlides,
   services,
   site,
   stats,
@@ -18,17 +21,11 @@ import { cn } from "@/lib/utils";
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden bg-navy-deep text-white">
-        <Image
-          src="/images/construction.jpg"
-          alt="Construction crew reviewing a reinforced concrete slab"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-navy-deep/78" />
-        <div className="relative container-site grid items-center gap-12 py-16 md:grid-cols-12 md:py-24 lg:py-28">
+      <ImageSlider
+        slides={heroSlides}
+        className="bg-navy-deep text-white"
+      >
+        <div className="container-site grid items-center gap-12 py-16 pb-20 md:grid-cols-12 md:py-24 md:pb-28 lg:py-28 lg:pb-32">
           <div className="md:col-span-7">
             <p className="text-[0.7rem] font-semibold tracking-[0.24em] text-gold uppercase">
               {site.name} · {site.city}
@@ -86,7 +83,7 @@ export default function Home() {
             </ul>
           </aside>
         </div>
-      </section>
+      </ImageSlider>
 
       <section className="border-y border-gold/25 bg-navy text-white">
         <div className="container-site grid grid-cols-2 divide-x divide-white/10 md:grid-cols-4">
@@ -187,15 +184,8 @@ export default function Home() {
               What clients say on 3psolutions.com.pk
             </h2>
           </div>
-          <div className="grid gap-5 lg:col-span-7">
-            {testimonials.map((quote) => (
-              <blockquote
-                key={quote}
-                className="rounded-xl border bg-card p-5 ring-1 ring-foreground/5"
-              >
-                <p className="font-heading text-lg leading-relaxed">“{quote}”</p>
-              </blockquote>
-            ))}
+          <div className="lg:col-span-7">
+            <QuoteSlider quotes={testimonials} />
           </div>
         </div>
       </section>

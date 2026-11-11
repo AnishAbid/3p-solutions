@@ -36,6 +36,57 @@ export const nav = [
   { href: "/contact", label: "Get In Touch" },
 ] as const;
 
+export const headerLinks = [
+  { href: "/projects", label: "Projects" },
+  { href: "/about", label: "About" },
+] as const;
+
+export const serviceMenu = [
+  {
+    kicker: "Construction",
+    href: "/projects",
+    slugs: ["construction"],
+  },
+  {
+    kicker: "Renewables",
+    href: "/renewables",
+    slugs: ["solar", "wind"],
+  },
+  {
+    kicker: "Municipal",
+    href: "/municipal-services",
+    slugs: ["water", "wastewater", "waste"],
+  },
+  {
+    kicker: "IT",
+    href: "/practices/it",
+    slugs: ["odoo"],
+  },
+] as const;
+
+export const heroSlides = [
+  {
+    src: "/images/construction.jpg",
+    alt: "Construction crew reviewing a reinforced concrete slab",
+  },
+  {
+    src: "/images/solar-farm.jpg",
+    alt: "Aerial view of a solar farm",
+  },
+  {
+    src: "/images/wind.jpg",
+    alt: "Wind turbines on a field at sunset",
+  },
+  {
+    src: "/images/municipal.jpg",
+    alt: "City skyline at night",
+  },
+  {
+    src: "/images/odoo.jpg",
+    alt: "Laptop showing operations dashboards used in ERP work",
+  },
+] as const;
+
 export const services = [
   {
     slug: "odoo",

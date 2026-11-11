@@ -12,13 +12,13 @@ export function PhotoArticle({
   imageAlt: string;
 }) {
   return (
-    <article className="overflow-hidden rounded-xl border bg-card">
+    <article className="group overflow-hidden rounded-xl border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transform-none">
       <div className="relative aspect-[16/10] bg-muted">
         <Image
           src={image}
           alt={imageAlt}
           fill
-          className="object-cover"
+          className="object-cover transition duration-700 group-hover:scale-105 motion-reduce:transform-none"
           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
         />
       </div>

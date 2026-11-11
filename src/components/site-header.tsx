@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { Menu } from "lucide-react";
 import {
   Sheet,
@@ -11,19 +12,30 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { MobileServices, ServicesMenu } from "@/components/services-menu";
 import { SiteLogo } from "@/components/site-logo";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { nav } from "@/lib/site";
+import { headerLinks, nav } from "@/lib/site";
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
+function isServicesActive(pathname: string) {
+  return (
+    pathname.startsWith("/projects") ||
+    pathname.startsWith("/renewables") ||
+    pathname.startsWith("/municipal-services") ||
+    pathname.startsWith("/practices")
+  );
+}
+
 export function SiteHeader() {
   const pathname = usePathname();
   const onDark = pathname === "/";
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <header
@@ -36,8 +48,9 @@ export function SiteHeader() {
     >
       <div className="container-site flex h-16 items-center justify-between gap-4">
         <SiteLogo tone={onDark ? "light" : "dark"} />
-        <nav className="hidden items-center gap-6 text-sm font-medium xl:flex">
-          {nav.map((item) => {
+        <nav className="hidden items-center gap-7 text-sm font-medium lg:flex">
+          <ServicesMenu onDark={onDark} active={isServicesActive(pathname)} />
+          {headerLinks.map((item) => {
             const active = isActive(pathname, item.href);
             return (
               <Link
@@ -62,7 +75,7 @@ export function SiteHeader() {
             );
           })}
         </nav>
-        <div className="hidden items-center gap-3 xl:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <Link
             href="/contact"
             className={cn(
@@ -76,12 +89,15 @@ export function SiteHeader() {
             Get in touch
           </Link>
         </div>
-        <Sheet>
+        <Sheet
+          open={mobileOpen}
+          onOpenChange={(open) => setMobileOpen(open)}
+        >
           <SheetTrigger
             aria-label="Open menu"
             className={cn(
               buttonVariants({ variant: "outline", size: "icon" }),
-              "xl:hidden",
+              "lg:hidden",
               onDark &&
                 "border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white",
             )}
@@ -92,8 +108,9 @@ export function SiteHeader() {
             <SheetHeader>
               <SheetTitle className="text-white">Menu</SheetTitle>
             </SheetHeader>
-            <nav className="flex flex-col gap-1 px-4">
+            <nav className="flex flex-col gap-1 overflow-y-auto px-4 pb-8">
               <MobileLink href="/" label="Home" />
+              <MobileServices onNavigate={() => setMobileOpen(false)} />
               {nav.map((item) => (
                 <MobileLink key={item.href} href={item.href} label={item.label} />
               ))}

@@ -18,7 +18,7 @@ export function PracticeCard({
   return (
     <Card
       className={cn(
-        "h-full gap-0 overflow-hidden py-0 ring-border transition-shadow hover:shadow-md",
+        "group h-full gap-0 overflow-hidden py-0 ring-border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg motion-reduce:transform-none",
         className,
       )}
     >
@@ -27,7 +27,7 @@ export function PracticeCard({
           src={practice.image}
           alt={practice.imageAlt}
           fill
-          className="object-cover"
+          className="object-cover transition duration-700 group-hover:scale-105 motion-reduce:transform-none"
           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
         />
       </div>
