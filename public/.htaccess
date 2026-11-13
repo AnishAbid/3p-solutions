@@ -1,0 +1,14 @@
+DirectoryIndex index.html
+Options -MultiViews
+DirectorySlash Off
+
+RewriteEngine On
+
+# Former next.config.ts redirects (static export cannot emit them)
+RewriteRule ^practices/engineering/?$ /projects [R=302,L]
+RewriteRule ^practices/consulting/?$ /municipal-services [R=302,L]
+
+# Next export writes both foo.html and a foo/ folder. Prefer the HTML file
+# so /projects serves projects.html instead of the sidecar directory.
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]

@@ -41,13 +41,12 @@ The dev server binds to **port 4783** (not 3000):
 
 Photographs live in `public/images/` (Unsplash, Pexels, and Pixabay). See `public/images/CREDITS.md`. They were not copied from eliteengineering.com.pk, unitenterprises.site, or 3psolutions.com.pk.
 
-Production-style local run:
+Production build is a **static export** (`output: 'export'`). It writes **`out/`**:
 
 ```bash
 npm run build
-npm start
 ```
 
-`npm start` also uses port 4783.
+Upload the **contents of `out/`** to Namecheap `public_html`. See [docs/namecheap-deploy.md](docs/namecheap-deploy.md).
 
-To replace the live WordPress site at 3psolutions.com.pk, see [docs/namecheap-deploy.md](docs/namecheap-deploy.md). This app is a Node Next.js server as committed; Namecheap shared hosting cannot run it without a later static-export change.
+`/practices/engineering` and `/practices/consulting` redirect via `public/.htaccess` (copied into `out/`) and HTML fallbacks under `public/practices/`.

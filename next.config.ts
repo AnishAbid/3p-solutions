@@ -1,24 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
-  allowedDevOrigins: ["127.0.0.1", "localhost"],
-  async redirects() {
-    return [
-      {
-        source: "/practices/engineering",
-        destination: "/projects",
-        permanent: false,
-      },
-      {
-        source: "/practices/consulting",
-        destination: "/municipal-services",
-        permanent: false,
-      },
-    ];
+  output: "export",
+  images: {
+    unoptimized: true,
   },
+  allowedDevOrigins: ["127.0.0.1", "localhost"],
   turbopack: {
     rules: {
       "*.css": {
