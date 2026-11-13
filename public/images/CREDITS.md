@@ -27,3 +27,7 @@ Licenses allow commercial use:
 | `partners/order-karu.jpg` | Original screenshot of [orderkaru.com](https://www.orderkaru.com/) (13 Nov 2026) | Product partner · Order Karu |
 | `partners/manage-karo.jpg` | Original screenshot of [subkaro.com/products/manage-karo](https://www.subkaro.com/products/manage-karo) (13 Nov 2026) | Product partner · Manage Karo |
 | `partners/event-karo.jpg` | Original screenshot of [eventkaro.pk](https://eventkaro.pk/) (13 Nov 2026) | Product partner · Event Karo |
+
+## Tech logos
+
+SVG marks in `public/icons/tech/` are from [Simple Icons](https://simpleicons.org/) ([CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md)). Azure is the Simple Icons v12 mark (later versions dropped it). They were not copied from 3psolutions.com.pk.

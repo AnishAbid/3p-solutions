@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { TechLogos } from "@/components/tech-logos";
 import { itPractice } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -17,16 +18,7 @@ export function ItExperience({
           {itPractice.yearsLabel} · {itPractice.associatedWith}
         </p>
         <p className="mt-2 text-sm leading-relaxed text-white/70">{itPractice.intro}</p>
-        <ul className="mt-4 flex flex-wrap gap-1.5">
-          {itPractice.featuredTech.map((tech) => (
-            <li
-              key={tech}
-              className="rounded-full border border-white/20 px-2.5 py-0.5 text-[0.7rem] tracking-wide text-white/80"
-            >
-              {tech}
-            </li>
-          ))}
-        </ul>
+        <TechLogos featured className="mt-4" />
         <ul className="mt-4 space-y-3">
           {itPractice.industries.slice(0, 3).map((industry) => (
             <li key={industry.name} className="text-sm">
@@ -58,16 +50,7 @@ export function ItExperience({
         <p className="mt-4 max-w-2xl text-muted-foreground">{itPractice.intro}</p>
         <p className="mt-2 text-sm text-muted-foreground">{itPractice.role}.</p>
 
-        <div className="mt-8 flex flex-wrap gap-2">
-          {itPractice.technologies.map((tech) => (
-            <span
-              key={tech}
-              className="rounded-full border border-gold/35 bg-gold-soft/30 px-3 py-1 text-xs font-medium text-navy"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+        <TechLogos className="mt-8" />
 
         <ul className="mt-8 grid gap-3 text-sm text-muted-foreground md:grid-cols-2">
           {itPractice.capabilities.map((item) => (
