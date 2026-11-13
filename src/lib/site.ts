@@ -265,6 +265,7 @@ export const itPractice = {
     "MongoDB",
     "MySQL",
     "AWS",
+    "AWS IVS",
     "Azure",
     "Docker",
     "CI/CD",
@@ -283,66 +284,50 @@ export const itPractice = {
     "AWS",
     "OpenAI API",
   ],
-  projects: [
+  capabilities: [
+    "AI search and LLM integration (OpenAI API)",
+    "Live streaming (AWS IVS), real-time chat, and notifications",
+    "Payments (Stripe) and role-based access control",
+    "GraphQL and REST APIs, Node.js microservices",
+    "AWS (Lambda, S3, EC2, IVS), Azure, Docker, and CI/CD",
+    "Technical project management, system design, and code review",
+  ],
+  industries: [
     {
-      name: "Coord",
+      name: "Real estate",
       summary:
-        "Real estate job marketplace where agents post and complete jobs. Delivery with a remote engineering team, GraphQL API design, and AWS (Lambda, S3, EC2) through CI/CD.",
-      stack: ["Node.js", "Nest.js", "GraphQL", "TypeScript", "Python", "AWS"],
+        "Marketplaces, workflow automation, natural-language property search, and automated market reporting.",
+      tech: ["TypeScript", "Node.js", "Nest.js", "GraphQL", "Python", "OpenAI API", "AWS"],
     },
     {
-      name: "Property Analyzer",
+      name: "Banking and financial services",
       summary:
-        "AI-powered analyzer for investors in the Dubai real estate market: natural-language search and automated reports on pricing trends, comparables, rental yields, and ROI.",
-      stack: ["OpenAI API", "Python", "Nest.js", "Docker", "Azure"],
+        "Microservices platforms with Angular frontends, connecting new services to existing core-banking data and transactions.",
+      tech: ["Node.js", "Microservices", "Angular"],
     },
     {
-      name: "Banking application",
+      name: "Live streaming and fan engagement",
       summary:
-        "Large-scale banking application on Node.js microservices with an Angular frontend, connecting new services to existing core-banking data and transactions.",
-      stack: ["Node.js", "Microservices", "Angular"],
+        "Interactive live events with streaming, real-time chat, and notifications.",
+      tech: ["AWS IVS", "Node.js"],
     },
     {
-      name: "Real estate automation",
+      name: "Food, hospitality, and entertainment",
       summary:
-        "Custom web platform automating core real-estate workflows, with database design, APIs, and AWS deployment.",
-      stack: ["Next.js", "Nest.js", "GraphQL", "MongoDB", "AWS"],
+        "Compliance-oriented audit software for food operations, plus booking-style APIs for hospitality venues.",
+      tech: ["APIs", "Full-stack"],
     },
     {
-      name: "Fanweave",
+      name: "Education",
       summary:
-        "Fan engagement platform: database architecture and client-server application, delivered with a small engineering team.",
-      stack: ["Full-stack"],
+        "API-driven sites with live lecture streaming and student interaction.",
+      tech: ["PHP", "CodeIgniter", "MySQL", "AWS"],
     },
     {
-      name: "Live Roster",
+      name: "IT services platforms",
       summary:
-        "Live-streaming application with AWS IVS, real-time chat, and push notifications.",
-      stack: ["AWS IVS", "Node.js"],
-    },
-    {
-      name: "Audit App",
-      summary:
-        "Full-stack internal audit software aligned with food-industry compliance standards.",
-      stack: ["Full-stack"],
-    },
-    {
-      name: "Sparvis",
-      summary:
-        "MVP combining casino and hotel booking services: database architecture and API development.",
-      stack: ["APIs"],
-    },
-    {
-      name: "Educational live lectures",
-      summary:
-        "API-driven educational site with live lecture streaming and student interaction.",
-      stack: ["PHP", "CodeIgniter", "MySQL", "AWS"],
-    },
-    {
-      name: "IT services platform",
-      summary:
-        "Cloud IT-services work: third-party API integrations, role-based access control, Stripe payments, and a re-architected configuration mapping module.",
-      stack: ["Angular", "Stripe", "REST APIs"],
+        "Cloud IT-services work: third-party API integrations, configuration mapping, role-based access, and payment processing.",
+      tech: ["Angular", "Stripe", "REST APIs"],
     },
   ],
 } as const;

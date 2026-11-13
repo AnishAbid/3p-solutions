@@ -28,10 +28,10 @@ export function ItExperience({
           ))}
         </ul>
         <ul className="mt-4 space-y-3">
-          {itPractice.projects.slice(0, 3).map((project) => (
-            <li key={project.name} className="text-sm">
-              <p className="font-medium text-white">{project.name}</p>
-              <p className="mt-0.5 text-white/60">{project.summary}</p>
+          {itPractice.industries.slice(0, 3).map((industry) => (
+            <li key={industry.name} className="text-sm">
+              <p className="font-medium text-white">{industry.name}</p>
+              <p className="mt-0.5 text-white/60">{industry.summary}</p>
             </li>
           ))}
         </ul>
@@ -39,7 +39,7 @@ export function ItExperience({
           href="/practices/it"
           className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:text-white"
         >
-          All IT project work
+          Industries and stack
           <ArrowUpRight className="size-4" />
         </Link>
       </div>
@@ -53,7 +53,7 @@ export function ItExperience({
           {itPractice.associatedWith}
         </p>
         <h2 className="font-display mt-3 max-w-3xl text-3xl leading-tight md:text-4xl">
-          {itPractice.yearsLabel} of software platforms, APIs, and delivery.
+          {itPractice.yearsLabel} across industries, with a modern web stack.
         </h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">{itPractice.intro}</p>
         <p className="mt-2 text-sm text-muted-foreground">{itPractice.role}.</p>
@@ -69,18 +69,26 @@ export function ItExperience({
           ))}
         </div>
 
+        <ul className="mt-8 grid gap-3 text-sm text-muted-foreground md:grid-cols-2">
+          {itPractice.capabilities.map((item) => (
+            <li key={item} className="rounded-xl border bg-card px-4 py-3">
+              {item}
+            </li>
+          ))}
+        </ul>
+
         <div className="mt-12 grid gap-4 md:grid-cols-2">
-          {itPractice.projects.map((project) => (
+          {itPractice.industries.map((industry) => (
             <article
-              key={project.name}
+              key={industry.name}
               className="rounded-2xl border bg-card p-6"
             >
-              <h3 className="font-display text-2xl">{project.name}</h3>
+              <h3 className="font-display text-2xl">{industry.name}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {project.summary}
+                {industry.summary}
               </p>
               <p className="mt-4 text-xs tracking-wide text-navy/70">
-                {project.stack.join(" · ")}
+                {industry.tech.join(" · ")}
               </p>
             </article>
           ))}
