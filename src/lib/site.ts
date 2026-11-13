@@ -237,6 +237,116 @@ export const partnerProducts = [
 
 export const partnerCards = [productPartner, ...partnerProducts] as const;
 
+/** Software work associated with 3P Solutions / Anish. Employer names from the resume are omitted. */
+export const itPractice = {
+  associatedWith: "3P Solutions / Anish",
+  years: "8+",
+  yearsLabel: "8+ years",
+  role: "Senior full-stack engineering and technical project management",
+  intro:
+    "IT work at 3P Solutions is associated with Anish: 8+ years building web platforms, APIs, and delivery with TypeScript, Node.js, Nest.js, Python, React/Next.js, and Angular.",
+  technologies: [
+    "TypeScript",
+    "JavaScript",
+    "Python",
+    "PHP",
+    "SQL",
+    "React",
+    "Next.js",
+    "Angular",
+    "Redux",
+    "Node.js",
+    "Nest.js",
+    "Express.js",
+    "GraphQL",
+    "REST APIs",
+    "Microservices",
+    "OpenAI API",
+    "MongoDB",
+    "MySQL",
+    "AWS",
+    "Azure",
+    "Docker",
+    "CI/CD",
+    "Stripe",
+    "CodeIgniter",
+  ],
+  featuredTech: [
+    "TypeScript",
+    "Node.js",
+    "Nest.js",
+    "Python",
+    "React",
+    "Next.js",
+    "Angular",
+    "GraphQL",
+    "AWS",
+    "OpenAI API",
+  ],
+  projects: [
+    {
+      name: "Coord",
+      summary:
+        "Real estate job marketplace where agents post and complete jobs. Delivery with a remote engineering team, GraphQL API design, and AWS (Lambda, S3, EC2) through CI/CD.",
+      stack: ["Node.js", "Nest.js", "GraphQL", "TypeScript", "Python", "AWS"],
+    },
+    {
+      name: "Property Analyzer",
+      summary:
+        "AI-powered analyzer for investors in the Dubai real estate market: natural-language search and automated reports on pricing trends, comparables, rental yields, and ROI.",
+      stack: ["OpenAI API", "Python", "Nest.js", "Docker", "Azure"],
+    },
+    {
+      name: "Banking application",
+      summary:
+        "Large-scale banking application on Node.js microservices with an Angular frontend, connecting new services to existing core-banking data and transactions.",
+      stack: ["Node.js", "Microservices", "Angular"],
+    },
+    {
+      name: "Real estate automation",
+      summary:
+        "Custom web platform automating core real-estate workflows, with database design, APIs, and AWS deployment.",
+      stack: ["Next.js", "Nest.js", "GraphQL", "MongoDB", "AWS"],
+    },
+    {
+      name: "Fanweave",
+      summary:
+        "Fan engagement platform: database architecture and client-server application, delivered with a small engineering team.",
+      stack: ["Full-stack"],
+    },
+    {
+      name: "Live Roster",
+      summary:
+        "Live-streaming application with AWS IVS, real-time chat, and push notifications.",
+      stack: ["AWS IVS", "Node.js"],
+    },
+    {
+      name: "Audit App",
+      summary:
+        "Full-stack internal audit software aligned with food-industry compliance standards.",
+      stack: ["Full-stack"],
+    },
+    {
+      name: "Sparvis",
+      summary:
+        "MVP combining casino and hotel booking services: database architecture and API development.",
+      stack: ["APIs"],
+    },
+    {
+      name: "Educational live lectures",
+      summary:
+        "API-driven educational site with live lecture streaming and student interaction.",
+      stack: ["PHP", "CodeIgniter", "MySQL", "AWS"],
+    },
+    {
+      name: "IT services platform",
+      summary:
+        "Cloud IT-services work: third-party API integrations, role-based access control, Stripe payments, and a re-architected configuration mapping module.",
+      stack: ["Angular", "Stripe", "REST APIs"],
+    },
+  ],
+} as const;
+
 export const stats = [
   { value: "10", label: "Years in business" },
   { value: "150", label: "Projects completed" },

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
+import { ItExperience } from "@/components/it-experience";
 import { PracticeCard } from "@/components/practice-card";
 import { ProductPartners } from "@/components/product-partners";
 import { services } from "@/lib/site";
@@ -28,6 +29,7 @@ export default function PracticesPage() {
           ))}
         </div>
       </section>
+      <ItExperience />
       <ProductPartners />
       <CtaBand />
     </>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { CtaBand } from "@/components/cta-band";
+import { ItExperience } from "@/components/it-experience";
 import { PageHero } from "@/components/page-hero";
 import { ProductPartners } from "@/components/product-partners";
 import { buttonVariants } from "@/components/ui/button";
@@ -11,8 +12,18 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "IT · Odoo",
   description:
-    "3P Solutions IT practice: Odoo ERP implementation, configuration, training, and support in Pakistan.",
-  keywords: ["Odoo", "OODO", "ERP", "IT services", "3P Solutions"],
+    "3P Solutions IT practice, associated with Anish: 8+ years of TypeScript, Node.js, Nest.js, Python, and React/Next.js, plus Odoo ERP in Pakistan.",
+  keywords: [
+    "Odoo",
+    "OODO",
+    "ERP",
+    "TypeScript",
+    "Node.js",
+    "Nest.js",
+    "IT services",
+    "3P Solutions",
+    "Anish",
+  ],
 };
 
 const offers = [
@@ -46,8 +57,8 @@ export default function ItPracticePage() {
     <>
       <PageHero
         kicker="IT practice"
-        title="Odoo for companies that already run plants, sites, and ledgers."
-        description="3P Solutions’ IT practice implements Odoo — the open-source ERP suite. Local search sometimes writes it OODO; the product name is Odoo."
+        title="Odoo, plus software platforms associated with Anish."
+        description="3P Solutions’ IT practice implements Odoo — the open-source ERP suite — and software work associated with Anish: 8+ years with TypeScript, Node.js, Nest.js, Python, and React/Next.js. Local search sometimes writes Odoo as OODO."
         image="/images/odoo.jpg"
         imageAlt="Laptop showing operations dashboards used in ERP work"
       />
@@ -97,6 +108,8 @@ export default function ItPracticePage() {
           </div>
         </div>
       </section>
+
+      <ItExperience />
 
       <ProductPartners />
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { FaqList } from "@/components/faq-list";
 import { ImageSlider } from "@/components/image-slider";
+import { ItExperience } from "@/components/it-experience";
 import { ProductPartners } from "@/components/product-partners";
 import { QuoteSlider } from "@/components/quote-slider";
 import { buttonVariants } from "@/components/ui/button";
@@ -199,7 +200,10 @@ export default function Home() {
                           </ul>
                         ) : null}
                         {group.kicker === "IT" ? (
-                          <ProductPartners variant="home" />
+                          <>
+                            <ItExperience variant="home" />
+                            <ProductPartners variant="home" />
+                          </>
                         ) : null}
                       </div>
                       <Link
