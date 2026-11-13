@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
 import { PracticeCard } from "@/components/practice-card";
+import { ProductPartners } from "@/components/product-partners";
 import { services } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function PracticesPage() {
           ))}
         </div>
       </section>
+      <ProductPartners />
       <CtaBand />
     </>
   );

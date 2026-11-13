@@ -195,6 +195,37 @@ export function getService(slug: string) {
   return services.find((service) => service.slug === slug);
 }
 
+/** Product partner published at https://www.subkaro.com/ — names and URLs from that site. */
+export const productPartner = {
+  name: "Subkaro",
+  href: "https://www.subkaro.com/",
+  summary: "Parent company for Order Karu, Manage Karo, and Event Karo.",
+} as const;
+
+export const partnerProducts = [
+  {
+    name: "Order Karu",
+    href: "https://www.orderkaru.com/",
+    tagline: "Automate your restaurant from one screen.",
+    summary:
+      "Cloud POS, online ordering, kitchen display, inventory, and analytics for cafes, restaurants, and cloud kitchens.",
+  },
+  {
+    name: "Manage Karo",
+    href: "https://www.subkaro.com/products/manage-karo",
+    tagline: "Run finance, stock, and teams in one place.",
+    summary:
+      "ERP for growing businesses that need accounts, inventory, HR, and reporting without spreadsheet chaos.",
+  },
+  {
+    name: "Event Karo",
+    href: "https://eventkaro.pk/",
+    tagline: "Shaadi se Eid tak.",
+    summary:
+      "Event venues and services marketplace for celebrations across Lahore, from shaadi nights to iftar gatherings.",
+  },
+] as const;
+
 export const stats = [
   { value: "10", label: "Years in business" },
   { value: "150", label: "Projects completed" },

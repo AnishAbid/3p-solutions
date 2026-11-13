@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
+import { ProductPartners } from "@/components/product-partners";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -87,14 +88,17 @@ export default function ItPracticePage() {
             <div className="rounded-xl border bg-card p-6 md:p-8">
               <h2 className="text-2xl font-semibold">What we do not claim here</h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                No partner logos, no named Odoo customers, and no invented SAP
-                specialisations. If a brief needs a different ERP landscape, that
-                is a conversation — not a badge on this page.
+                No named Odoo customers and no invented SAP specialisations. If
+                a brief needs a different ERP landscape, that is a conversation
+                — not a badge on this page. Software products listed as product
+                partners are those published by Subkaro.
               </p>
             </div>
           </div>
         </div>
       </section>
+
+      <ProductPartners />
 
       <section className="bg-muted/50">
         <div className="container-site py-16 md:py-20">
