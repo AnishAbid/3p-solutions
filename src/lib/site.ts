@@ -237,14 +237,14 @@ export const partnerProducts = [
 
 export const partnerCards = [productPartner, ...partnerProducts] as const;
 
-/** Software work associated with 3P Solutions / Anish. Employer names from the resume are omitted. */
+/** IT software work. Employer names and personal bio are omitted. */
 export const itPractice = {
-  associatedWith: "3P Solutions / Anish",
-  years: "8+",
-  yearsLabel: "8+ years",
-  role: "Senior full-stack engineering and technical project management",
-  intro:
-    "IT work at 3P Solutions is associated with Anish: 8+ years building web platforms, APIs, and delivery with TypeScript, Node.js, Nest.js, Python, React/Next.js, and Angular.",
+  techHeading: "Technologies",
+  techIntro:
+    "These are the languages, frameworks, and cloud platforms used to design, build, and run web applications, APIs, and delivery pipelines — including TypeScript, JavaScript, Python, PHP, React, Next.js, Angular, Node.js, Nest.js, GraphQL, and AWS.",
+  industriesHeading: "Industries",
+  industriesIntro:
+    "Software delivered in the sectors below: marketplaces, core-banking services, live streaming, operational audits, bookings, education, and IT-services platforms. This is the kind of work, not a list of employers or named products.",
   techLogos: [
     { name: "TypeScript", file: "typescript.svg" },
     { name: "JavaScript", file: "javascript.svg", onDark: true },
@@ -294,25 +294,25 @@ export const itPractice = {
     {
       name: "Real estate",
       summary:
-        "Marketplaces, workflow automation, natural-language property search, and automated market reporting.",
+        "Job marketplaces for field agents, workflow automation for day-to-day operations, natural-language property search, and automated market reports covering pricing, comparables, yields, and ROI.",
       tech: ["TypeScript", "Node.js", "Nest.js", "GraphQL", "Python", "OpenAI API", "AWS"],
     },
     {
       name: "Banking and financial services",
       summary:
-        "Microservices platforms with Angular frontends, connecting new services to existing core-banking data and transactions.",
+        "Large-scale microservices with Angular frontends, connecting new services to existing core-banking data and transactions.",
       tech: ["Node.js", "Microservices", "Angular"],
     },
     {
       name: "Live streaming and fan engagement",
       summary:
-        "Interactive live events with streaming, real-time chat, and notifications.",
+        "Interactive live events with cloud streaming, real-time chat, and push notifications, plus fan-engagement platforms with client-server architecture.",
       tech: ["AWS IVS", "Node.js"],
     },
     {
       name: "Food, hospitality, and entertainment",
       summary:
-        "Compliance-oriented audit software for food operations, plus booking-style APIs for hospitality venues.",
+        "Internal audit software aligned with food-industry compliance, and booking-style APIs that combine venue and hospitality services.",
       tech: ["APIs", "Full-stack"],
     },
     {
@@ -324,7 +324,7 @@ export const itPractice = {
     {
       name: "IT services platforms",
       summary:
-        "Cloud IT-services work: third-party API integrations, configuration mapping, role-based access, and payment processing.",
+        "Cloud IT-services work: third-party API integrations, configuration mapping, role-based access control, and payment processing.",
       tech: ["Angular", "Stripe", "REST APIs"],
     },
   ],

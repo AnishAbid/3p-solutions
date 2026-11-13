@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "IT · Odoo",
   description:
-    "3P Solutions IT practice, associated with Anish: 8+ years of TypeScript, Node.js, Nest.js, Python, and React/Next.js, plus Odoo ERP in Pakistan.",
+    "3P Solutions IT practice: Odoo ERP plus custom software with TypeScript, Node.js, Nest.js, Python, and React/Next.js.",
   keywords: [
     "Odoo",
     "OODO",
@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     "Nest.js",
     "IT services",
     "3P Solutions",
-    "Anish",
   ],
 };
 
@@ -57,8 +56,8 @@ export default function ItPracticePage() {
     <>
       <PageHero
         kicker="IT practice"
-        title="Odoo, plus software platforms associated with Anish."
-        description="3P Solutions’ IT practice implements Odoo — the open-source ERP suite — and software work associated with Anish: 8+ years with TypeScript, Node.js, Nest.js, Python, and React/Next.js. Local search sometimes writes Odoo as OODO."
+        title="Odoo, plus custom software platforms."
+        description="3P Solutions’ IT practice implements Odoo — the open-source ERP suite — and custom web platforms, APIs, and delivery with TypeScript, Node.js, Nest.js, Python, and React/Next.js. Local search sometimes writes Odoo as OODO."
         image="/images/odoo.jpg"
         imageAlt="Laptop showing operations dashboards used in ERP work"
       />
