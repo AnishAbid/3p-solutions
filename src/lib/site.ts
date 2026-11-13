@@ -199,7 +199,10 @@ export function getService(slug: string) {
 export const productPartner = {
   name: "Subkaro",
   href: "https://www.subkaro.com/",
+  tagline: "Software products we build and sell",
   summary: "Parent company for Order Karu, Manage Karo, and Event Karo.",
+  image: "/images/partners/subkaro.jpg",
+  imageAlt: "Screenshot of the Subkaro homepage",
 } as const;
 
 export const partnerProducts = [
@@ -209,6 +212,8 @@ export const partnerProducts = [
     tagline: "Automate your restaurant from one screen.",
     summary:
       "Cloud POS, online ordering, kitchen display, inventory, and analytics for cafes, restaurants, and cloud kitchens.",
+    image: "/images/partners/order-karu.jpg",
+    imageAlt: "Screenshot of the Order Karu homepage",
   },
   {
     name: "Manage Karo",
@@ -216,6 +221,8 @@ export const partnerProducts = [
     tagline: "Run finance, stock, and teams in one place.",
     summary:
       "ERP for growing businesses that need accounts, inventory, HR, and reporting without spreadsheet chaos.",
+    image: "/images/partners/manage-karo.jpg",
+    imageAlt: "Screenshot of the Manage Karo page on subkaro.com",
   },
   {
     name: "Event Karo",
@@ -223,8 +230,12 @@ export const partnerProducts = [
     tagline: "Shaadi se Eid tak.",
     summary:
       "Event venues and services marketplace for celebrations across Lahore, from shaadi nights to iftar gatherings.",
+    image: "/images/partners/event-karo.jpg",
+    imageAlt: "Screenshot of the Event Karo homepage",
   },
 ] as const;
+
+export const partnerCards = [productPartner, ...partnerProducts] as const;
 
 export const stats = [
   { value: "10", label: "Years in business" },

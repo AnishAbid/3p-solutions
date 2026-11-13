@@ -23,3 +23,7 @@ Licenses allow commercial use:
 | `odoo.jpg` | Unsplash `photo-1551288049` | IT / Odoo dashboards |
 | `it-network.jpg` | [Pexels 442150](https://www.pexels.com/photo/442150/) | IT practice |
 | `transmission.jpg` | [Pexels 221012](https://www.pexels.com/photo/221012/) | About / transmission lines |
+| `partners/subkaro.jpg` | Original screenshot of [subkaro.com](https://www.subkaro.com/) (13 Nov 2026) | Product partner · Subkaro |
+| `partners/order-karu.jpg` | Original screenshot of [orderkaru.com](https://www.orderkaru.com/) (13 Nov 2026) | Product partner · Order Karu |
+| `partners/manage-karo.jpg` | Original screenshot of [subkaro.com/products/manage-karo](https://www.subkaro.com/products/manage-karo) (13 Nov 2026) | Product partner · Manage Karo |
+| `partners/event-karo.jpg` | Original screenshot of [eventkaro.pk](https://eventkaro.pk/) (13 Nov 2026) | Product partner · Event Karo |
