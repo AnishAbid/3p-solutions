@@ -191,6 +191,10 @@
   animation: marquee 42s linear infinite;
 }
 
+@utility animate-tech-marquee {
+  animation: marquee 32s linear infinite;
+}
+
 @utility animate-rise {
   animation: rise 0.8s ease both;
 }
@@ -198,6 +202,7 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-slow-zoom,
   .animate-marquee,
+  .animate-tech-marquee,
   .animate-rise {
     animation: none;
   }
