@@ -282,14 +282,6 @@ export const itPractice = {
     "AWS",
     "OpenAI API",
   ],
-  capabilities: [
-    "AI search and LLM integration (OpenAI API)",
-    "Live streaming (AWS IVS), real-time chat, and notifications",
-    "Payments (Stripe) and role-based access control",
-    "GraphQL and REST APIs, Node.js microservices",
-    "AWS (Lambda, S3, EC2, IVS), Azure, Docker, and CI/CD",
-    "Technical project management, system design, and code review",
-  ],
   industries: [
     {
       name: "Real estate",

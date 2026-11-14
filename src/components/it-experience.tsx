@@ -58,13 +58,6 @@ export function ItExperience({
         </h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">{itPractice.techIntro}</p>
         <TechLogos className="mt-8" />
-        <ul className="mt-8 grid gap-3 text-sm text-muted-foreground md:grid-cols-2">
-          {itPractice.capabilities.map((item) => (
-            <li key={item} className="rounded-xl border bg-card px-4 py-3">
-              {item}
-            </li>
-          ))}
-        </ul>
       </section>
 
       <section className="border-t bg-cream py-16 md:py-20">
