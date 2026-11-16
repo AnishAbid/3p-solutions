@@ -49,6 +49,7 @@ export const nav = [
 ] as const;
 
 export const headerLinks = [
+  { href: "/", label: "Home" },
   { href: "/municipal-services", label: "Consulting" },
   { href: "/practices/it", label: "IT" },
   { href: "/projects", label: "Engineering" },
