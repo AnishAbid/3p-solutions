@@ -7,7 +7,6 @@ import { PageHero } from "@/components/page-hero";
 import { ProductPartners } from "@/components/product-partners";
 import { Reveal } from "@/components/reveal";
 import { SolutionPlatforms } from "@/components/solution-platforms";
-import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "IT · Odoo",

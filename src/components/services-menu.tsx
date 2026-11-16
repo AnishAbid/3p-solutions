@@ -16,7 +16,27 @@ export function ServicesMenu({
 }) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const menuId = useId();
+
+  function openMenu() {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+    setOpen(true);
+  }
+
+  function scheduleClose() {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setOpen(false), 200);
+  }
+
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    };
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -35,18 +55,15 @@ export function ServicesMenu({
   }, [open]);
 
   return (
-    <div
-      ref={rootRef}
-      className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
+    <div ref={rootRef} className="relative flex h-16 items-center">
       <button
         type="button"
         aria-expanded={open}
         aria-controls={menuId}
         aria-haspopup="menu"
         onClick={() => setOpen((value) => !value)}
+        onMouseEnter={openMenu}
+        onMouseLeave={scheduleClose}
         className={cn(
           "relative inline-flex items-center gap-1 py-1 whitespace-nowrap transition-colors",
           onDark
@@ -72,8 +89,10 @@ export function ServicesMenu({
         <div
           id={menuId}
           role="menu"
+          onMouseEnter={openMenu}
+          onMouseLeave={scheduleClose}
           className={cn(
-            "fixed top-16 left-1/2 z-50 w-[min(92vw,64rem)] -translate-x-1/2 pt-2 transition duration-200",
+            "fixed top-16 left-1/2 z-50 w-[min(92vw,64rem)] -translate-x-1/2 pt-3 transition duration-200",
             open
               ? "visible translate-y-0 opacity-100"
               : "invisible pointer-events-none -translate-y-1 opacity-0",
