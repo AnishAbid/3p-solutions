@@ -39,7 +39,7 @@ export function SiteLogo({
             light ? "text-gold" : "text-muted-foreground",
           )}
         >
-          {site.alsoKnownAs}
+          {site.tagline}
         </span>
       </span>
     </Link>

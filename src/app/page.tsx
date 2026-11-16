@@ -36,6 +36,7 @@ const catalog = homeOrder
   .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
 const marqueeLabels = [
+  site.tagline,
   ...services.map((item) => item.shortTitle),
   site.city,
   site.country,
@@ -53,11 +54,11 @@ export default function Home() {
             {site.name} · {site.city}, {site.country}
           </p>
           <h1 className="font-display mt-5 max-w-5xl text-5xl leading-[0.95] font-medium tracking-tight md:text-7xl lg:text-[5.75rem]">
-            {aboutCopy.hero}
+            {site.tagline}.
           </h1>
           <div className="mt-8 grid max-w-6xl gap-10 lg:grid-cols-12">
             <p className="animate-rise max-w-2xl text-base leading-relaxed text-white/80 md:text-lg lg:col-span-7">
-              {site.tagline}. {aboutCopy.intro} The IT practice implements{" "}
+              {aboutCopy.intro} The IT practice implements{" "}
               <Link
                 href="/practices/it"
                 className="text-gold underline-offset-4 hover:underline"
@@ -380,7 +381,7 @@ export default function Home() {
               Get started
             </p>
             <h2 className="font-display mt-4 max-w-3xl text-4xl leading-tight md:text-6xl">
-              {aboutCopy.hero}
+              {site.tagline}.
             </h2>
             <p className="mt-6 max-w-2xl text-white/75">{aboutCopy.footer}</p>
           </div>

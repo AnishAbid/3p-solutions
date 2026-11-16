@@ -1,7 +1,7 @@
 export const site = {
   name: "3P Solutions",
   alsoKnownAs: "3Psolution",
-  tagline: "Your trusted partner in construction and sustainable energy",
+  tagline: "Solutions redefined",
   description:
     "3P Solutions delivers construction, renewable energy, municipal services, and Odoo IT from Lahore, for work across Pakistan.",
   city: "Lahore",

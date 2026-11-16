@@ -266,7 +266,7 @@ export default function ProjectsPage() {
               Get started
             </p>
             <h2 className="font-display mt-4 max-w-3xl text-4xl leading-tight md:text-6xl">
-              {aboutCopy.hero}
+              {site.tagline}.
             </h2>
             <p className="mt-6 max-w-2xl text-white/75">{aboutCopy.footer}</p>
           </div>

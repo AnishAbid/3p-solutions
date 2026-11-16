@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function CtaBand({
-  title = "Build a sustainable future with us",
+  title = `${site.tagline}.`,
   body = "Contact 3P Solutions in Lahore about construction, solar and wind energy, or municipal services across Pakistan.",
   href = "/contact",
 }: {

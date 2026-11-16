@@ -14,8 +14,8 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        kicker="About us"
-        title="High-quality construction and innovative energy solutions from Lahore."
+        kicker="Vision"
+        title={`${site.tagline}.`}
         description={aboutCopy.intro}
         image="/images/transmission.jpg"
         imageAlt="Transmission lines at dusk"
@@ -25,6 +25,7 @@ export default function AboutPage() {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="max-w-2xl lg:col-span-7">
             <h2 className="text-3xl font-semibold">Who we are</h2>
+            <p className="font-display mt-3 text-3xl text-navy">{site.tagline}.</p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
               {aboutCopy.footer}
             </p>
@@ -54,9 +55,7 @@ export default function AboutPage() {
                 Company
               </p>
               <p className="mt-3 font-heading text-2xl">{site.name}</p>
-              <p className="mt-1 text-sm text-white/70">
-                Construction, energy, municipal, and Odoo IT
-              </p>
+              <p className="mt-1 text-sm text-white/70">{site.tagline}.</p>
               <dl className="mt-8 space-y-4 text-sm">
                 <div>
                   <dt className="text-white/50">Address</dt>

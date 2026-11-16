@@ -26,7 +26,7 @@ const display = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} · Construction, Energy, Odoo`,
+    default: `${site.name} · ${site.tagline}`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
