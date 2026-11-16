@@ -46,7 +46,7 @@ export default function Home() {
       >
         <div className="container-home flex min-h-[min(92vh,54rem)] flex-col justify-end pb-24 pt-20 md:pb-28 md:pt-28">
           <h1 className="animate-rise font-display max-w-5xl text-3xl leading-[1.1] font-medium tracking-[0.14em] text-gold uppercase sm:text-4xl md:text-5xl lg:text-6xl">
-            {site.name} · {site.city}, {site.country}
+            {site.name}
           </h1>
           <div className="mt-8 grid max-w-6xl gap-10 lg:grid-cols-12">
             <p className="animate-rise max-w-2xl text-base leading-relaxed text-white/80 md:text-lg lg:col-span-7">
