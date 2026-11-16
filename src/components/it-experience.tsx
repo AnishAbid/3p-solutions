@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { TechLogos } from "@/components/tech-logos";
@@ -32,9 +33,20 @@ export function ItExperience({
           </p>
           <ul className="mt-4 space-y-3">
             {itPractice.industries.slice(0, 3).map((industry) => (
-              <li key={industry.name} className="text-sm">
-                <p className="font-medium text-white">{industry.name}</p>
-                <p className="mt-0.5 text-white/60">{industry.summary}</p>
+              <li key={industry.name} className="flex gap-3 text-sm">
+                <span className="relative mt-0.5 size-14 shrink-0 overflow-hidden rounded-lg">
+                  <Image
+                    src={industry.image}
+                    alt={industry.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="56px"
+                  />
+                </span>
+                <span>
+                  <p className="font-medium text-white">{industry.name}</p>
+                  <p className="mt-0.5 text-white/60">{industry.summary}</p>
+                </span>
               </li>
             ))}
           </ul>
@@ -72,15 +84,26 @@ export function ItExperience({
             {itPractice.industries.map((industry) => (
               <article
                 key={industry.name}
-                className="rounded-2xl border bg-card p-6"
+                className="overflow-hidden rounded-2xl border bg-card"
               >
-                <h3 className="font-display text-2xl">{industry.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {industry.summary}
-                </p>
-                <p className="mt-4 text-xs tracking-wide text-navy/70">
-                  {industry.tech.join(" · ")}
-                </p>
+                <div className="relative aspect-[16/10] bg-muted">
+                  <Image
+                    src={industry.image}
+                    alt={industry.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 40vw, 100vw"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display text-2xl">{industry.name}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {industry.summary}
+                  </p>
+                  <p className="mt-4 text-xs tracking-wide text-navy/70">
+                    {industry.tech.join(" · ")}
+                  </p>
+                </div>
               </article>
             ))}
           </div>

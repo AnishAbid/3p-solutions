@@ -288,36 +288,48 @@ export const itPractice = {
       summary:
         "Job marketplaces for field agents, workflow automation for day-to-day operations, natural-language property search, and automated market reports covering pricing, comparables, yields, and ROI.",
       tech: ["TypeScript", "Node.js", "Nest.js", "GraphQL", "Python", "OpenAI API", "AWS"],
+      image: "/images/industries/real-estate.jpg",
+      imageAlt: "House keys beside a model home on a desk",
     },
     {
       name: "Banking and financial services",
       summary:
         "Large-scale microservices with Angular frontends, connecting new services to existing core-banking data and transactions.",
       tech: ["Node.js", "Microservices", "Angular"],
+      image: "/images/industries/banking.jpg",
+      imageAlt: "Payment cards used in banking and financial services",
     },
     {
       name: "Live streaming and fan engagement",
       summary:
         "Interactive live events with cloud streaming, real-time chat, and push notifications, plus fan-engagement platforms with client-server architecture.",
       tech: ["AWS IVS", "Node.js"],
+      image: "/images/industries/streaming.jpg",
+      imageAlt: "Concert crowd under stage lights at a live event",
     },
     {
       name: "Food, hospitality, and entertainment",
       summary:
         "Internal audit software aligned with food-industry compliance, and booking-style APIs that combine venue and hospitality services.",
       tech: ["APIs", "Full-stack"],
+      image: "/images/industries/hospitality.jpg",
+      imageAlt: "Plated dish served at a restaurant table",
     },
     {
       name: "Education",
       summary:
         "API-driven sites with live lecture streaming and student interaction.",
       tech: ["PHP", "CodeIgniter", "MySQL", "AWS"],
+      image: "/images/industries/education.jpg",
+      imageAlt: "Students in a classroom watching a lesson on a projector",
     },
     {
       name: "IT services platforms",
       summary:
         "Cloud IT-services work: third-party API integrations, configuration mapping, role-based access control, and payment processing.",
       tech: ["Angular", "Stripe", "REST APIs"],
+      image: "/images/industries/it-services.jpg",
+      imageAlt: "Network cables in a server rack",
     },
   ],
 } as const;

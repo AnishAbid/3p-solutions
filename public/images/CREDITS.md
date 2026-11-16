@@ -27,6 +27,12 @@ Licenses allow commercial use:
 | `partners/order-karu.jpg` | Original screenshot of [orderkaru.com](https://www.orderkaru.com/) (13 Nov 2026) | Product partner · Order Karu |
 | `partners/manage-karo.jpg` | Original screenshot of [subkaro.com/products/manage-karo](https://www.subkaro.com/products/manage-karo) (13 Nov 2026) | Product partner · Manage Karo |
 | `partners/event-karo.jpg` | Original screenshot of [eventkaro.pk](https://eventkaro.pk/) (13 Nov 2026) | Product partner · Event Karo |
+| `industries/real-estate.jpg` | Unsplash `photo-1560518883` | IT industries · Real estate |
+| `industries/banking.jpg` | [Pexels 259200](https://www.pexels.com/photo/259200/) | IT industries · Banking |
+| `industries/streaming.jpg` | Unsplash `photo-1514525253161` | IT industries · Live streaming |
+| `industries/hospitality.jpg` | Unsplash `photo-1414235077428` | IT industries · Food and hospitality |
+| `industries/education.jpg` | Unsplash `photo-1509062522246` | IT industries · Education |
+| `industries/it-services.jpg` | Unsplash `photo-1558494949` | IT industries · IT services |
 
 ## Tech logos
 
