@@ -1,95 +1,110 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
-import { FaqList } from "@/components/faq-list";
+import { OfferingCard } from "@/components/offering-card";
 import { PageHero } from "@/components/page-hero";
-import { PhotoArticle } from "@/components/photo-article";
 import { buttonVariants } from "@/components/ui/button";
-import { municipalFaqs } from "@/lib/site";
+import {
+  consultingPage,
+  engagementCta,
+  getService,
+  serviceMenu,
+} from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Consulting",
+  title: "Consulting Services",
   description:
-    "3P Solutions consulting: urban water supply, wastewater treatment, solid waste, and solar integration.",
+    "Financial modelling, feasibility studies, business plans, joint venture proposals and tender support from 3P Solutions.",
 };
 
-const offerings = [
-  {
-    title: "Urban Water Supply Management",
-    body: "We specialize in designing and implementing efficient urban water supply systems, ensuring clean and reliable access to water for communities.",
-    image: "/images/water.jpg",
-    imageAlt: "Clean drinking water poured into a glass",
-  },
-  {
-    title: "Innovative Treatment Plants",
-    body: "Our state-of-the-art wastewater treatment plants are designed to meet stringent environmental standards while optimizing resource recovery.",
-    image: "/images/wastewater.jpg",
-    imageAlt: "Industrial treatment plant tanks and piping",
-  },
-  {
-    title: "Comprehensive Waste Services",
-    body: "From collection to disposal, our solid waste management solutions are tailored to promote sustainability and minimize environmental impact.",
-    image: "/images/waste.jpg",
-    imageAlt: "Sorted scrap and solid waste ready for processing",
-  },
-  {
-    title: "Solar Energy Integration",
-    body: "Harness the power of the sun with our custom solar energy systems, designed to reduce costs and enhance energy efficiency.",
-    image: "/images/solar-install.jpg",
-    imageAlt: "Installer carrying a solar panel onto a roof",
-  },
-  {
-    title: "Sustainable Practices in Municipal Services",
-    body: "We implement eco-friendly solutions to ensure sustainable urban development and environmental conservation.",
-    image: "/images/solar-farm.jpg",
-    imageAlt: "Aerial view of a solar farm",
-  },
-  {
-    title: "Empowering Local Communities",
-    body: "Through active community engagement, we promote awareness and participation in municipal service initiatives for better urban living.",
-    image: "/images/municipal.jpg",
-    imageAlt: "City skyline at night",
-  },
-];
+const consulting =
+  serviceMenu.find((group) => group.kicker === "Consulting") ?? serviceMenu[0];
+const offerings = consulting.slugs
+  .map((slug) => getService(slug))
+  .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
-export default function MunicipalServicesPage() {
+export default function ConsultingPage() {
   return (
     <>
       <PageHero
-        kicker="Consulting"
-        title="Empowering communities with sustainable solutions"
-        description="Your trusted partner in construction, solar, and environmental management."
-        image="/images/municipal.jpg"
-        imageAlt="City skyline at night"
+        kicker={consultingPage.kicker}
+        title={consultingPage.title}
+        description={consultingPage.lead}
+        image="/images/industries/real-estate.jpg"
+        imageAlt="House keys beside a model home on a desk"
       />
-      <section className="container-site py-16 md:py-20">
-        <h2 className="text-3xl font-semibold">Consulting</h2>
+
+      <section className="container-home py-16 md:py-24">
+        <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
+          What we do
+        </p>
+        <h2 className="font-display mt-3 text-3xl md:text-5xl">What we do</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {offerings.map((item) => (
-            <PhotoArticle
-              key={item.title}
+            <OfferingCard
+              key={item.slug}
+              id={item.slug}
               title={item.title}
-              body={item.body}
+              summary={item.summary}
+              points={item.points}
               image={item.image}
               imageAlt={item.imageAlt}
             />
           ))}
         </div>
-        <Link
-          href="/contact"
-          className={cn(buttonVariants({ size: "lg" }), "mt-10 h-11 px-6")}
-        >
-          Transform your community
-        </Link>
+        <aside className="mt-10 rounded-2xl border border-gold/40 bg-navy p-6 text-white md:p-8">
+          <h3 className="font-display text-2xl">{consultingPage.paidTitle}</h3>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/75 md:text-base">
+            {consultingPage.paidBody}
+          </p>
+        </aside>
       </section>
-      <section className="bg-muted/50">
-        <div className="container-site py-16 md:py-20">
-          <h2 className="mb-8 text-3xl font-semibold">FAQ</h2>
-          <FaqList items={municipalFaqs} />
+
+      <section className="border-y bg-cream py-16 md:py-24">
+        <div className="container-home grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <h2 className="font-display text-3xl md:text-4xl">
+              {consultingPage.deliverTitle}
+            </h2>
+            <p className="mt-4 text-muted-foreground">{consultingPage.deliverLead}</p>
+          </div>
+          <ul className="grid gap-3 sm:grid-cols-2 lg:col-span-7">
+            {consultingPage.deliverables.map((item) => (
+              <li
+                key={item}
+                className="rounded-xl border bg-card px-4 py-3 text-sm"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
-      <CtaBand title="Transform your community with our solutions" />
+
+      <section className="container-home py-16 md:py-24">
+        <h2 className="font-display text-3xl md:text-4xl">
+          {consultingPage.clientsTitle}
+        </h2>
+        <ul className="mt-10 grid gap-6 md:grid-cols-2">
+          {consultingPage.clients.map((client) => (
+            <li key={client.title} className="border-l border-gold/50 pl-5">
+              <h3 className="text-xl font-semibold">{client.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {client.body}
+              </p>
+            </li>
+          ))}
+        </ul>
+        <Link
+          href="/contact"
+          className={cn(buttonVariants({ size: "lg" }), "mt-12 h-11 px-6")}
+        >
+          Get in touch
+        </Link>
+      </section>
+
+      <CtaBand title={engagementCta.title} body={engagementCta.body} />
     </>
   );
 }

@@ -2,7 +2,7 @@
 
 Marketing site for **3P Solutions** (also written **3Psolution**), a Lahore-based firm. Copy and contact details follow [3psolutions.com.pk](https://3psolutions.com.pk/).
 
-Practices are grouped as **Engineering** (construction, solar, wind), **Consulting** (water supply, wastewater, solid waste), and **IT** (Odoo, sometimes searched as OODO).
+Practices are grouped as **Consulting** (financial modelling, business plans, tender support, regulatory documentation), **IT** (Odoo and Subkaro), and **Engineering** (roads and earthworks, buildings, water/drainage/flood protection, site management).
 
 The Contact page publishes the Lahore address, phone, email, and website. There is no enquiry form.
 
@@ -27,8 +27,8 @@ The dev server binds to **port 4783** (not 3000):
 | Route | Page |
 | --- | --- |
 | `/` | Homepage |
-| `/projects` | Engineering |
-| `/renewables` | Engineering · solar and wind |
+| `/projects` | Engineering contracting |
+| `/renewables` | Redirects to engineering |
 | `/municipal-services` | Consulting |
 | `/practices` | All practices |
 | `/practices/it` | IT · Odoo |

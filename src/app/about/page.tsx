@@ -30,14 +30,12 @@ export default function AboutPage() {
               {aboutCopy.footer}
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Headquarters are in {site.city}, {site.country}. Projects are
-              undertaken across the country, in construction, municipal
-              services, water supply, wastewater treatment, solar energy, wind
-              energy, and transmission lines.
+              Headquarters are in {site.city}, {site.country}. The company works
+              in consulting, IT, and engineering contracting.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Alongside that field work, the IT practice implements Odoo (also
-              searched as OODO). No named IT clients are listed on this site.
+              The IT practice implements Odoo (also searched as OODO) and
+              Subkaro products. No named IT clients are listed on this site.
             </p>
           </div>
           <aside className="lg:col-span-5">
@@ -65,10 +63,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <dt className="text-white/50">Focus</dt>
-                  <dd>
-                    Engineering (construction, solar, wind), consulting (water,
-                    wastewater, solid waste), and Odoo
-                  </dd>
+                  <dd>Consulting, IT, Engineering Contracting</dd>
                 </div>
               </dl>
             </div>

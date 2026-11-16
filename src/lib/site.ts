@@ -3,7 +3,7 @@ export const site = {
   alsoKnownAs: "3Psolution",
   tagline: "Solutions Redefined",
   description:
-    "3P Solutions delivers engineering, consulting, and Odoo IT from Lahore, for work across Pakistan.",
+    "3P Solutions (Private) Limited is a Pakistani company providing consulting services, IT services and engineering contracting services.",
   city: "Lahore",
   country: "Pakistan",
   foundedYear: 2008,
@@ -41,32 +41,32 @@ export function formatAddress() {
 }
 
 export const nav = [
-  { href: "/projects", label: "Engineering" },
   { href: "/municipal-services", label: "Consulting" },
   { href: "/practices/it", label: "IT" },
+  { href: "/projects", label: "Engineering" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Get In Touch" },
+  { href: "/contact", label: "Contact us" },
 ] as const;
 
 export const headerLinks = [
+  { href: "/municipal-services", label: "Consulting" },
+  { href: "/practices/it", label: "IT" },
   { href: "/projects", label: "Engineering" },
   { href: "/about", label: "About" },
 ] as const;
 
 export const serviceMenu = [
   {
-    kicker: "Engineering",
-    href: "/projects",
-    slugs: ["construction", "solar", "wind"],
-    image: "/images/construction.jpg",
-    imageAlt: "Construction crew reviewing a reinforced concrete slab",
-  },
-  {
     kicker: "Consulting",
     href: "/municipal-services",
-    slugs: ["water", "wastewater", "waste"],
-    image: "/images/municipal.jpg",
-    imageAlt: "City skyline at night",
+    slugs: [
+      "financial-modelling",
+      "business-plans",
+      "tender-support",
+      "regulatory",
+    ],
+    image: "/images/industries/real-estate.jpg",
+    imageAlt: "House keys beside a model home on a desk",
   },
   {
     kicker: "IT",
@@ -75,28 +75,30 @@ export const serviceMenu = [
     image: "/images/odoo.jpg",
     imageAlt: "Laptop showing operations dashboards used in ERP work",
   },
+  {
+    kicker: "Engineering",
+    href: "/projects",
+    slugs: ["roads", "buildings", "water-works", "site-management"],
+    image: "/images/construction.jpg",
+    imageAlt: "Construction crew reviewing a reinforced concrete slab",
+  },
 ] as const;
 
 export const heroSlides = [
   {
     src: "/images/construction.jpg",
     alt: "Construction crew reviewing a reinforced concrete slab",
-    label: "Construction",
+    label: "Engineering",
   },
   {
-    src: "/images/solar-farm.jpg",
-    alt: "Aerial view of a solar farm",
-    label: "Solar energy",
+    src: "/images/water.jpg",
+    alt: "Clean drinking water poured into a glass",
+    label: "Water infrastructure",
   },
   {
-    src: "/images/wind.jpg",
-    alt: "Wind turbines on a field at sunset",
-    label: "Wind energy",
-  },
-  {
-    src: "/images/municipal.jpg",
-    alt: "City skyline at night",
-    label: "Municipal services",
+    src: "/images/industries/real-estate.jpg",
+    alt: "House keys beside a model home on a desk",
+    label: "Consulting",
   },
   {
     src: "/images/odoo.jpg",
@@ -107,6 +109,81 @@ export const heroSlides = [
 
 export const services = [
   {
+    slug: "financial-modelling",
+    href: "/municipal-services#financial-modelling",
+    kicker: "Consulting",
+    title: "Financial modelling and feasibility",
+    shortTitle: "Financial modelling",
+    summary:
+      "Integrated models that show whether a project works and under what conditions.",
+    blurb:
+      "Area, inventory and phasing statements; revenue, payment-plan and cost build-ups; cash flow, funding requirement, NPV and IRR.",
+    points: [
+      "Area, inventory and phasing statements",
+      "Revenue, payment-plan and cost build-ups",
+      "Cash flow, funding requirement, NPV and IRR",
+      "Sensitivity and scenario analysis",
+    ],
+    image: "/images/industries/banking.jpg",
+    imageAlt: "Payment cards used in banking and financial services",
+  },
+  {
+    slug: "business-plans",
+    href: "/municipal-services#business-plans",
+    kicker: "Consulting",
+    title: "Business plans and JV proposals",
+    shortTitle: "Business plans",
+    summary:
+      "Plans written for a specific reader: an authority, a partner or an investor.",
+    blurb:
+      "Development approach and execution strategy, joint venture and land-equity structures, risk allocation, and implementation schedules.",
+    points: [
+      "Development approach and execution strategy",
+      "Joint venture and land-equity structures",
+      "Risk allocation and mitigation",
+      "Implementation schedules and milestones",
+    ],
+    image: "/images/industries/real-estate.jpg",
+    imageAlt: "House keys beside a model home on a desk",
+  },
+  {
+    slug: "tender-support",
+    href: "/municipal-services#tender-support",
+    kicker: "Consulting",
+    title: "Tender and procurement support",
+    shortTitle: "Tender support",
+    summary:
+      "Help preparing compliant, competitive bids for public and donor-funded work.",
+    blurb:
+      "Review of bidding documents and qualification criteria, gap analysis, bid forms, and joint venture structuring.",
+    points: [
+      "Review of bidding documents and qualification criteria",
+      "Gap analysis against experience and financial requirements",
+      "Bid forms, method statements and schedules",
+      "Partner and joint venture structuring",
+    ],
+    image: "/images/construction-work.jpg",
+    imageAlt: "Construction worker placing a concrete pour",
+  },
+  {
+    slug: "regulatory",
+    href: "/municipal-services#regulatory",
+    kicker: "Consulting",
+    title: "Regulatory and compliance documentation",
+    shortTitle: "Regulatory documentation",
+    summary: "Documentation prepared to the format regulators expect.",
+    blurb:
+      "Standard operating procedures, licensing dossiers, quality management documentation, and policy manuals.",
+    points: [
+      "Standard operating procedures",
+      "Licensing and registration dossiers",
+      "Quality management documentation",
+      "Policy and procedure manuals",
+    ],
+    image: "/images/industries/education.jpg",
+    imageAlt: "Students in a classroom watching a lesson on a projector",
+  },
+  {
     slug: "odoo",
     href: "/practices/it",
     kicker: "IT",
@@ -116,86 +193,81 @@ export const services = [
       "Odoo ERP for finance, inventory, manufacturing, and operations — implemented so the books, the warehouse, and the site can share one set of numbers.",
     blurb:
       "Odoo implementation, configuration, training, and support. (Sometimes searched as OODO.)",
+    points: [] as const,
     image: "/images/odoo.jpg",
     imageAlt: "Laptop showing operations dashboards used in ERP work",
   },
   {
-    slug: "construction",
-    href: "/projects",
+    slug: "roads",
+    href: "/projects#roads",
     kicker: "Engineering",
-    title: "Construction Services",
-    shortTitle: "Construction",
-    summary:
-      "Expert project management and quality building practices for a robust infrastructure.",
+    title: "Roads and earthworks",
+    shortTitle: "Roads and earthworks",
+    summary: "Construction, dualisation and rehabilitation of roads.",
     blurb:
-      "Construction services for modern infrastructure, delivered with quality building practices.",
+      "Embankments, subgrade and sub-base; asphalt and concrete pavements; road furniture; bridge approaches and culverts.",
+    points: [
+      "Embankments, subgrade and sub-base",
+      "Asphalt and concrete pavements",
+      "Road furniture, signage and markings",
+      "Bridge approaches and culverts",
+    ],
+    image: "/images/construction-work.jpg",
+    imageAlt: "Construction worker placing a concrete pour",
+  },
+  {
+    slug: "buildings",
+    href: "/projects#buildings",
+    kicker: "Engineering",
+    title: "Buildings and structures",
+    shortTitle: "Buildings and structures",
+    summary: "Public and commercial buildings from foundations to finishes.",
+    blurb:
+      "Educational and healthcare buildings, offices and commercial premises, reinforced concrete structures, and external works.",
+    points: [
+      "Educational and healthcare buildings",
+      "Offices and commercial premises",
+      "Reinforced concrete structures",
+      "Finishing and external works",
+    ],
     image: "/images/construction.jpg",
     imageAlt: "Construction crew reviewing a reinforced concrete slab",
   },
   {
-    slug: "solar",
-    href: "/renewables",
+    slug: "water-works",
+    href: "/projects#water-works",
     kicker: "Engineering",
-    title: "Solar Energy Solutions",
-    shortTitle: "Solar Energy",
-    summary:
-      "Harness the power of the sun with efficient solar panel installations.",
+    title: "Water, drainage and flood protection",
+    shortTitle: "Water and drainage",
+    summary: "Infrastructure that manages water safely.",
     blurb:
-      "Solar installations designed to optimize energy efficiency and reduce carbon footprints.",
-    image: "/images/solar.jpg",
-    imageAlt: "Rows of solar panels in an open field",
-  },
-  {
-    slug: "water",
-    href: "/municipal-services",
-    kicker: "Consulting",
-    title: "Water Supply Management",
-    shortTitle: "Water Supply",
-    summary:
-      "Reliable water supply solutions for municipalities and private sectors.",
-    blurb:
-      "Urban water supply systems for clean, reliable access in communities.",
+      "Sewerage and storm-water drainage, dykes and retention ponds, lined channels, and erosion control.",
+    points: [
+      "Sewerage and storm-water drainage",
+      "Dykes, embankments and retention ponds",
+      "Lined channels and ditches",
+      "Erosion control and slope protection",
+    ],
     image: "/images/water.jpg",
     imageAlt: "Clean drinking water poured into a glass",
   },
   {
-    slug: "wastewater",
-    href: "/municipal-services",
-    kicker: "Consulting",
-    title: "Wastewater Treatment",
-    shortTitle: "Wastewater",
-    summary:
-      "Advanced technologies for effective wastewater management and treatment.",
-    blurb:
-      "Treatment plants designed to meet environmental standards and recover resources.",
-    image: "/images/wastewater.jpg",
-    imageAlt: "Industrial treatment plant tanks, piping, and towers",
-  },
-  {
-    slug: "waste",
-    href: "/municipal-services",
-    kicker: "Consulting",
-    title: "Solid Waste Management",
-    shortTitle: "Solid Waste",
-    summary:
-      "Approaches to waste collection, recycling, and management.",
-    blurb:
-      "Collection to disposal, with recycling and composting where the work calls for it.",
-    image: "/images/waste.jpg",
-    imageAlt: "Sorted scrap and solid waste ready for processing",
-  },
-  {
-    slug: "wind",
-    href: "/renewables",
+    slug: "site-management",
+    href: "/projects#site-management",
     kicker: "Engineering",
-    title: "Wind Energy Projects",
-    shortTitle: "Wind Energy",
-    summary:
-      "Wind farms that convert natural wind into clean energy for Pakistan’s energy mix.",
+    title: "Project and site management",
+    shortTitle: "Site management",
+    summary: "Running the site so the work is done right the first time.",
     blurb:
-      "Wind energy projects contributing to a sustainable energy mix for Pakistan.",
-    image: "/images/wind.jpg",
-    imageAlt: "Wind turbines on a field at sunset",
+      "Planning and progress reporting, quality control and material testing, health and safety, and joint ventures with specialist partners.",
+    points: [
+      "Planning, scheduling and progress reporting",
+      "Quality control and material testing",
+      "Health, safety and environmental management",
+      "Joint ventures with specialist partners",
+    ],
+    image: "/images/municipal.jpg",
+    imageAlt: "City skyline at night",
   },
 ] as const;
 
@@ -207,6 +279,92 @@ export type ServiceSlug = (typeof services)[number]["slug"];
 export function getService(slug: string) {
   return services.find((service) => service.slug === slug);
 }
+
+export const engineeringPage = {
+  kicker: "Engineering Contracting",
+  title:
+    "Civil and infrastructure works delivered to specification and on schedule",
+  lead: "We construct and rehabilitate roads, buildings and water infrastructure for public and private clients, with planning, quality control and site safety managed in-house.",
+  partnersTitle: "Working with partners",
+  partnersBody:
+    "For larger or specialised projects, including donor-funded tenders, we form joint ventures with experienced partners so each contract is delivered by the right combination of experience, equipment and people.",
+  deliverTitle: "What you receive",
+  deliverLead:
+    "Typical deliverables. Every proposal lists exactly what is included.",
+  deliverables: [
+    "Method statement",
+    "Construction schedule",
+    "Quality assurance plan",
+    "Health and safety plan",
+    "Monthly progress reports",
+    "As-built drawings",
+    "Completion documentation",
+  ],
+  clientsTitle: "Who we work with",
+  clients: [
+    {
+      title: "Government departments",
+      body: "Highways, local government and development authorities.",
+    },
+    {
+      title: "Real estate developers",
+      body: "Infrastructure and building works for private schemes.",
+    },
+    {
+      title: "Donor-funded programmes",
+      body: "Civil works under World Bank and similar procurement rules, alone or in joint venture.",
+    },
+    {
+      title: "Industrial clients",
+      body: "Site development, access roads and drainage.",
+    },
+  ],
+} as const;
+
+export const consultingPage = {
+  kicker: "Consulting Services",
+  title: "Financial models, business plans and bids that stand up to scrutiny",
+  lead: "We help developers, investors and contractors make decisions and win approvals. Our work is built around the questions an authority, lender or board will ask.",
+  paidTitle: "Paid on milestones",
+  paidBody:
+    "Consulting assignments are quoted as a lump-sum professional fee paid against defined milestones, such as mobilisation, draft model and final report. Where it suits the client, part of the fee can be linked to a successful outcome.",
+  deliverTitle: "What you receive",
+  deliverLead:
+    "Typical deliverables. Every proposal lists exactly what is included.",
+  deliverables: [
+    "Financial model (Excel) with user guide",
+    "Business plan report",
+    "Executive summary for decision-makers",
+    "Bid compliance matrix",
+    "Method statements",
+    "SOP and policy manuals",
+    "Presentation to authority or board",
+  ],
+  clientsTitle: "Who we work with",
+  clients: [
+    {
+      title: "Real estate developers",
+      body: "Preparing models and business plans for mixed-use and joint venture developments.",
+    },
+    {
+      title: "Contractors and bidders",
+      body: "Checking qualification and preparing bids for public and international tenders.",
+    },
+    {
+      title: "Healthcare and regulated businesses",
+      body: "Preparing the SOPs and documentation needed for licensing.",
+    },
+    {
+      title: "Investors and lenders",
+      body: "Independent review of project economics before committing funds.",
+    },
+  ],
+} as const;
+
+export const engagementCta = {
+  title: "Have a project in mind?",
+  body: "Tell us what you are planning. We reply within two working days with next steps and, where we can, an indicative scope and fee.",
+} as const;
 
 /** Product partner published at https://www.subkaro.com/ — names and URLs from that site. */
 export const productPartner = {
@@ -439,57 +597,16 @@ export const testimonials = [
   "The installation of the solar panels was smooth and efficient. Highly recommend!",
 ] as const;
 
-export const projectLines = [
-  {
-    title: "Construction Services",
-    body: "Project management and quality building practices for infrastructure.",
-    image: "/images/construction.jpg",
-    imageAlt: "Construction crew on a concrete slab",
-    href: "/projects",
-  },
-  {
-    title: "Solar Energy Solutions",
-    body: "Solar panel installations for efficient, lower-carbon power.",
-    image: "/images/solar.jpg",
-    imageAlt: "Solar panel array",
-    href: "/renewables",
-  },
-  {
-    title: "Water Supply Management",
-    body: "Water supply for municipalities and private clients.",
-    image: "/images/water.jpg",
-    imageAlt: "Clean water supply",
-    href: "/municipal-services",
-  },
-  {
-    title: "Wastewater Treatment Projects",
-    body: "Treatment plants for safe discharge and resource recovery.",
-    image: "/images/wastewater.jpg",
-    imageAlt: "Wastewater treatment plant",
-    href: "/municipal-services",
-  },
-  {
-    title: "Wind Energy Projects",
-    body: "Wind farms converting natural wind into clean energy.",
-    image: "/images/wind.jpg",
-    imageAlt: "Wind farm at sunset",
-    href: "/renewables",
-  },
-  {
-    title: "Municipal Services",
-    body: "Urban water, waste, and related municipal infrastructure.",
-    image: "/images/municipal.jpg",
-    imageAlt: "City skyline at night",
-    href: "/municipal-services",
-  },
-] as const;
+export const projectLines = services.filter(
+  (item) => item.kicker === "Engineering",
+);
 
 export const faqs = [
   {
     id: "types",
     question: "What types of projects does 3P Solutions undertake?",
     answer:
-      "We specialize in a variety of sectors including construction services, municipal services, water supply, wastewater treatment plants, solar energy, wind energy, and transmission lines projects.",
+      "Engineering contracting covers roads and earthworks, buildings and structures, water, drainage and flood protection, and project and site management. Consulting covers financial modelling and feasibility, business plans and JV proposals, tender and procurement support, and regulatory and compliance documentation. IT covers Odoo and Subkaro products.",
   },
   {
     id: "where",
@@ -513,7 +630,7 @@ export const faqs = [
     id: "sustainable",
     question: "Does 3P Solutions offer sustainable solutions?",
     answer:
-      "Absolutely! We are committed to sustainability and incorporate eco-friendly practices into our solar energy and waste management projects.",
+      "Health, safety and environmental management is part of project and site management. Water, drainage and flood protection includes erosion control and slope protection.",
   },
   {
     id: "contact",

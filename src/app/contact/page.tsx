@@ -11,7 +11,7 @@ import { contact, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Get In Touch",
   description:
-    "Contact 3P Solutions in Lahore about engineering, consulting, or Odoo IT.",
+    "Contact 3P Solutions about consulting, IT or engineering contracting projects.",
 };
 
 export default function ContactPage() {
@@ -19,10 +19,10 @@ export default function ContactPage() {
     <>
       <PageHero
         kicker="Get in touch"
-        title="Your local experts in construction and sustainable energy solutions."
-        description="Have questions or need assistance? Reach out about engineering, consulting, or Odoo IT."
-        image="/images/solar.jpg"
-        imageAlt="Rows of solar panels in an open field"
+        title="Tell us about your project"
+        description="Send a short description and we will reply within two working days. Reach out about consulting, IT, or engineering contracting."
+        image="/images/construction.jpg"
+        imageAlt="Construction crew reviewing a reinforced concrete slab"
       />
       <section className="container-site grid gap-12 py-16 lg:grid-cols-12">
         <div className="lg:col-span-7">

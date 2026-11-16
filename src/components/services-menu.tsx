@@ -104,7 +104,7 @@ export function ServicesMenu({
               <p className="text-[0.65rem] font-semibold tracking-[0.22em] text-gold uppercase">
                 Practices
               </p>
-              <p className="mt-1 font-heading text-lg">Engineering, consulting, IT</p>
+              <p className="mt-1 font-heading text-lg">Consulting, IT, Engineering</p>
             </div>
             <Link
               href="/practices"

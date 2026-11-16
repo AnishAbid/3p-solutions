@@ -12,7 +12,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { MobileServices, ServicesMenu } from "@/components/services-menu";
 import { SiteLogo } from "@/components/site-logo";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -20,16 +19,8 @@ import { headerLinks, nav } from "@/lib/site";
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
-  return pathname === href || pathname.startsWith(`${href}/`);
-}
-
-function isServicesActive(pathname: string) {
-  return (
-    pathname.startsWith("/projects") ||
-    pathname.startsWith("/renewables") ||
-    pathname.startsWith("/municipal-services") ||
-    pathname.startsWith("/practices")
-  );
+  const path = href.split("#")[0] ?? href;
+  return pathname === path || pathname.startsWith(`${path}/`);
 }
 
 export function SiteHeader() {
@@ -49,7 +40,6 @@ export function SiteHeader() {
       <div className="container-site flex h-16 items-center justify-between gap-4">
         <SiteLogo tone={onDark ? "light" : "dark"} />
         <nav className="hidden items-center gap-7 text-sm font-medium lg:flex">
-          <ServicesMenu onDark={onDark} active={isServicesActive(pathname)} />
           {headerLinks.map((item) => {
             const active = isActive(pathname, item.href);
             return (
@@ -86,7 +76,7 @@ export function SiteHeader() {
                 : "bg-navy text-primary-foreground hover:bg-navy/90",
             )}
           >
-            Get in touch
+            Contact us
           </Link>
         </div>
         <Sheet
@@ -110,7 +100,6 @@ export function SiteHeader() {
             </SheetHeader>
             <nav className="flex flex-col gap-1 overflow-y-auto px-4 pb-8">
               <MobileLink href="/" label="Home" />
-              <MobileServices onNavigate={() => setMobileOpen(false)} />
               {nav.map((item) => (
                 <MobileLink key={item.href} href={item.href} label={item.label} />
               ))}

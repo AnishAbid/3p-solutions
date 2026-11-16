@@ -19,11 +19,6 @@ export function SiteFooter() {
           </p>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <Link href="/projects" className="text-white/80 hover:text-gold">
-                Engineering
-              </Link>
-            </li>
-            <li>
               <Link
                 href="/municipal-services"
                 className="text-white/80 hover:text-gold"
@@ -34,6 +29,11 @@ export function SiteFooter() {
             <li>
               <Link href="/practices/it" className="text-white/80 hover:text-gold">
                 IT · Odoo
+              </Link>
+            </li>
+            <li>
+              <Link href="/projects" className="text-white/80 hover:text-gold">
+                Engineering
               </Link>
             </li>
             <li>

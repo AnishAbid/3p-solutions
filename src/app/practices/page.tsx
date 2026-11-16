@@ -18,8 +18,8 @@ export default function PracticesPage() {
     <>
       <PageHero
         kicker="Practices"
-        title="Engineering, consulting, and IT."
-        description="Field services match 3psolutions.com.pk. The IT practice is Odoo ERP, listed here because it is part of this site’s offering."
+        title="Consulting, IT, and engineering contracting."
+        description="Consulting services, IT (Odoo and Subkaro), and engineering contracting. The IT practice is listed here because it is part of this site’s offering."
         image="/images/construction.jpg"
         imageAlt="Construction crew reviewing a reinforced concrete slab"
       />

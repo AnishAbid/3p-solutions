@@ -22,12 +22,14 @@ import {
 import { cn } from "@/lib/utils";
 
 const homeOrder = [
-  "construction",
-  "solar",
-  "wind",
-  "water",
-  "wastewater",
-  "waste",
+  "financial-modelling",
+  "business-plans",
+  "tender-support",
+  "regulatory",
+  "roads",
+  "buildings",
+  "water-works",
+  "site-management",
   "odoo",
 ] as const;
 
@@ -105,11 +107,11 @@ export default function Home() {
               Our services
             </p>
             <h2 className="font-display text-4xl leading-[1.05] font-medium md:text-6xl">
-              Comprehensive solutions for your needs
+              Consulting, technology and construction under one roof
             </h2>
             <p className="max-w-2xl text-lg text-muted-foreground">
-              We offer a wide range of services tailored to meet the demands of
-              modern infrastructure and sustainable building.
+              We advise on projects, build the software that runs them, and
+              deliver the civil works on the ground.
             </p>
           </div>
           <div className="mt-16 space-y-6 md:space-y-8">
