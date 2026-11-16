@@ -85,25 +85,14 @@ export default function ItPracticePage() {
               ))}
             </ul>
           </div>
-          <div className="space-y-6">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-xl">
-              <Image
-                src="/images/it-network.jpg"
-                alt="Engineer connecting servers in a network rack"
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
-            </div>
-            <div className="rounded-xl border bg-card p-6 md:p-8">
-              <h2 className="text-2xl font-semibold">What we do not claim here</h2>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                No named Odoo customers and no invented SAP specialisations. If
-                a brief needs a different ERP landscape, that is a conversation
-                — not a badge on this page. Software products listed as product
-                partners are those published by Subkaro.
-              </p>
-            </div>
+          <div className="relative aspect-[16/10] overflow-hidden rounded-xl">
+            <Image
+              src="/images/it-network.jpg"
+              alt="Engineer connecting servers in a network rack"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
           </div>
         </div>
       </section>
