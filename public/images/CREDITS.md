@@ -38,4 +38,4 @@ Licenses allow commercial use:
 
 ## Tech logos
 
-SVG marks in `public/icons/tech/` are from [Simple Icons](https://simpleicons.org/) ([CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md)). Azure is the Simple Icons v12 mark (later versions dropped it). They were not copied from 3psolutions.com.pk.
+SVG marks in `public/icons/tech/` are from [Simple Icons](https://simpleicons.org/) ([CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md)). Azure is the Simple Icons v12 mark (later versions dropped it). Odoo uses the Simple Icons mark with brand fill `#714B67`. They were not copied from 3psolutions.com.pk.

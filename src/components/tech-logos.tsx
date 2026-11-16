@@ -9,7 +9,7 @@ function logoSrc(logo: Logo) {
 
 function LogoCard({ logo }: { logo: Logo }) {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-2 rounded-xl bg-white px-2 py-3 text-center shadow-sm ring-1 ring-black/10">
+    <div className="flex h-full flex-col items-center justify-center gap-2 rounded-xl bg-white px-2 py-3 text-center shadow-sm ring-1 ring-black/10 transition duration-300 hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none">
       <span
         className={cn(
           "flex size-10 items-center justify-center rounded-lg",

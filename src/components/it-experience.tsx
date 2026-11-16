@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { Reveal } from "@/components/reveal";
 import { TechLogos } from "@/components/tech-logos";
 import { itPractice } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -64,47 +65,57 @@ export function ItExperience({
 
   return (
     <div className={cn("bg-background", className)}>
-      <section className="container-site py-16 md:py-20">
-        <h2 className="font-display text-3xl leading-tight md:text-4xl">
-          {itPractice.techHeading}
-        </h2>
-        <p className="mt-4 max-w-2xl text-muted-foreground">{itPractice.techIntro}</p>
-        <TechLogos className="mt-8" />
-      </section>
-
-      <section className="border-t bg-cream py-16 md:py-20">
-        <div className="container-site">
+      <section className="container-site py-16 md:py-24">
+        <Reveal>
           <h2 className="font-display text-3xl leading-tight md:text-4xl">
-            {itPractice.industriesHeading}
+            {itPractice.techHeading}
           </h2>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            {itPractice.industriesIntro}
+            {itPractice.techIntro}
           </p>
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {itPractice.industries.map((industry) => (
-              <article
-                key={industry.name}
-                className="overflow-hidden rounded-2xl border bg-card"
-              >
-                <div className="relative aspect-[16/10] bg-muted">
-                  <Image
-                    src={industry.image}
-                    alt={industry.imageAlt}
-                    fill
-                    className="object-cover"
-                    sizes="(min-width: 768px) 40vw, 100vw"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display text-2xl">{industry.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {industry.summary}
-                  </p>
-                  <p className="mt-4 text-xs tracking-wide text-navy/70">
-                    {industry.tech.join(" · ")}
-                  </p>
-                </div>
-              </article>
+        </Reveal>
+        <Reveal delay={120}>
+          <TechLogos className="mt-8" />
+        </Reveal>
+      </section>
+
+      <section className="border-t bg-cream py-16 md:py-24">
+        <div className="container-site">
+          <Reveal>
+            <h2 className="font-display text-3xl leading-tight md:text-4xl">
+              {itPractice.industriesHeading}
+            </h2>
+            <p className="mt-4 max-w-2xl text-muted-foreground">
+              {itPractice.industriesIntro}
+            </p>
+          </Reveal>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {itPractice.industries.map((industry, index) => (
+              <Reveal key={industry.name} delay={(index % 3) * 80}>
+                <article className="group overflow-hidden rounded-2xl border bg-card transition duration-500 hover:-translate-y-1 hover:shadow-lg motion-reduce:transform-none">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                    <Image
+                      src={industry.image}
+                      alt={industry.imageAlt}
+                      fill
+                      className="object-cover transition duration-700 group-hover:scale-105 motion-reduce:transform-none"
+                      sizes="(min-width: 1280px) 30vw, (min-width: 768px) 40vw, 100vw"
+                    />
+                    <span className="absolute left-4 top-4 rounded-full bg-navy/80 px-2.5 py-1 font-heading text-xs text-gold">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-display text-2xl">{industry.name}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                      {industry.summary}
+                    </p>
+                    <p className="mt-4 text-xs tracking-wide text-navy/70">
+                      {industry.tech.join(" · ")}
+                    </p>
+                  </div>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>

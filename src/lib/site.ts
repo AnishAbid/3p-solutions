@@ -346,27 +346,32 @@ export const solutionPlatforms = [
   {
     name: "Odoo",
     href: "https://www.odoo.com/",
+    icon: "/icons/tech/odoo.svg",
     summary:
       "ERP for accounting, inventory, sales, purchasing, and manufacturing.",
   },
   {
     name: "AWS",
     href: "https://aws.amazon.com/",
+    icon: "/icons/tech/aws.svg",
     summary: "Cloud infrastructure for APIs, streaming, and application delivery.",
   },
   {
     name: "Azure",
     href: "https://azure.microsoft.com/",
+    icon: "/icons/tech/azure.svg",
     summary: "Cloud hosting and services used alongside custom application work.",
   },
   {
     name: "OpenAI API",
     href: "https://platform.openai.com/",
+    icon: "/icons/tech/openai.svg",
     summary: "Language models for search, reports, and product features.",
   },
   {
     name: "Subkaro",
     href: "https://www.subkaro.com/",
+    icon: "",
     summary: "Software products we build and sell: Order Karu, Manage Karo, and Event Karo.",
   },
 ] as const;
