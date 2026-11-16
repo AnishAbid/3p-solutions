@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
+import { PhoneLink } from "@/components/contact-address";
 import { contact, formatAddress, site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -35,7 +36,8 @@ export default function PrivacyPage() {
           <h2 className="text-xl font-semibold text-foreground">Contact</h2>
           <p className="mt-3">
             There is no enquiry form on this site. Use {contact.email} or{" "}
-            {contact.phoneDisplay} if you need a reply from the firm.
+            <PhoneLink className="text-navy underline" /> if you need a reply
+            from the firm.
           </p>
         </div>
       </section>

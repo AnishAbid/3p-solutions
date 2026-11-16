@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ContactAddress } from "@/components/contact-address";
+import { ContactAddress, PhoneLink } from "@/components/contact-address";
 import { PageHero } from "@/components/page-hero";
 import { contact, site } from "@/lib/site";
 
@@ -26,10 +26,8 @@ export default function LegalNoticePage() {
             <ContactAddress />
           </p>
           <p>
-            Phone:{" "}
-            <a className="text-navy underline" href={contact.phoneHref}>
-              {contact.phoneDisplay}
-            </a>
+            {contact.phoneLabel}:{" "}
+            <PhoneLink className="text-navy underline" />
           </p>
           <p>
             Email:{" "}

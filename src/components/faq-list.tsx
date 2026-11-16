@@ -6,9 +6,23 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { faqs } from "@/lib/site";
+import { PhoneLink } from "@/components/contact-address";
+import { contact, faqs } from "@/lib/site";
 
 type Faq = { id: string; question: string; answer: string };
+
+function Answer({ text }: { text: string }) {
+  const parts = text.split(contact.phoneDisplay);
+  if (parts.length === 1) return text;
+  return parts.map((part, index) => (
+    <span key={`${part}-${index}`}>
+      {part}
+      {index < parts.length - 1 ? (
+        <PhoneLink className="underline underline-offset-4" />
+      ) : null}
+    </span>
+  ));
+}
 
 export function FaqList({ items = faqs }: { items?: readonly Faq[] }) {
   return (
@@ -19,7 +33,7 @@ export function FaqList({ items = faqs }: { items?: readonly Faq[] }) {
             {item.question}
           </AccordionTrigger>
           <AccordionContent className="text-muted-foreground">
-            {item.answer}
+            <Answer text={item.answer} />
           </AccordionContent>
         </AccordionItem>
       ))}

@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ContactAddress, ContactDetails } from "@/components/contact-address";
+import {
+  ContactAddress,
+  ContactDetails,
+  PhoneLink,
+} from "@/components/contact-address";
 import { PageHero } from "@/components/page-hero";
 import { contact, site } from "@/lib/site";
 
@@ -28,10 +32,8 @@ export default function ContactPage() {
             <a className="text-navy underline" href={`mailto:${contact.email}`}>
               {contact.email}
             </a>{" "}
-            or call{" "}
-            <a className="text-navy underline" href={contact.phoneHref}>
-              {contact.phoneDisplay}
-            </a>
+            or WhatsApp{" "}
+            <PhoneLink className="text-navy underline" />
             .
           </p>
           <div className="rounded-2xl border bg-card p-8">
@@ -63,9 +65,9 @@ export default function ContactPage() {
                 </dd>
               </div>
               <div>
-                <dt className="text-muted-foreground">Telephone</dt>
+                <dt className="text-muted-foreground">{contact.phoneLabel}</dt>
                 <dd className="mt-1 font-medium">
-                  <a href={contact.phoneHref}>{contact.phoneDisplay}</a>
+                  <PhoneLink />
                 </dd>
               </div>
               <div>

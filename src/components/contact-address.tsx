@@ -1,6 +1,19 @@
 import { contact } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
+export function PhoneLink({ className }: { className?: string }) {
+  return (
+    <a
+      href={contact.phoneHref}
+      target="_blank"
+      rel="noopener"
+      className={className}
+    >
+      {contact.phoneDisplay}
+    </a>
+  );
+}
+
 /** Address line breaks match the 3P Solutions contact card. */
 export function ContactAddress({ className }: { className?: string }) {
   return (
@@ -28,9 +41,7 @@ export function ContactDetails({
         <ContactAddress />
       </p>
       <p>
-        <a href={contact.phoneHref} className={linkClassName}>
-          {contact.phoneDisplay}
-        </a>
+        <PhoneLink className={linkClassName} />
       </p>
       <p>
         <a href={`mailto:${contact.email}`} className={linkClassName}>
