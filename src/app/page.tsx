@@ -14,7 +14,7 @@ import {
   serviceMenu,
   services,
   site,
-  stats,
+  getStats,
   team,
   testimonials,
   values,
@@ -89,9 +89,9 @@ export default function Home() {
 
       <section className="bg-navy text-white">
         <div className="container-home grid grid-cols-2 divide-x divide-white/10 md:grid-cols-4">
-          {stats.map((item) => (
+          {getStats().map((item) => (
             <div key={item.label} className="px-4 py-10 md:px-8 md:py-14">
-              <p className="font-display text-4xl text-gold md:text-5xl">{item.value}</p>
+              <p className="font-display text-4xl tabular-nums text-gold md:text-5xl">{item.value}</p>
               <p className="mt-2 text-sm tracking-wide text-white/65">{item.label}</p>
             </div>
           ))}

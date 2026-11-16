@@ -4,7 +4,7 @@ import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
 import { PhotoArticle } from "@/components/photo-article";
 import { buttonVariants } from "@/components/ui/button";
-import { stats, team } from "@/lib/site";
+import { getStats, team } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -64,9 +64,9 @@ export default function RenewablesPage() {
       />
       <section className="border-y border-gold/25 bg-navy text-white">
         <div className="container-site grid grid-cols-2 divide-x divide-white/10 md:grid-cols-4">
-          {stats.map((item) => (
+          {getStats().map((item) => (
             <div key={item.label} className="px-4 py-8 md:px-6">
-              <p className="font-heading text-2xl text-gold md:text-3xl">
+              <p className="font-heading text-2xl tabular-nums text-gold md:text-3xl">
                 {item.value}
               </p>
               <p className="mt-2 text-sm text-white/70">{item.label}</p>

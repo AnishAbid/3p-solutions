@@ -6,7 +6,12 @@ export const site = {
     "3P Solutions delivers construction, renewable energy, municipal services, and Odoo IT from Lahore, for work across Pakistan.",
   city: "Lahore",
   country: "Pakistan",
+  foundedYear: 2008,
 } as const;
+
+export function yearsInBusiness(year = new Date().getFullYear()) {
+  return Math.max(0, year - site.foundedYear);
+}
 
 export const contact = {
   addressLines: [
@@ -377,12 +382,14 @@ export const solutionPlatforms = [
   },
 ] as const;
 
-export const stats = [
-  { value: "10", label: "Years in business" },
-  { value: "150", label: "Projects completed" },
-  { value: "5,000", label: "Happy clients" },
-  { value: "30", label: "Renewable projects" },
-] as const;
+export function getStats() {
+  return [
+    { value: String(yearsInBusiness()), label: "Years in business" },
+    { value: "150", label: "Projects completed" },
+    { value: "5,000", label: "Happy clients" },
+    { value: "30", label: "Renewable projects" },
+  ] as const;
+}
 
 export const values = [
   {
