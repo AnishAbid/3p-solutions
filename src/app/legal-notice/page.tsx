@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactAddress } from "@/components/contact-address";
 import { PageHero } from "@/components/page-hero";
 import { contact, site } from "@/lib/site";
 
@@ -22,11 +23,7 @@ export default function LegalNoticePage() {
         </p>
         <address className="mt-8 space-y-3 text-sm leading-relaxed not-italic">
           <p>
-            {contact.addressLines.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
-            ))}
+            <ContactAddress />
           </p>
           <p>
             Phone:{" "}

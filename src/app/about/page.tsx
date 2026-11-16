@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CtaBand } from "@/components/cta-band";
 import { PageHero } from "@/components/page-hero";
-import { aboutCopy, contact, site, team, values } from "@/lib/site";
+import { ContactAddress } from "@/components/contact-address";
+import { aboutCopy, site, team, values } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -60,11 +61,7 @@ export default function AboutPage() {
                 <div>
                   <dt className="text-white/50">Address</dt>
                   <dd>
-                    {contact.addressLines.map((line) => (
-                      <span key={line} className="block">
-                        {line}
-                      </span>
-                    ))}
+                    <ContactAddress />
                   </dd>
                 </div>
                 <div>

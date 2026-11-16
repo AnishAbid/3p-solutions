@@ -10,11 +10,11 @@ export const site = {
 
 export const contact = {
   addressLines: [
-    "SF 10, D.G Commercial Arcade",
-    "Divine Gardens, New Airport Road, Lahore",
+    "SF 10, D.G Commercial Arcade,",
+    "Divine Gardens, New Airport Road, Lahore.",
   ],
   city: "Lahore",
-  phoneDisplay: "+92 323 417 6685",
+  phoneDisplay: "+92-323-417 6685",
   phoneHref: "tel:+923234176685",
   email: "info@3psolutions.com.pk",
   websiteDisplay: "www.3psolutions.com.pk",
@@ -31,7 +31,7 @@ export const contact = {
 } as const;
 
 export function formatAddress() {
-  return contact.addressLines.join(", ");
+  return contact.addressLines.join(" ");
 }
 
 export const nav = [

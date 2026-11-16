@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { ContactAddress } from "@/components/contact-address";
 import { ContactForm } from "@/components/contact-form";
 import { PageHero } from "@/components/page-hero";
 import { contact } from "@/lib/site";
@@ -53,11 +54,7 @@ export default function ContactPage() {
               <div>
                 <dt className="text-muted-foreground">Address</dt>
                 <dd className="mt-1 font-medium">
-                  {contact.addressLines.map((line) => (
-                    <span key={line} className="block">
-                      {line}
-                    </span>
-                  ))}
+                  <ContactAddress />
                 </dd>
               </div>
               <div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ContactAddress } from "@/components/contact-address";
 import { SiteLogo } from "@/components/site-logo";
 import { contact, site } from "@/lib/site";
 
@@ -6,13 +7,13 @@ export function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-white/10 bg-navy-deep text-white">
       <div className="container-site grid gap-10 py-14 md:grid-cols-12">
-        <div className="md:col-span-5">
+        <div className="md:col-span-4">
           <SiteLogo tone="light" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
             {site.description}
           </p>
         </div>
-        <div className="md:col-span-3">
+        <div className="md:col-span-2">
           <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-gold uppercase">
             Navigation
           </p>
@@ -77,17 +78,13 @@ export function SiteFooter() {
             </li>
           </ul>
         </div>
-        <div className="md:col-span-2">
+        <div className="md:col-span-4">
           <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-gold uppercase">
             Contact
           </p>
           <address className="mt-4 space-y-2 text-sm leading-relaxed text-white/70 not-italic">
             <p>
-              {contact.addressLines.map((line) => (
-                <span key={line} className="block">
-                  {line}
-                </span>
-              ))}
+              <ContactAddress />
             </p>
             <p>
               <a href={contact.phoneHref} className="hover:text-gold">
