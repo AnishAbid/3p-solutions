@@ -12,9 +12,20 @@ export function SnowflakeDataCloud({
   return (
     <section className="border-t bg-navy text-white">
       <div className="container-site py-16 md:py-20">
-        <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
-          {snowflakePractice.kicker}
-        </p>
+        <div className="flex items-center gap-3">
+          <span className="flex size-11 items-center justify-center rounded-xl bg-white">
+            <img
+              src="/icons/tech/snowflake.svg"
+              alt=""
+              width={28}
+              height={28}
+              className="size-7 object-contain"
+            />
+          </span>
+          <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
+            {snowflakePractice.kicker}
+          </p>
+        </div>
         <h2 className="font-display mt-3 max-w-2xl text-3xl leading-tight md:text-4xl">
           {snowflakePractice.heading}
         </h2>
