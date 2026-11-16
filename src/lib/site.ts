@@ -3,7 +3,7 @@ export const site = {
   alsoKnownAs: "3Psolution",
   tagline: "Solutions Redefined",
   description:
-    "3P Solutions delivers construction, renewable energy, municipal services, and Odoo IT from Lahore, for work across Pakistan.",
+    "3P Solutions delivers engineering, consulting, and Odoo IT from Lahore, for work across Pakistan.",
   city: "Lahore",
   country: "Pakistan",
   foundedYear: 2008,
@@ -41,39 +41,39 @@ export function formatAddress() {
 }
 
 export const nav = [
-  { href: "/projects", label: "Projects" },
-  { href: "/renewables", label: "Renewables" },
-  { href: "/municipal-services", label: "Municipal Services" },
+  { href: "/projects", label: "Engineering" },
+  { href: "/municipal-services", label: "Consulting" },
   { href: "/practices/it", label: "IT" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Get In Touch" },
 ] as const;
 
 export const headerLinks = [
-  { href: "/projects", label: "Projects" },
+  { href: "/projects", label: "Engineering" },
   { href: "/about", label: "About" },
 ] as const;
 
 export const serviceMenu = [
   {
-    kicker: "Construction",
+    kicker: "Engineering",
     href: "/projects",
-    slugs: ["construction"],
+    slugs: ["construction", "solar", "wind"],
+    image: "/images/construction.jpg",
+    imageAlt: "Construction crew reviewing a reinforced concrete slab",
   },
   {
-    kicker: "Renewables",
-    href: "/renewables",
-    slugs: ["solar", "wind"],
-  },
-  {
-    kicker: "Municipal",
+    kicker: "Consulting",
     href: "/municipal-services",
     slugs: ["water", "wastewater", "waste"],
+    image: "/images/municipal.jpg",
+    imageAlt: "City skyline at night",
   },
   {
     kicker: "IT",
     href: "/practices/it",
     slugs: ["odoo"],
+    image: "/images/odoo.jpg",
+    imageAlt: "Laptop showing operations dashboards used in ERP work",
   },
 ] as const;
 
@@ -122,7 +122,7 @@ export const services = [
   {
     slug: "construction",
     href: "/projects",
-    kicker: "Construction",
+    kicker: "Engineering",
     title: "Construction Services",
     shortTitle: "Construction",
     summary:
@@ -135,7 +135,7 @@ export const services = [
   {
     slug: "solar",
     href: "/renewables",
-    kicker: "Renewables",
+    kicker: "Engineering",
     title: "Solar Energy Solutions",
     shortTitle: "Solar Energy",
     summary:
@@ -148,7 +148,7 @@ export const services = [
   {
     slug: "water",
     href: "/municipal-services",
-    kicker: "Municipal",
+    kicker: "Consulting",
     title: "Water Supply Management",
     shortTitle: "Water Supply",
     summary:
@@ -161,7 +161,7 @@ export const services = [
   {
     slug: "wastewater",
     href: "/municipal-services",
-    kicker: "Municipal",
+    kicker: "Consulting",
     title: "Wastewater Treatment",
     shortTitle: "Wastewater",
     summary:
@@ -174,7 +174,7 @@ export const services = [
   {
     slug: "waste",
     href: "/municipal-services",
-    kicker: "Municipal",
+    kicker: "Consulting",
     title: "Solid Waste Management",
     shortTitle: "Solid Waste",
     summary:
@@ -187,7 +187,7 @@ export const services = [
   {
     slug: "wind",
     href: "/renewables",
-    kicker: "Renewables",
+    kicker: "Engineering",
     title: "Wind Energy Projects",
     shortTitle: "Wind Energy",
     summary:

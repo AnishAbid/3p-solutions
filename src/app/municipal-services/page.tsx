@@ -9,9 +9,9 @@ import { municipalFaqs } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Municipal Services",
+  title: "Consulting",
   description:
-    "3P Solutions municipal services: urban water supply, wastewater treatment, solid waste, and solar integration.",
+    "3P Solutions consulting: urban water supply, wastewater treatment, solid waste, and solar integration.",
 };
 
 const offerings = [
@@ -57,14 +57,14 @@ export default function MunicipalServicesPage() {
   return (
     <>
       <PageHero
-        kicker="Municipal services"
+        kicker="Consulting"
         title="Empowering communities with sustainable solutions"
         description="Your trusted partner in construction, solar, and environmental management."
         image="/images/municipal.jpg"
         imageAlt="City skyline at night"
       />
       <section className="container-site py-16 md:py-20">
-        <h2 className="text-3xl font-semibold">Our municipal services</h2>
+        <h2 className="text-3xl font-semibold">Consulting</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {offerings.map((item) => (
             <PhotoArticle

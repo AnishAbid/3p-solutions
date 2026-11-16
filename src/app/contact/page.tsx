@@ -11,7 +11,7 @@ import { contact, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Get In Touch",
   description:
-    "Contact 3P Solutions in Lahore about construction, solar energy, or municipal services.",
+    "Contact 3P Solutions in Lahore about engineering, consulting, or Odoo IT.",
 };
 
 export default function ContactPage() {
@@ -20,7 +20,7 @@ export default function ContactPage() {
       <PageHero
         kicker="Get in touch"
         title="Your local experts in construction and sustainable energy solutions."
-        description="Have questions or need assistance? Reach out about construction services, solar energy projects, or municipal services."
+        description="Have questions or need assistance? Reach out about engineering, consulting, or Odoo IT."
         image="/images/solar.jpg"
         imageAlt="Rows of solar panels in an open field"
       />

@@ -8,9 +8,9 @@ import { getStats, team } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Renewables",
+  title: "Engineering · Solar and wind",
   description:
-    "3P Solutions renewable energy: solar installations and wind farms, plus related water and waste work in Pakistan.",
+    "3P Solutions engineering: solar installations and wind farms, plus related water and waste work in Pakistan.",
 };
 
 const renewableServices = [
@@ -56,7 +56,7 @@ export default function RenewablesPage() {
   return (
     <>
       <PageHero
-        kicker="Renewables"
+        kicker="Engineering"
         title="Renewable energy solutions for a sustainable future"
         description="Empowering Pakistan with clean and green energy — solar installations and wind farms, as published on 3psolutions.com.pk."
         image="/images/solar-farm.jpg"

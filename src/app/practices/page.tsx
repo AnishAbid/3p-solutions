@@ -5,12 +5,12 @@ import { ItExperience } from "@/components/it-experience";
 import { PracticeCard } from "@/components/practice-card";
 import { ProductPartners } from "@/components/product-partners";
 import { SolutionPlatforms } from "@/components/solution-platforms";
-import { services } from "@/lib/site";
+import { getService, serviceMenu } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Practices",
   description:
-    "3P Solutions practices: construction, renewables, municipal services, and Odoo IT.",
+    "3P Solutions practices: engineering, consulting, and Odoo IT.",
 };
 
 export default function PracticesPage() {
@@ -18,18 +18,29 @@ export default function PracticesPage() {
     <>
       <PageHero
         kicker="Practices"
-        title="Construction, energy, municipal work — and Odoo."
+        title="Engineering, consulting, and IT."
         description="Field services match 3psolutions.com.pk. The IT practice is Odoo ERP, listed here because it is part of this site’s offering."
         image="/images/construction.jpg"
         imageAlt="Construction crew reviewing a reinforced concrete slab"
       />
-      <section className="container-site py-16 md:py-20">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <PracticeCard key={service.slug} practice={service} />
-          ))}
-        </div>
-      </section>
+      {serviceMenu.map((group) => {
+        const items = group.slugs
+          .map((slug) => getService(slug))
+          .filter((item): item is NonNullable<typeof item> => Boolean(item));
+        return (
+          <section key={group.kicker} className="container-site py-12 md:py-16">
+            <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
+              {group.kicker}
+            </p>
+            <h2 className="mt-2 font-display text-3xl md:text-4xl">{group.kicker}</h2>
+            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {items.map((service) => (
+                <PracticeCard key={service.slug} practice={service} />
+              ))}
+            </div>
+          </section>
+        );
+      })}
       <SolutionPlatforms />
       <ItExperience />
       <ProductPartners />

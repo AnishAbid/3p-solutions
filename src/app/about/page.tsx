@@ -65,7 +65,10 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <dt className="text-white/50">Focus</dt>
-                  <dd>Construction, solar, wind, water, waste, municipal, Odoo</dd>
+                  <dd>
+                    Engineering (construction, solar, wind), consulting (water,
+                    wastewater, solid waste), and Odoo
+                  </dd>
                 </div>
               </dl>
             </div>

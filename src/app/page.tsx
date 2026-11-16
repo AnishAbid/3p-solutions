@@ -133,14 +133,8 @@ export default function Home() {
                   >
                     <div className="relative min-h-[18rem] lg:col-span-7 lg:min-h-[32rem]">
                       <Image
-                        src={
-                          group.kicker === "Renewables"
-                            ? "/images/solar-farm.jpg"
-                            : group.kicker === "Municipal"
-                              ? "/images/municipal.jpg"
-                              : lead.image
-                        }
-                        alt={lead.imageAlt}
+                        src={group.image}
+                        alt={group.imageAlt}
                         fill
                         className="object-cover transition duration-700 hover:scale-[1.03] motion-reduce:transform-none"
                         sizes="(min-width: 1024px) 60vw, 100vw"
@@ -152,30 +146,12 @@ export default function Home() {
                           {String(index + 1).padStart(2, "0")} · {group.kicker}
                         </p>
                         <h3 className="font-display mt-3 text-3xl leading-tight md:text-4xl">
-                          {group.kicker === "Renewables"
-                            ? "Renewable energy solutions for a sustainable future"
-                            : group.kicker === "Municipal"
-                              ? "Empowering communities with sustainable solutions"
-                              : lead.title}
+                          {items.length > 1 ? group.kicker : lead.title}
                         </h3>
                         <p className="mt-4 text-sm leading-relaxed text-white/70 md:text-base">
-                          {group.kicker === "Renewables"
-                            ? `${items.find((item) => item.slug === "solar")?.blurb} ${items.find((item) => item.slug === "wind")?.blurb}`
-                            : group.kicker === "Municipal"
-                              ? items.map((item) => item.summary).join(" ")
-                              : lead.summary}
+                          {items.map((item) => item.summary).join(" ")}
                         </p>
-                        {items.length > 1 && group.kicker !== "Municipal" ? (
-                          <ul className="mt-6 space-y-2 text-sm text-white/80">
-                            {items.map((item) => (
-                              <li key={item.slug} className="flex items-center gap-2">
-                                <span className="size-1.5 rounded-full bg-gold" />
-                                {item.shortTitle}
-                              </li>
-                            ))}
-                          </ul>
-                        ) : null}
-                        {group.kicker === "Municipal" ? (
+                        {items.length > 1 ? (
                           <ul className="mt-6 space-y-2 text-sm text-white/80">
                             {items.map((item) => (
                               <li key={item.slug} className="flex items-center gap-2">

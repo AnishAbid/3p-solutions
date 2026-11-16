@@ -104,7 +104,7 @@ export function ServicesMenu({
               <p className="text-[0.65rem] font-semibold tracking-[0.22em] text-gold uppercase">
                 Practices
               </p>
-              <p className="mt-1 font-heading text-lg">Construction, energy, municipal, Odoo</p>
+              <p className="mt-1 font-heading text-lg">Engineering, consulting, IT</p>
             </div>
             <Link
               href="/practices"
@@ -114,7 +114,7 @@ export function ServicesMenu({
               All practices
             </Link>
           </div>
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-5 md:grid-cols-3">
             {serviceMenu.map((group) => (
               <div key={group.kicker}>
                 <Link

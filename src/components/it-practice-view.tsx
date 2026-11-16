@@ -198,11 +198,11 @@ export function ItPracticeView() {
             </p>
             <h2 className="font-display mt-3 text-3xl md:text-5xl">Odoo ERP</h2>
             <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">
-              Construction, energy, and municipal work still need a system that
-              posts inventory, progress, and invoices in one place. This
-              practice is that system work. It sits alongside the construction,
-              renewables, and municipal services published on
-              3psolutions.com.pk — it does not replace them.
+              Engineering and consulting work still need a system that posts
+              inventory, progress, and invoices in one place. This practice is
+              that system work. It sits alongside the engineering and consulting
+              practices published on 3psolutions.com.pk — it does not replace
+              them.
             </p>
           </Reveal>
           <div className="lg:col-span-7">

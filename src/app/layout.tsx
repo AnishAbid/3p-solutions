@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   keywords: [
     "3P Solutions",
     "construction Pakistan",
+    "engineering",
+    "consulting",
     "solar energy",
     "wind energy",
     "municipal services",

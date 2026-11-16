@@ -20,12 +20,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2 text-sm">
             <li>
               <Link href="/projects" className="text-white/80 hover:text-gold">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link href="/renewables" className="text-white/80 hover:text-gold">
-                Renewables
+                Engineering
               </Link>
             </li>
             <li>
@@ -33,7 +28,7 @@ export function SiteFooter() {
                 href="/municipal-services"
                 className="text-white/80 hover:text-gold"
               >
-                Municipal Services
+                Consulting
               </Link>
             </li>
             <li>

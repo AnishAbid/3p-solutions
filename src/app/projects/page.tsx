@@ -16,9 +16,9 @@ import {
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Engineering",
   description:
-    "3P Solutions projects in construction, solar, water supply, wastewater, wind energy, and municipal services.",
+    "3P Solutions engineering: construction, solar, and wind energy, plus related project work.",
 };
 
 const [construction, ...otherLines] = projectLines;
@@ -40,7 +40,7 @@ export default function ProjectsPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/55 to-navy-deep/25" />
         <div className="relative container-home flex min-h-[min(78vh,44rem)] flex-col justify-end pb-16 pt-24 md:pb-20">
           <p className="text-[0.7rem] font-semibold tracking-[0.28em] text-gold uppercase">
-            Projects · {site.city}
+            Engineering
           </p>
           <h1 className="font-display mt-5 max-w-5xl text-5xl leading-[0.95] font-medium tracking-tight md:text-7xl">
             Showcasing our expertise in diverse fields
@@ -125,7 +125,7 @@ export default function ProjectsPage() {
               <div className="flex flex-col justify-between gap-8 p-8 lg:col-span-5 lg:p-12">
                 <div>
                   <p className="text-[0.65rem] font-semibold tracking-[0.22em] text-gold uppercase">
-                    01 · Construction
+                    01 · Engineering
                   </p>
                   <h3 className="font-display mt-3 text-3xl leading-tight md:text-5xl">
                     {construction.title}

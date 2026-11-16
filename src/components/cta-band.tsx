@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export function CtaBand({
   title = `${site.tagline}.`,
-  body = "Contact 3P Solutions in Lahore about construction, solar and wind energy, or municipal services across Pakistan.",
+  body = "Contact 3P Solutions in Lahore about engineering, consulting, or Odoo IT across Pakistan.",
   href = "/contact",
 }: {
   title?: string;
