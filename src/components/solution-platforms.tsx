@@ -19,8 +19,8 @@ export function SolutionPlatforms() {
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/75 md:text-base">
             These are the systems 3P Solutions already puts in front of customers:
-            Odoo ERP, cloud platforms used in delivery, the OpenAI API, and Subkaro
-            products. Related industry work is listed below.
+            AWS, Azure, the OpenAI API, Subkaro products, and Odoo ERP. Related
+            industry work is listed below.
           </p>
         </Reveal>
         <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">

@@ -31,7 +31,7 @@ The dev server binds to **port 4783** (not 3000):
 | `/renewables` | Redirects to engineering |
 | `/municipal-services` | Consulting |
 | `/practices` | All practices |
-| `/practices/it` | IT · Odoo |
+| `/practices/it` | IT |
 | `/about` | About, values, team |
 | `/contact` | Get in touch |
 | `/legal-notice` | Legal notice |

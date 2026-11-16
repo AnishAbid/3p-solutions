@@ -30,6 +30,9 @@ const homeOrder = [
   "buildings",
   "water-works",
   "site-management",
+  "custom-software",
+  "product-platforms",
+  "cloud-platforms",
   "odoo",
 ] as const;
 

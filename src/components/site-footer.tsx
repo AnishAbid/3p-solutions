@@ -28,7 +28,7 @@ export function SiteFooter() {
             </li>
             <li>
               <Link href="/practices/it" className="text-white/80 hover:text-gold">
-                IT · Odoo
+                IT
               </Link>
             </li>
             <li>

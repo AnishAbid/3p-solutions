@@ -4,6 +4,7 @@ import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/reveal";
 import { TechLogos } from "@/components/tech-logos";
 import {
+  getService,
   itPractice,
   partnerCards,
   productPartner,
@@ -13,28 +14,22 @@ import {
 } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-const pillars = [
-  {
-    title: "Odoo ERP",
-    body: "Accounting, inventory, sales, purchasing, and manufacturing on one set of numbers.",
-    image: "/images/it-network.jpg",
-    imageAlt: "Engineer connecting servers in a network rack",
-  },
-  {
-    title: "Custom software",
-    body: "Web platforms and APIs in TypeScript, Node.js, Nest.js, Python, and React/Next.js.",
-    image: "/images/custom-software.jpg",
-    imageAlt: "Laptop on a desk showing code used in custom web development",
-  },
-  {
-    title: "Product platforms",
-    body: "Software 3P Solutions builds and sells through Subkaro — Order Karu, Manage Karo, Event Karo.",
-    image: "/images/product-platforms.jpg",
-    imageAlt: "Order Karu, Manage Karo, and Event Karo product screens from Subkaro",
-  },
+const itSlugs = [
+  "custom-software",
+  "product-platforms",
+  "cloud-platforms",
+  "odoo",
 ] as const;
 
-const offers = [
+const pillars = itSlugs
+  .map((slug) => getService(slug))
+  .filter((item): item is NonNullable<typeof item> => Boolean(item));
+
+const cloudPlatforms = solutionPlatforms.filter((platform) =>
+  ["AWS", "Azure", "OpenAI API"].includes(platform.name),
+);
+
+const odooOffers = [
   "Accounting, inventory, sales, purchasing, and manufacturing on Odoo",
   "Fit-gap against how finance and operations already work",
   "Data migration, user training, and go-live support",
@@ -61,9 +56,10 @@ const phases = [
 ] as const;
 
 const jumpLinks = [
-  { href: "#odoo", label: "Odoo ERP" },
-  { href: "#platforms", label: "Platforms" },
+  { href: "#software", label: "Custom software" },
   { href: "#products", label: "Subkaro" },
+  { href: "#cloud", label: "Cloud and APIs" },
+  { href: "#odoo", label: "Odoo" },
   { href: "#technologies", label: "Technologies" },
   { href: "#industries", label: "Industries" },
 ] as const;
@@ -77,8 +73,8 @@ export function ItPracticeView() {
     <>
       <section className="relative overflow-hidden bg-navy-deep text-white">
         <Image
-          src="/images/odoo.jpg"
-          alt="Laptop showing operations dashboards used in ERP work"
+          src="/images/custom-software.jpg"
+          alt="Laptop on a desk showing code used in custom web development"
           fill
           priority
           className="object-cover animate-slow-zoom motion-reduce:animate-none"
@@ -92,13 +88,13 @@ export function ItPracticeView() {
             </p>
             <span className="animate-gold-line mt-4 block h-px w-16 bg-gold" />
             <h1 className="animate-rise font-display mt-5 max-w-3xl text-4xl leading-[1.05] font-medium tracking-tight delay-100 md:text-6xl lg:text-[4.25rem]">
-              Odoo, plus custom software platforms.
+              Custom software, products, and platforms.
             </h1>
             <p className="animate-rise mt-6 max-w-xl text-base leading-relaxed text-white/78 delay-200 md:text-lg">
-              3P Solutions’ IT practice implements Odoo — the open-source ERP
-              suite — and custom web platforms, APIs, and delivery with
-              TypeScript, Node.js, Nest.js, Python, and React/Next.js. Local
-              search sometimes writes Odoo as OODO.
+              The IT practice builds custom web platforms and APIs, sells
+              software through Subkaro, uses AWS, Azure, and the OpenAI API in
+              delivery, and implements Odoo ERP. Local search sometimes writes
+              Odoo as OODO.
             </p>
             <p className="animate-rise mt-8 flex items-end gap-4 delay-200">
               <span className="font-display text-5xl leading-none tabular-nums text-gold md:text-6xl">
@@ -157,31 +153,25 @@ export function ItPracticeView() {
       </section>
 
       <section className="relative z-10 container-home -mt-16 pb-6 md:-mt-20">
-        <div className="grid gap-4 lg:grid-cols-12">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {pillars.map((pillar, index) => (
-            <Reveal
-              key={pillar.title}
-              delay={index * 90}
-              className={index === 0 ? "lg:col-span-6" : "lg:col-span-3"}
-            >
+            <Reveal key={pillar.slug} delay={index * 80}>
               <article className="group relative min-h-[18rem] overflow-hidden rounded-2xl lg:min-h-[22rem]">
                 <Image
                   src={pillar.image}
                   alt={pillar.imageAlt}
                   fill
                   className="object-cover transition duration-700 group-hover:scale-105 motion-reduce:transform-none"
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 1280px) 25vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/45 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5 text-white md:p-6">
                   <p className="font-heading text-xs text-gold">
                     {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h2 className="font-display mt-1 text-2xl lg:text-3xl">
-                    {pillar.title}
-                  </h2>
+                  <h2 className="font-display mt-1 text-2xl">{pillar.title}</h2>
                   <p className="mt-3 text-sm leading-relaxed text-white/80">
-                    {pillar.body}
+                    {pillar.summary}
                   </p>
                 </div>
               </article>
@@ -190,124 +180,22 @@ export function ItPracticeView() {
         </div>
       </section>
 
-      <section id="odoo" className="scroll-mt-24 py-16 md:py-24">
-        <div className="container-home grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
-          <Reveal className="lg:sticky lg:top-24 lg:col-span-5">
-            <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
-              What we implement
-            </p>
-            <h2 className="font-display mt-3 text-3xl md:text-5xl">Odoo ERP</h2>
-            <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">
-              Engineering and consulting work still need a system that posts
-              inventory, progress, and invoices in one place. This practice is
-              that system work. It sits alongside the engineering and consulting
-              practices published on 3psolutions.com.pk — it does not replace
-              them.
-            </p>
-          </Reveal>
-          <div className="lg:col-span-7">
-            <Reveal>
-              <ol className="relative space-y-0">
-                <span
-                  aria-hidden
-                  className="animate-gold-line-y absolute top-3 bottom-3 left-[0.9rem] hidden w-px bg-gold/40 md:block"
-                />
-                {offers.map((point, index) => (
-                  <li
-                    key={point}
-                    className="relative flex gap-5 py-4 md:pl-1"
-                  >
-                    <span className="relative z-10 flex size-8 shrink-0 items-center justify-center rounded-full border border-gold/50 bg-background font-heading text-xs text-gold">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <p className="pt-1 text-base leading-relaxed">{point}</p>
-                  </li>
-                ))}
-              </ol>
-            </Reveal>
-            <Reveal delay={120} className="mt-10 border-t pt-10">
-              <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
-                Delivery
-              </p>
-              <h3 className="font-display mt-2 text-2xl md:text-3xl">
-                A sequence finance can recognise.
-              </h3>
-              <div className="mt-8 grid gap-8 sm:grid-cols-2">
-                {phases.map((phase, index) => (
-                  <div key={phase.title} className="border-l border-gold/40 pl-4">
-                    <p className="font-heading text-xs text-gold">
-                      {String(index + 1).padStart(2, "0")} · {phase.title}
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {phase.body}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="platforms"
-        className="scroll-mt-24 overflow-hidden bg-navy text-white"
-      >
-        <div className="container-home grid gap-12 py-16 md:py-24 lg:grid-cols-12 lg:items-end">
+      <section id="software" className="scroll-mt-24 py-16 md:py-24">
+        <div className="container-home grid items-start gap-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
             <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
-              Solution platforms
+              Custom software
             </p>
-            <h2 className="font-display mt-3 text-3xl leading-tight md:text-5xl">
-              Platforms we implement and sell.
+            <h2 className="font-display mt-3 text-3xl md:text-5xl">
+              Web platforms and APIs
             </h2>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-white/75 md:text-base">
-              These are the systems 3P Solutions already puts in front of
-              customers: Odoo ERP, cloud platforms used in delivery, the OpenAI
-              API, and Subkaro products. Related industry work is listed below.
+            <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">
+              {itPractice.techIntro}
             </p>
           </Reveal>
-          <div className="lg:col-span-7">
-            <ul className="grid gap-3 sm:grid-cols-2">
-              {solutionPlatforms.map((platform, index) => (
-                <li
-                  key={platform.name}
-                  className={index === 0 ? "sm:col-span-2" : undefined}
-                >
-                  <Reveal delay={index * 70}>
-                    <a
-                      href={platform.href}
-                      target="_blank"
-                      rel="noopener"
-                      className={cn(
-                        "group flex h-full items-start gap-4 rounded-2xl border border-white/15 bg-white/5 p-5 transition duration-500 hover:border-gold/50 hover:bg-white/10",
-                        index === 0 && "sm:p-7",
-                      )}
-                    >
-                      <PlatformMark platform={platform} large={index === 0} />
-                      <span className="min-w-0 flex-1">
-                        <span
-                          className={cn(
-                            "font-display block",
-                            index === 0 ? "text-3xl" : "text-xl",
-                          )}
-                        >
-                          {platform.name}
-                        </span>
-                        <span className="mt-2 block text-sm leading-relaxed text-white/70">
-                          {platform.summary}
-                        </span>
-                        <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold">
-                          Open {platform.name}
-                          <ArrowUpRight className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
-                        </span>
-                      </span>
-                    </a>
-                  </Reveal>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <Reveal delay={80} className="lg:col-span-7">
+            <TechLogos />
+          </Reveal>
         </div>
       </section>
 
@@ -315,7 +203,7 @@ export function ItPracticeView() {
         <div className="container-home">
           <Reveal>
             <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
-              Product partners
+              Product platforms
             </p>
             <h2 className="font-display mt-3 max-w-2xl text-3xl leading-tight md:text-5xl">
               Software products from {productPartner.name}
@@ -400,7 +288,108 @@ export function ItPracticeView() {
         </div>
       </section>
 
-      <section id="technologies" className="scroll-mt-24 py-16 md:py-24">
+      <section
+        id="cloud"
+        className="scroll-mt-24 overflow-hidden bg-navy text-white"
+      >
+        <div className="container-home py-16 md:py-24">
+          <Reveal>
+            <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
+              Cloud and APIs
+            </p>
+            <h2 className="font-display mt-3 max-w-2xl text-3xl leading-tight md:text-5xl">
+              AWS, Azure, and the OpenAI API.
+            </h2>
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/75 md:text-base">
+              Cloud platforms used in delivery, and the OpenAI API for search,
+              reports, and product features.
+            </p>
+          </Reveal>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-3">
+            {cloudPlatforms.map((platform, index) => (
+              <li key={platform.name}>
+                <Reveal delay={index * 70}>
+                  <a
+                    href={platform.href}
+                    target="_blank"
+                    rel="noopener"
+                    className="group flex h-full flex-col rounded-2xl border border-white/15 bg-white/5 p-6 transition duration-500 hover:border-gold/50 hover:bg-white/10"
+                  >
+                    <PlatformMark platform={platform} />
+                    <span className="font-display mt-4 text-2xl">
+                      {platform.name}
+                    </span>
+                    <span className="mt-2 flex-1 text-sm leading-relaxed text-white/70">
+                      {platform.summary}
+                    </span>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold">
+                      Open {platform.name}
+                      <ArrowUpRight className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none" />
+                    </span>
+                  </a>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section id="odoo" className="scroll-mt-24 py-16 md:py-24">
+        <div className="container-home grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
+          <Reveal className="lg:sticky lg:top-24 lg:col-span-5">
+            <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
+              Odoo
+            </p>
+            <h2 className="font-display mt-3 text-3xl md:text-5xl">Odoo ERP</h2>
+            <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">
+              Engineering and consulting work still need a system that posts
+              inventory, progress, and invoices in one place. Odoo is one of
+              the platforms this practice implements. Local search sometimes
+              writes Odoo as OODO.
+            </p>
+          </Reveal>
+          <div className="lg:col-span-7">
+            <Reveal>
+              <ol className="relative space-y-0">
+                <span
+                  aria-hidden
+                  className="animate-gold-line-y absolute top-3 bottom-3 left-[0.9rem] hidden w-px bg-gold/40 md:block"
+                />
+                {odooOffers.map((point, index) => (
+                  <li key={point} className="relative flex gap-5 py-4 md:pl-1">
+                    <span className="relative z-10 flex size-8 shrink-0 items-center justify-center rounded-full border border-gold/50 bg-background font-heading text-xs text-gold">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <p className="pt-1 text-base leading-relaxed">{point}</p>
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
+            <Reveal delay={120} className="mt-10 border-t pt-10">
+              <p className="text-[0.7rem] font-semibold tracking-[0.22em] text-gold uppercase">
+                Delivery
+              </p>
+              <h3 className="font-display mt-2 text-2xl md:text-3xl">
+                A sequence finance can recognise.
+              </h3>
+              <div className="mt-8 grid gap-8 sm:grid-cols-2">
+                {phases.map((phase, index) => (
+                  <div key={phase.title} className="border-l border-gold/40 pl-4">
+                    <p className="font-heading text-xs text-gold">
+                      {String(index + 1).padStart(2, "0")} · {phase.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {phase.body}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section id="technologies" className="scroll-mt-24 border-t py-16 md:py-24">
         <div className="container-home">
           <Reveal>
             <h2 className="font-display max-w-2xl text-3xl md:text-5xl">
@@ -438,10 +427,7 @@ export function ItPracticeView() {
             <div className="grid gap-4 lg:col-span-5">
               {stackedIndustries.map((industry, index) => (
                 <Reveal key={industry.name} delay={(index + 1) * 80}>
-                  <IndustryFeature
-                    industry={industry}
-                    index={index + 1}
-                  />
+                  <IndustryFeature industry={industry} index={index + 1} />
                 </Reveal>
               ))}
             </div>
@@ -458,7 +444,7 @@ export function ItPracticeView() {
 
       <CtaBand
         title="Talk to the IT practice."
-        body="Bring the chart of accounts, the warehouse list, and the pain. 3P Solutions in Lahore implements Odoo and the platforms above."
+        body="3P Solutions in Lahore builds custom software, Subkaro products, cloud delivery on AWS and Azure, OpenAI API features, and Odoo."
         href="/contact"
       />
     </>
@@ -552,4 +538,3 @@ function IndustryFeature({
     </article>
   );
 }
-

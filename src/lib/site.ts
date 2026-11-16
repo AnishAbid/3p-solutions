@@ -72,9 +72,9 @@ export const serviceMenu = [
   {
     kicker: "IT",
     href: "/practices/it",
-    slugs: ["odoo"],
-    image: "/images/odoo.jpg",
-    imageAlt: "Laptop showing operations dashboards used in ERP work",
+    slugs: ["custom-software", "product-platforms", "cloud-platforms", "odoo"],
+    image: "/images/custom-software.jpg",
+    imageAlt: "Laptop on a desk showing code used in custom web development",
   },
   {
     kicker: "Engineering",
@@ -102,9 +102,9 @@ export const heroSlides = [
     label: "Consulting",
   },
   {
-    src: "/images/odoo.jpg",
-    alt: "Laptop showing operations dashboards used in ERP work",
-    label: "Odoo",
+    src: "/images/custom-software.jpg",
+    alt: "Laptop on a desk showing code used in custom web development",
+    label: "IT",
   },
 ] as const;
 
@@ -185,8 +185,58 @@ export const services = [
     imageAlt: "Students in a classroom watching a lesson on a projector",
   },
   {
+    slug: "custom-software",
+    href: "/practices/it#software",
+    kicker: "IT",
+    title: "Custom software",
+    shortTitle: "Custom software",
+    summary:
+      "Web platforms and APIs in TypeScript, Node.js, Nest.js, Python, and React/Next.js.",
+    blurb:
+      "Custom web platforms, APIs, and delivery with TypeScript, Node.js, Nest.js, Python, and React/Next.js.",
+    points: [
+      "Web platforms and APIs",
+      "TypeScript, Node.js, Nest.js, Python, and React/Next.js",
+    ],
+    image: "/images/custom-software.jpg",
+    imageAlt: "Laptop on a desk showing code used in custom web development",
+  },
+  {
+    slug: "product-platforms",
+    href: "/practices/it#products",
+    kicker: "IT",
+    title: "Product platforms",
+    shortTitle: "Subkaro",
+    summary:
+      "Software 3P Solutions builds and sells through Subkaro — Order Karu, Manage Karo, Event Karo.",
+    blurb:
+      "Subkaro products: Order Karu, Manage Karo, and Event Karo.",
+    points: [
+      "Subkaro",
+      "Order Karu",
+      "Manage Karo",
+      "Event Karo",
+    ],
+    image: "/images/product-platforms.jpg",
+    imageAlt: "Order Karu, Manage Karo, and Event Karo product screens from Subkaro",
+  },
+  {
+    slug: "cloud-platforms",
+    href: "/practices/it#cloud",
+    kicker: "IT",
+    title: "Cloud and APIs",
+    shortTitle: "AWS, Azure, OpenAI",
+    summary:
+      "Cloud platforms used in delivery, and the OpenAI API for search, reports, and product features.",
+    blurb:
+      "AWS, Azure, and the OpenAI API used in application delivery.",
+    points: ["AWS", "Azure", "OpenAI API"],
+    image: "/images/industries/it-services.jpg",
+    imageAlt: "Network cables in a server rack",
+  },
+  {
     slug: "odoo",
-    href: "/practices/it",
+    href: "/practices/it#odoo",
     kicker: "IT",
     title: "Odoo",
     shortTitle: "Odoo",
@@ -194,7 +244,10 @@ export const services = [
       "Odoo ERP for finance, inventory, manufacturing, and operations — implemented so the books, the warehouse, and the site can share one set of numbers.",
     blurb:
       "Odoo implementation, configuration, training, and support. (Sometimes searched as OODO.)",
-    points: [] as const,
+    points: [
+      "Accounting, inventory, sales, purchasing, and manufacturing",
+      "Fit-gap, data migration, training, and go-live support",
+    ],
     image: "/images/odoo.jpg",
     imageAlt: "Laptop showing operations dashboards used in ERP work",
   },
@@ -509,13 +562,6 @@ export const itPractice = {
 /** Platforms 3P Solutions already implements or sells. Vendor names we are not authorised to show are omitted. */
 export const solutionPlatforms = [
   {
-    name: "Odoo",
-    href: "https://www.odoo.com/",
-    icon: "/icons/tech/odoo.svg",
-    summary:
-      "ERP for accounting, inventory, sales, purchasing, and manufacturing.",
-  },
-  {
     name: "AWS",
     href: "https://aws.amazon.com/",
     icon: "/icons/tech/aws.svg",
@@ -538,6 +584,13 @@ export const solutionPlatforms = [
     href: "https://www.subkaro.com/",
     icon: "",
     summary: "Software products we build and sell: Order Karu, Manage Karo, and Event Karo.",
+  },
+  {
+    name: "Odoo",
+    href: "https://www.odoo.com/",
+    icon: "/icons/tech/odoo.svg",
+    summary:
+      "ERP for accounting, inventory, sales, purchasing, and manufacturing.",
   },
 ] as const;
 
@@ -607,7 +660,7 @@ export const faqs = [
     id: "types",
     question: "What types of projects does 3P Solutions undertake?",
     answer:
-      "Engineering contracting covers roads and earthworks, buildings and structures, water, drainage and flood protection, and project and site management. Consulting covers financial modelling and feasibility, business plans and JV proposals, tender and procurement support, and regulatory and compliance documentation. IT covers Odoo and Subkaro products.",
+      "Engineering contracting covers roads and earthworks, buildings and structures, water, drainage and flood protection, and project and site management. Consulting covers financial modelling and feasibility, business plans and JV proposals, tender and procurement support, and regulatory and compliance documentation. IT covers custom software, Subkaro products, AWS, Azure, the OpenAI API, and Odoo.",
   },
   {
     id: "where",

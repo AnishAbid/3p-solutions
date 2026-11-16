@@ -34,8 +34,9 @@ export default function AboutPage() {
               in consulting, IT, and engineering contracting.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              The IT practice implements Odoo (also searched as OODO) and
-              Subkaro products. No named IT clients are listed on this site.
+              The IT practice covers custom software, Subkaro products, AWS,
+              Azure, the OpenAI API, and Odoo (also searched as OODO). No named
+              IT clients are listed on this site.
             </p>
           </div>
           <aside className="lg:col-span-5">

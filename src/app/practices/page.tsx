@@ -10,7 +10,7 @@ import { getService, serviceMenu } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Practices",
   description:
-    "3P Solutions practices: engineering, consulting, and Odoo IT.",
+    "3P Solutions practices: engineering, consulting, and IT.",
 };
 
 export default function PracticesPage() {
@@ -19,7 +19,7 @@ export default function PracticesPage() {
       <PageHero
         kicker="Practices"
         title="Consulting, IT, and engineering contracting."
-        description="Consulting services, IT (Odoo and Subkaro), and engineering contracting. The IT practice is listed here because it is part of this site’s offering."
+        description="Consulting services, IT (custom software, Subkaro, cloud platforms, and Odoo), and engineering contracting."
         image="/images/construction.jpg"
         imageAlt="Construction crew reviewing a reinforced concrete slab"
       />
