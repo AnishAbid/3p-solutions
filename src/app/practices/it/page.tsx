@@ -73,7 +73,7 @@ export default function ItPracticePage() {
   return (
     <>
       <PageHero
-        kicker={`IT practice · ${site.tagline}`}
+        kicker="IT practice"
         title="Odoo, plus custom software platforms."
         description="3P Solutions’ IT practice implements Odoo — the open-source ERP suite — and custom web platforms, APIs, and delivery with TypeScript, Node.js, Nest.js, Python, and React/Next.js. Local search sometimes writes Odoo as OODO."
         image="/images/odoo.jpg"

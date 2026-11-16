@@ -36,7 +36,6 @@ const catalog = homeOrder
   .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
 const marqueeLabels = [
-  site.tagline,
   ...services.map((item) => item.shortTitle),
   site.city,
   site.country,

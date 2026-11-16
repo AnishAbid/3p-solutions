@@ -35,7 +35,7 @@ export function SiteLogo({
         </span>
         <span
           className={cn(
-            "mt-1 text-[0.65rem] font-medium tracking-[0.2em] uppercase",
+            "mt-1 text-[0.65rem] font-medium tracking-wide",
             light ? "text-gold" : "text-muted-foreground",
           )}
         >
