@@ -34,6 +34,8 @@ Licenses allow commercial use:
 | `industries/education.jpg` | Unsplash `photo-1509062522246` | IT industries · Education |
 | `industries/it-services.jpg` | Unsplash `photo-1558494949` | IT industries · IT services |
 
+| `logo.png` | Supplied by 3P Solutions (company mark, transparent background) | Header, footer, favicon |
+
 ## Tech logos
 
-SVG marks in `public/icons/tech/` are from [Simple Icons](https://simpleicons.org/) ([CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md)). Azure is the Simple Icons v12 mark (later versions dropped it). They were not copied from 3psolutions.com.pk.
+SVG marks in `public/icons/tech/` are from [Simple Icons](https://simpleicons.org/) ([CC0 1.0](https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md)). Azure is the Simple Icons v12 mark (later versions dropped it). Snowflake uses the Simple Icons mark with brand fill `#29B5E8`. They were not copied from 3psolutions.com.pk.

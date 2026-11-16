@@ -15,7 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { contact, resolveServiceSlug, services } from "@/lib/site";
+import { contact, enquiryOptions, resolveServiceSlug } from "@/lib/site";
 
 type FormState = "empty" | "editing" | "error" | "submitting" | "success";
 
@@ -219,7 +219,7 @@ export function ContactForm() {
             <SelectValue placeholder="Select a service" />
           </SelectTrigger>
           <SelectContent alignItemWithTrigger={false} align="start">
-            {services.map((service) => (
+            {enquiryOptions.map((service) => (
               <SelectItem key={service.slug} value={service.slug}>
                 {service.title}
               </SelectItem>
@@ -284,6 +284,6 @@ function Field({
 }
 
 function getServiceLabel(slug: string) {
-  const match = services.find((item) => item.slug === slug);
+  const match = enquiryOptions.find((item) => item.slug === slug);
   return match ? match.title : slug;
 }

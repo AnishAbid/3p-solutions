@@ -17,12 +17,16 @@ export default function LegalNoticePage() {
       />
       <section className="container-site max-w-2xl py-16">
         <p className="font-heading text-2xl">{site.name}</p>
-        <p className="mt-1 text-sm text-muted-foreground">3psolutions.com.pk</p>
+        <p className="mt-1 text-sm text-muted-foreground">
+          {contact.websiteDisplay}
+        </p>
         <address className="mt-8 space-y-3 text-sm leading-relaxed not-italic">
           <p>
-            {contact.addressLine}
-            <br />
-            {contact.city} {contact.postalCode}
+            {contact.addressLines.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
           </p>
           <p>
             Phone:{" "}
@@ -34,6 +38,17 @@ export default function LegalNoticePage() {
             Email:{" "}
             <a className="text-navy underline" href={`mailto:${contact.email}`}>
               {contact.email}
+            </a>
+          </p>
+          <p>
+            Website:{" "}
+            <a
+              className="text-navy underline"
+              href={contact.websiteHref}
+              target="_blank"
+              rel="noopener"
+            >
+              {contact.websiteDisplay}
             </a>
           </p>
         </address>

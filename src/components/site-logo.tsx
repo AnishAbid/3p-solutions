@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { site } from "@/lib/site";
 
 export function SiteLogo({
   className,
@@ -19,17 +21,17 @@ export function SiteLogo({
         className,
       )}
     >
-      <span
-        className={cn(
-          "flex size-9 shrink-0 items-center justify-center font-heading text-sm font-semibold tracking-wide",
-          light ? "bg-gold text-navy" : "bg-navy text-gold",
-        )}
-      >
-        3P
-      </span>
+      <Image
+        src="/images/logo.png"
+        alt=""
+        width={40}
+        height={38}
+        className="size-9 object-contain"
+        priority
+      />
       <span className="flex min-w-0 flex-col leading-none">
         <span className="font-heading text-[1.05rem] font-semibold tracking-wide">
-          3P Solutions
+          {site.name}
         </span>
         <span
           className={cn(
@@ -37,7 +39,7 @@ export function SiteLogo({
             light ? "text-gold" : "text-muted-foreground",
           )}
         >
-          3Psolution
+          {site.alsoKnownAs}
         </span>
       </span>
     </Link>

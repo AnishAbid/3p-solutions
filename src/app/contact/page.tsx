@@ -53,9 +53,11 @@ export default function ContactPage() {
               <div>
                 <dt className="text-muted-foreground">Address</dt>
                 <dd className="mt-1 font-medium">
-                  {contact.addressLine}
-                  <br />
-                  {contact.postalCode} {contact.city}
+                  {contact.addressLines.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
                 </dd>
               </div>
               <div>
@@ -71,6 +73,14 @@ export default function ContactPage() {
                 </dd>
               </div>
               <div>
+                <dt className="text-muted-foreground">Website</dt>
+                <dd className="mt-1 font-medium">
+                  <a href={contact.websiteHref} target="_blank" rel="noopener">
+                    {contact.websiteDisplay}
+                  </a>
+                </dd>
+              </div>
+              <div>
                 <dt className="text-muted-foreground">Hours</dt>
                 <dd className="mt-1 space-y-1 font-medium">
                   {contact.hours.map((row) => (
@@ -82,8 +92,7 @@ export default function ContactPage() {
               </div>
             </dl>
             <p className="mt-6 border-t pt-4 text-xs leading-relaxed text-muted-foreground">
-              Details as published on 3psolutions.com.pk (Get In Touch and
-              footer).
+              Address, phone, email, and website as supplied by 3P Solutions.
             </p>
           </div>
         </aside>

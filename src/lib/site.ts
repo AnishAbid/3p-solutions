@@ -9,13 +9,16 @@ export const site = {
 } as const;
 
 export const contact = {
-  addressLine: "123 Construction Lane",
-  postalCode: "54000",
+  addressLines: [
+    "SF 10, D.G Commercial Arcade",
+    "Divine Gardens, New Airport Road, Lahore",
+  ],
   city: "Lahore",
-  phoneDisplay: "+92 123 4567890",
-  phoneAltDisplay: "+92 123 456 7890",
-  phoneHref: "tel:+921234567890",
+  phoneDisplay: "+92 323 417 6685",
+  phoneHref: "tel:+923234176685",
   email: "info@3psolutions.com.pk",
+  websiteDisplay: "www.3psolutions.com.pk",
+  websiteHref: "https://www.3psolutions.com.pk",
   hours: [
     { day: "Monday", hours: "9:00 AM - 5:00 PM" },
     { day: "Tuesday", hours: "9:00 AM - 5:00 PM" },
@@ -26,6 +29,10 @@ export const contact = {
     { day: "Sunday", hours: "Closed" },
   ],
 } as const;
+
+export function formatAddress() {
+  return contact.addressLines.join(", ");
+}
 
 export const nav = [
   { href: "/projects", label: "Projects" },
@@ -241,7 +248,7 @@ export const partnerCards = [productPartner, ...partnerProducts] as const;
 export const itPractice = {
   techHeading: "Technologies",
   techIntro:
-    "These are the languages, frameworks, and cloud platforms used to design, build, and run web applications, APIs, and delivery pipelines — including TypeScript, JavaScript, Python, PHP, React, Next.js, Angular, Node.js, Nest.js, GraphQL, and AWS.",
+    "These are the languages, frameworks, and cloud platforms used to design, build, and run web applications, APIs, and delivery pipelines — including TypeScript, JavaScript, Python, PHP, React, Next.js, Angular, Node.js, Nest.js, GraphQL, AWS, and Snowflake.",
   industriesHeading: "Industries",
   industriesIntro:
     "Software delivered in the sectors below: marketplaces, core-banking services, live streaming, operational audits, bookings, education, and IT-services platforms. This is the kind of work, not a list of employers or named products.",
@@ -263,6 +270,7 @@ export const itPractice = {
     { name: "MySQL", file: "mysql.svg" },
     { name: "AWS", file: "aws.svg" },
     { name: "Azure", file: "azure.svg" },
+    { name: "Snowflake", file: "snowflake.svg" },
     { name: "Docker", file: "docker.svg" },
     { name: "CI/CD", file: "cicd.svg" },
     { name: "Stripe", file: "stripe.svg" },
@@ -280,6 +288,7 @@ export const itPractice = {
     "Nest.js",
     "GraphQL",
     "AWS",
+    "Snowflake",
     "OpenAI API",
   ],
   industries: [
@@ -287,6 +296,8 @@ export const itPractice = {
       name: "Real estate",
       summary:
         "Job marketplaces for field agents, workflow automation for day-to-day operations, natural-language property search, and automated market reports covering pricing, comparables, yields, and ROI.",
+      snowflakeLine:
+        "This industry’s operational data can sit in Snowflake for reporting and AI.",
       tech: ["TypeScript", "Node.js", "Nest.js", "GraphQL", "Python", "OpenAI API", "AWS"],
       image: "/images/industries/real-estate.jpg",
       imageAlt: "House keys beside a model home on a desk",
@@ -295,6 +306,8 @@ export const itPractice = {
       name: "Banking and financial services",
       summary:
         "Large-scale microservices with Angular frontends, connecting new services to existing core-banking data and transactions.",
+      snowflakeLine:
+        "This industry’s operational data can sit in Snowflake for reporting and AI.",
       tech: ["Node.js", "Microservices", "Angular"],
       image: "/images/industries/banking.jpg",
       imageAlt: "Payment cards used in banking and financial services",
@@ -311,6 +324,8 @@ export const itPractice = {
       name: "Food, hospitality, and entertainment",
       summary:
         "Internal audit software aligned with food-industry compliance, and booking-style APIs that combine venue and hospitality services.",
+      snowflakeLine:
+        "This industry’s operational data can sit in Snowflake for reporting and AI.",
       tech: ["APIs", "Full-stack"],
       image: "/images/industries/hospitality.jpg",
       imageAlt: "Plated dish served at a restaurant table",
@@ -319,6 +334,8 @@ export const itPractice = {
       name: "Education",
       summary:
         "API-driven sites with live lecture streaming and student interaction.",
+      snowflakeLine:
+        "This industry’s operational data can sit in Snowflake for reporting and AI.",
       tech: ["PHP", "CodeIgniter", "MySQL", "AWS"],
       image: "/images/industries/education.jpg",
       imageAlt: "Students in a classroom watching a lesson on a projector",
@@ -333,6 +350,76 @@ export const itPractice = {
     },
   ],
 } as const;
+
+export const snowflakeWorkloads = itPractice.industries.filter(
+  (industry): industry is (typeof itPractice.industries)[number] & {
+    snowflakeLine: string;
+  } => "snowflakeLine" in industry,
+);
+
+/** Snowflake product names and URLs as published on snowflake.com. Not a Partner Network claim. */
+export const snowflakePractice = {
+  href: "/practices/it/snowflake",
+  kicker: "Data cloud · Snowflake",
+  heading: "Snowflake for companies in Pakistan",
+  summary:
+    "3P Solutions implements Snowflake for companies in Pakistan so operational systems — Odoo, custom apps, and Subkaro products — land in one governed place for analytics and AI.",
+  sourceHref: "https://www.snowflake.com/en/",
+  sourceLabel: "snowflake.com",
+  products: [
+    {
+      name: "Platform",
+      href: "https://www.snowflake.com/en/product/",
+      summary:
+        "A fully managed AI Data Cloud, connected across the data estate.",
+    },
+    {
+      name: "Data Engineering",
+      href: "https://www.snowflake.com/en/product/data-engineering/",
+      summary:
+        "Reliable, continuous data pipelines in the language of your choice.",
+    },
+    {
+      name: "Analytics",
+      href: "https://www.snowflake.com/en/product/analytics/",
+      summary: "Analytics on governed data with near-zero maintenance.",
+    },
+    {
+      name: "AI / Cortex",
+      href: "https://www.snowflake.com/en/product/features/cortex/",
+      summary:
+        "LLMs and ML models customized with your data, including Cortex AI.",
+    },
+    {
+      name: "Collaboration",
+      href: "https://www.snowflake.com/en/product/applications-and-collaboration/",
+      summary:
+        "Share live data across clouds and organisations, and scale data apps.",
+    },
+  ],
+  flow: [
+    {
+      title: "Odoo, apps, Subkaro",
+      body: "Operational systems already in use: Odoo ERP, custom applications, and Subkaro products.",
+    },
+    {
+      title: "Snowflake",
+      body: "The AI Data Cloud — one governed place for engineering, analytics, and AI.",
+    },
+    {
+      title: "Dashboards and AI",
+      body: "Reporting, dashboards, and AI on that same governed data.",
+    },
+  ],
+} as const;
+
+export const enquiryOptions = [
+  ...services.map((service) => ({
+    slug: service.slug,
+    title: service.title,
+  })),
+  { slug: "snowflake", title: "IT · Snowflake" },
+] as const;
 
 export const stats = [
   { value: "10", label: "Years in business" },
@@ -517,6 +604,7 @@ const legacyQuery: Record<string, ServiceSlug> = {
 
 export function resolveServiceSlug(raw: string | null) {
   if (!raw) return "";
+  if (enquiryOptions.some((item) => item.slug === raw)) return raw;
   if (services.some((item) => item.slug === raw)) return raw;
   return legacyQuery[raw] ?? "";
 }

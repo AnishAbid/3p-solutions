@@ -5,9 +5,11 @@ import { cn } from "@/lib/utils";
 export function CtaBand({
   title = "Build a sustainable future with us",
   body = "Contact 3P Solutions in Lahore about construction, solar and wind energy, or municipal services across Pakistan.",
+  href = "/contact",
 }: {
   title?: string;
   body?: string;
+  href?: string;
 }) {
   return (
     <section className="bg-navy text-white">
@@ -20,7 +22,7 @@ export function CtaBand({
           <p className="mt-4 text-white/75">{body}</p>
         </div>
         <Link
-          href="/contact"
+          href={href}
           className={cn(
             buttonVariants({ size: "lg" }),
             "h-11 bg-gold px-6 text-navy hover:bg-gold/90",

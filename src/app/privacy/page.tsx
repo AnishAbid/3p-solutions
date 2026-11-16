@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
-import { contact, site } from "@/lib/site";
+import { contact, formatAddress, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -20,8 +20,7 @@ export default function PrivacyPage() {
         <div>
           <h2 className="text-xl font-semibold text-foreground">Who is responsible</h2>
           <p className="mt-3">
-            Enquiries on this site are for {site.name}, {contact.addressLine},{" "}
-            {contact.postalCode} {contact.city}. Email{" "}
+            Enquiries on this site are for {site.name}, {formatAddress()}. Email{" "}
             <a className="text-navy underline" href={`mailto:${contact.email}`}>
               {contact.email}
             </a>

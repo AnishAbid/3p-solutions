@@ -41,6 +41,14 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link
+                href="/practices/it/snowflake"
+                className="text-white/80 hover:text-gold"
+              >
+                IT · Snowflake
+              </Link>
+            </li>
+            <li>
               <Link href="/about" className="text-white/80 hover:text-gold">
                 About
               </Link>
@@ -75,9 +83,11 @@ export function SiteFooter() {
           </p>
           <address className="mt-4 space-y-2 text-sm leading-relaxed text-white/70 not-italic">
             <p>
-              {contact.addressLine}
-              <br />
-              {contact.postalCode} {contact.city}
+              {contact.addressLines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
             </p>
             <p>
               <a href={contact.phoneHref} className="hover:text-gold">
@@ -87,6 +97,16 @@ export function SiteFooter() {
             <p>
               <a href={`mailto:${contact.email}`} className="hover:text-gold">
                 {contact.email}
+              </a>
+            </p>
+            <p>
+              <a
+                href={contact.websiteHref}
+                target="_blank"
+                rel="noopener"
+                className="hover:text-gold"
+              >
+                {contact.websiteDisplay}
               </a>
             </p>
           </address>
