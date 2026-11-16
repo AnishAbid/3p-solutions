@@ -4,6 +4,7 @@ import { PageHero } from "@/components/page-hero";
 import { ItExperience } from "@/components/it-experience";
 import { PracticeCard } from "@/components/practice-card";
 import { ProductPartners } from "@/components/product-partners";
+import { SolutionPlatforms } from "@/components/solution-platforms";
 import { services } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function PracticesPage() {
           ))}
         </div>
       </section>
+      <SolutionPlatforms />
       <ItExperience />
       <ProductPartners />
       <CtaBand />

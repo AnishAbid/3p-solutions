@@ -2,7 +2,7 @@
 
 Marketing site for **3P Solutions** (also written **3Psolution**), a Lahore-based firm for construction and renewable energy in Pakistan. Copy and contact details follow [3psolutions.com.pk](https://3psolutions.com.pk/).
 
-Services include construction, solar energy, wind energy, water supply, wastewater treatment, solid waste, municipal services, Odoo IT (sometimes searched as OODO), and Snowflake implementation for companies in Pakistan.
+Services include construction, solar energy, wind energy, water supply, wastewater treatment, solid waste, municipal services, and Odoo IT (sometimes searched as OODO).
 
 The contact form validates in the browser (empty / error / success). Enquiries are also directed to **info@3psolutions.com.pk**.
 
@@ -31,8 +31,7 @@ The dev server binds to **port 4783** (not 3000):
 | `/renewables` | Solar, wind, and related work |
 | `/municipal-services` | Water, wastewater, waste, municipal |
 | `/practices` | All practices |
-| `/practices/it` | IT · Odoo and Snowflake |
-| `/practices/it/snowflake` | Snowflake pitch page |
+| `/practices/it` | IT · Odoo |
 | `/about` | About, values, team |
 | `/contact` | Get in touch |
 | `/legal-notice` | Legal notice |

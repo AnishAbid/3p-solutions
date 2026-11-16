@@ -146,11 +146,10 @@ Only if you later drop `output: 'export'` and restore a Node server. Shared cPan
    - `https://3psolutions.com.pk/renewables`
    - `https://3psolutions.com.pk/municipal-services`
    - `https://3psolutions.com.pk/practices/it`
-   - `https://3psolutions.com.pk/practices/it/snowflake`
    - `https://3psolutions.com.pk/about`
    - `https://3psolutions.com.pk/contact`
    - `https://3psolutions.com.pk/practices/engineering` → `/projects`
    - `https://3psolutions.com.pk/practices/consulting` → `/municipal-services`
 
-6. Contact form: empty / validation error / success still work in the browser. Query strings such as `/contact?practice=odoo` and `/contact?practice=snowflake` are read on the client.
+6. Contact form: empty / validation error / success still work in the browser. Query strings such as `/contact?practice=odoo` are read on the client.
 7. Keep the WP backup until you are sure you will not roll back.

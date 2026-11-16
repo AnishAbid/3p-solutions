@@ -100,11 +100,6 @@ export function ItExperience({
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {industry.summary}
                   </p>
-                  {"snowflakeLine" in industry ? (
-                    <p className="mt-3 text-sm leading-relaxed text-navy">
-                      {industry.snowflakeLine}
-                    </p>
-                  ) : null}
                   <p className="mt-4 text-xs tracking-wide text-navy/70">
                     {industry.tech.join(" · ")}
                   </p>

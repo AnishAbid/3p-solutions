@@ -42,14 +42,6 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link
-                href="/practices/it/snowflake"
-                className="text-white/80 hover:text-gold"
-              >
-                IT · Snowflake
-              </Link>
-            </li>
-            <li>
               <Link href="/about" className="text-white/80 hover:text-gold">
                 About
               </Link>

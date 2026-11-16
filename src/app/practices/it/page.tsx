@@ -6,19 +6,18 @@ import { CtaBand } from "@/components/cta-band";
 import { ItExperience } from "@/components/it-experience";
 import { PageHero } from "@/components/page-hero";
 import { ProductPartners } from "@/components/product-partners";
-import { SnowflakeDataCloud } from "@/components/snowflake-data-cloud";
+import { SolutionPlatforms } from "@/components/solution-platforms";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "IT · Odoo and Snowflake",
+  title: "IT · Odoo",
   description:
-    "3P Solutions IT practice: Odoo ERP, custom software, and Snowflake for analytics and AI in Pakistan.",
+    "3P Solutions IT practice: Odoo ERP plus custom software with TypeScript, Node.js, Nest.js, Python, and React/Next.js.",
   keywords: [
     "Odoo",
     "OODO",
     "ERP",
-    "Snowflake",
     "TypeScript",
     "Node.js",
     "Nest.js",
@@ -58,8 +57,8 @@ export default function ItPracticePage() {
     <>
       <PageHero
         kicker="IT practice"
-        title="Odoo, custom software, and Snowflake."
-        description="3P Solutions’ IT practice implements Odoo — the open-source ERP suite — custom web platforms, and Snowflake so operational data can be analysed in one place. Local search sometimes writes Odoo as OODO."
+        title="Odoo, plus custom software platforms."
+        description="3P Solutions’ IT practice implements Odoo — the open-source ERP suite — and custom web platforms, APIs, and delivery with TypeScript, Node.js, Nest.js, Python, and React/Next.js. Local search sometimes writes Odoo as OODO."
         image="/images/odoo.jpg"
         imageAlt="Laptop showing operations dashboards used in ERP work"
       />
@@ -99,7 +98,7 @@ export default function ItPracticePage() {
         </div>
       </section>
 
-      <SnowflakeDataCloud compact />
+      <SolutionPlatforms />
 
       <ItExperience />
 

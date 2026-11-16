@@ -39,7 +39,6 @@ export const metadata: Metadata = {
     "municipal services",
     "Odoo",
     "OODO",
-    "Snowflake",
     "Lahore",
   ],
 };
