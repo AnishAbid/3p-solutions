@@ -45,22 +45,12 @@ export default function Home() {
         className="min-h-[min(92vh,54rem)] bg-navy-deep text-white"
       >
         <div className="container-home flex min-h-[min(92vh,54rem)] flex-col justify-end pb-24 pt-20 md:pb-28 md:pt-28">
-          <p className="animate-rise text-[0.7rem] font-semibold tracking-[0.28em] text-gold uppercase">
+          <h1 className="animate-rise font-display max-w-5xl text-3xl leading-[1.1] font-medium tracking-[0.14em] text-gold uppercase sm:text-4xl md:text-5xl lg:text-6xl">
             {site.name} · {site.city}, {site.country}
-          </p>
-          <h1 className="font-display mt-5 max-w-5xl text-5xl leading-[0.95] font-medium tracking-tight md:text-7xl lg:text-[5.75rem]">
-            {site.tagline}.
           </h1>
           <div className="mt-8 grid max-w-6xl gap-10 lg:grid-cols-12">
             <p className="animate-rise max-w-2xl text-base leading-relaxed text-white/80 md:text-lg lg:col-span-7">
-              {aboutCopy.intro} The IT practice implements{" "}
-              <Link
-                href="/practices/it"
-                className="text-gold underline-offset-4 hover:underline"
-              >
-                Odoo
-              </Link>
-              .
+              {aboutCopy.hero}
             </p>
             <div className="flex flex-col gap-3 sm:flex-row lg:col-span-5 lg:justify-end lg:self-end">
               <Link

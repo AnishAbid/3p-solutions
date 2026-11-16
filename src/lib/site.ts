@@ -549,6 +549,6 @@ export const aboutCopy = {
   footer:
     "At 3P Solutions, we are dedicated to delivering high-quality construction services and innovative energy solutions, including solar and wind energy projects. Based in Lahore, we are committed to enhancing the infrastructure and sustainability of communities across Pakistan. Contact us today to find out how we can help you.",
   hero:
-    "Innovative construction and energy solutions for a greener tomorrow.",
+    "Established in 2008, we aspire to be a trusted partner in construction and infrastructure development, municipal services, information technology, and renewable energy. We deliver integrated, reliable, and value-driven solutions for government, public-sector, and private-sector organizations—pairing technical expertise, professional integrity, and modern technologies to support national progress and community development.",
 } as const;
 
