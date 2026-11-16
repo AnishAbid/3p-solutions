@@ -21,7 +21,9 @@ Licenses allow commercial use:
 | `waste.jpg` | Pixabay `disposal-1846033` | Solid waste |
 | `municipal.jpg` | Pixabay `architecture-1868667` | Municipal / urban |
 | `odoo.jpg` | Unsplash `photo-1551288049` | IT / Odoo dashboards |
-| `it-network.jpg` | [Pexels 442150](https://www.pexels.com/photo/442150/) | IT practice |
+| `it-network.jpg` | [Pexels 442150](https://www.pexels.com/photo/442150/) | IT practice · Odoo pillar |
+| `custom-software.jpg` | Unsplash `photo-1498050108023` | IT practice · Custom software pillar |
+| `product-platforms.jpg` | Composite of Order Karu, Manage Karo, and Event Karo screenshots listed below | IT practice · Product platforms pillar |
 | `transmission.jpg` | [Pexels 221012](https://www.pexels.com/photo/221012/) | About / transmission lines |
 | `partners/subkaro.jpg` | Original screenshot of [subkaro.com](https://www.subkaro.com/) (13 Nov 2026) | Product partner · Subkaro |
 | `partners/order-karu.jpg` | Original screenshot of [orderkaru.com](https://www.orderkaru.com/) (13 Nov 2026) | Product partner · Order Karu |

@@ -23,10 +23,14 @@ const pillars = [
   {
     title: "Custom software",
     body: "Web platforms and APIs in TypeScript, Node.js, Nest.js, Python, and React/Next.js.",
+    image: "/images/custom-software.jpg",
+    imageAlt: "Laptop on a desk showing code used in custom web development",
   },
   {
     title: "Product platforms",
     body: "Software 3P Solutions builds and sells through Subkaro — Order Karu, Manage Karo, Event Karo.",
+    image: "/images/product-platforms.jpg",
+    imageAlt: "Order Karu, Manage Karo, and Event Karo product screens from Subkaro",
   },
 ] as const;
 
@@ -160,41 +164,27 @@ export function ItPracticeView() {
               delay={index * 90}
               className={index === 0 ? "lg:col-span-6" : "lg:col-span-3"}
             >
-              {"image" in pillar ? (
-                <article className="group relative min-h-[18rem] overflow-hidden rounded-2xl lg:min-h-[22rem]">
-                  <Image
-                    src={pillar.image}
-                    alt={pillar.imageAlt}
-                    fill
-                    className="object-cover transition duration-700 group-hover:scale-105 motion-reduce:transform-none"
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/45 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-6 text-white md:p-7">
-                    <p className="font-heading text-xs text-gold">
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <h2 className="font-display mt-1 text-3xl">{pillar.title}</h2>
-                    <p className="mt-3 max-w-md text-sm leading-relaxed text-white/80">
-                      {pillar.body}
-                    </p>
-                  </div>
-                </article>
-              ) : (
-                <article className="flex h-full flex-col justify-between rounded-2xl border bg-card p-6 shadow-sm md:p-7">
+              <article className="group relative min-h-[18rem] overflow-hidden rounded-2xl lg:min-h-[22rem]">
+                <Image
+                  src={pillar.image}
+                  alt={pillar.imageAlt}
+                  fill
+                  className="object-cover transition duration-700 group-hover:scale-105 motion-reduce:transform-none"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/45 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-5 text-white md:p-6">
                   <p className="font-heading text-xs text-gold">
                     {String(index + 1).padStart(2, "0")}
                   </p>
-                  <div className="mt-10">
-                    <h2 className="font-display text-2xl md:text-3xl">
-                      {pillar.title}
-                    </h2>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      {pillar.body}
-                    </p>
-                  </div>
-                </article>
-              )}
+                  <h2 className="font-display mt-1 text-2xl lg:text-3xl">
+                    {pillar.title}
+                  </h2>
+                  <p className="mt-3 text-sm leading-relaxed text-white/80">
+                    {pillar.body}
+                  </p>
+                </div>
+              </article>
             </Reveal>
           ))}
         </div>
