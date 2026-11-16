@@ -4,7 +4,7 @@ Marketing site for **3P Solutions** (also written **3Psolution**), a Lahore-base
 
 Services include construction, solar energy, wind energy, water supply, wastewater treatment, solid waste, municipal services, and Odoo IT (sometimes searched as OODO).
 
-The contact form validates in the browser (empty / error / success). Enquiries are also directed to **info@3psolutions.com.pk**.
+The Contact page publishes the Lahore address, phone, email, and website. There is no enquiry form.
 
 ## Stack
 

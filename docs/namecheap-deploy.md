@@ -12,7 +12,7 @@ This repo is configured for **Option B: static export**. `npm run build` writes 
 | Node | **20 or newer** to **build** on your computer. The live host does not run Node. |
 | Database | None |
 | Server API routes | None |
-| Contact form | Browser-only validation; success state is local. Copy still points people to `info@3psolutions.com.pk` |
+| Contact page | Address, phone, email, and website only. No enquiry form. |
 | Images | `next/image` with `images.unoptimized: true` (required for export) |
 | Redirects | `/practices/engineering` → `/projects`, `/practices/consulting` → `/municipal-services` via `public/.htaccess` plus static HTML fallbacks under `public/practices/…` |
 | Secrets | None required to run the site |
@@ -151,5 +151,5 @@ Only if you later drop `output: 'export'` and restore a Node server. Shared cPan
    - `https://3psolutions.com.pk/practices/engineering` → `/projects`
    - `https://3psolutions.com.pk/practices/consulting` → `/municipal-services`
 
-6. Contact form: empty / validation error / success still work in the browser. Query strings such as `/contact?practice=odoo` are read on the client.
+6. Contact page shows the Lahore address, phone, email, and website only. There is no form.
 7. Keep the WP backup until you are sure you will not roll back.

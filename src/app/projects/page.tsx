@@ -135,7 +135,7 @@ export default function ProjectsPage() {
                   </p>
                 </div>
                 <Link
-                  href="/contact?practice=construction"
+                  href="/contact"
                   className="inline-flex items-center gap-2 text-sm font-medium text-gold hover:text-white"
                 >
                   Get in touch

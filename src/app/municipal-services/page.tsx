@@ -77,7 +77,7 @@ export default function MunicipalServicesPage() {
           ))}
         </div>
         <Link
-          href="/contact?practice=water"
+          href="/contact"
           className={cn(buttonVariants({ size: "lg" }), "mt-10 h-11 px-6")}
         >
           Transform your community

@@ -88,7 +88,7 @@ export default function RenewablesPage() {
           ))}
         </div>
         <Link
-          href="/contact?practice=solar"
+          href="/contact"
           className={cn(buttonVariants({ size: "lg" }), "mt-10 h-11 px-6")}
         >
           Get in touch

@@ -186,7 +186,7 @@ export default function ItPracticePage() {
       <CtaBand
         title="Talk to the IT practice."
         body="Bring the chart of accounts, the warehouse list, and the pain. 3P Solutions in Lahore implements Odoo and the platforms above."
-        href="/contact?practice=odoo"
+        href="/contact"
       />
     </>
   );

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ContactAddress } from "@/components/contact-address";
+import { ContactDetails } from "@/components/contact-address";
 import { SiteLogo } from "@/components/site-logo";
 import { contact, site } from "@/lib/site";
 
@@ -74,31 +74,10 @@ export function SiteFooter() {
           <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-gold uppercase">
             Contact
           </p>
-          <address className="mt-4 space-y-2 text-sm leading-relaxed text-white/70 not-italic">
-            <p>
-              <ContactAddress />
-            </p>
-            <p>
-              <a href={contact.phoneHref} className="hover:text-gold">
-                {contact.phoneDisplay}
-              </a>
-            </p>
-            <p>
-              <a href={`mailto:${contact.email}`} className="hover:text-gold">
-                {contact.email}
-              </a>
-            </p>
-            <p>
-              <a
-                href={contact.websiteHref}
-                target="_blank"
-                rel="noopener"
-                className="hover:text-gold"
-              >
-                {contact.websiteDisplay}
-              </a>
-            </p>
-          </address>
+          <ContactDetails
+            className="mt-4 space-y-2 text-sm leading-relaxed text-white/70"
+            linkClassName="hover:text-gold"
+          />
         </div>
       </div>
       <div className="border-t border-white/10">

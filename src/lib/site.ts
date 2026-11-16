@@ -376,11 +376,6 @@ export const solutionPlatforms = [
   },
 ] as const;
 
-export const enquiryOptions = services.map((service) => ({
-  slug: service.slug,
-  title: service.title,
-}));
-
 export const stats = [
   { value: "10", label: "Years in business" },
   { value: "150", label: "Projects completed" },
@@ -516,7 +511,7 @@ export const faqs = [
     id: "contact",
     question: "How can I get in touch for a project consultation?",
     answer:
-      "You can contact us through our website’s contact form or call us directly to schedule a consultation regarding your project needs.",
+      "Call +92-323-417 6685 or email info@3psolutions.com.pk to schedule a consultation.",
   },
 ] as const;
 
@@ -543,7 +538,7 @@ export const municipalFaqs = [
     id: "reach",
     question: "How can I get in touch with your team?",
     answer:
-      "You can contact us through our website’s contact form or call our customer service for immediate assistance.",
+      "Call +92-323-417 6685 or email info@3psolutions.com.pk for assistance.",
   },
 ] as const;
 
@@ -556,15 +551,3 @@ export const aboutCopy = {
     "Innovative construction and energy solutions for a greener tomorrow.",
 } as const;
 
-const legacyQuery: Record<string, ServiceSlug> = {
-  it: "odoo",
-  engineering: "construction",
-  consulting: "water",
-};
-
-export function resolveServiceSlug(raw: string | null) {
-  if (!raw) return "";
-  if (enquiryOptions.some((item) => item.slug === raw)) return raw;
-  if (services.some((item) => item.slug === raw)) return raw;
-  return legacyQuery[raw] ?? "";
-}
