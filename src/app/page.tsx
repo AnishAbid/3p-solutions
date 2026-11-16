@@ -35,11 +35,7 @@ const catalog = homeOrder
   .map((slug) => getService(slug))
   .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
-const marqueeLabels = [
-  ...services.map((item) => item.shortTitle),
-  site.city,
-  site.country,
-];
+const marqueeLabels = services.map((item) => item.shortTitle);
 
 export default function Home() {
   return (
